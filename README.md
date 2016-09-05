@@ -3,9 +3,6 @@
 [![Code Climate](https://codeclimate.com/github/jhonnyzao/restrot/badges/gpa.svg)](https://codeclimate.com/github/jhonnyzao/restrot)
 [![Build Status](https://travis-ci.org/jhonnyzao/restrot.svg?branch=master)](https://travis-ci.org/jhonnyzao/restrot)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 ### Links:
 * Heroku: http://restrot.herokuapp.com
 * Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1857719
