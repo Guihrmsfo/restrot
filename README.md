@@ -18,23 +18,3 @@
 ### Problema a ser resolvido:
 
 Criação de uma aplicação web baseada na busca inteligente de receitas. A ideia do projeto é encontrar todas as receitas possíveis a partir da informação dos ingredientes que o usuário possui em casa, para que não seja necessário sair de casa para comprar novos ingredientes sempre que precisar cozinhar uma refeição e também para expandir as receitas feitas no dia a dia
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
