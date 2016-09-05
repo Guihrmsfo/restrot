@@ -17,4 +17,4 @@
 
 ### Problema a ser resolvido:
 
-Criação de uma aplicação web baseada na busca inteligente de receitas. A ideia do projeto é encontrar todas as receitas possíveis a partir da informação dos ingredientes que o usuário possui em casa, para que não seja necessário sair de casa para comprar novos ingredientes sempre que precisar cozinhar uma refeição e também para expandir as receitas feitas no dia a dia
+Criação de uma aplicação web baseada na busca inteligente de receitas. A ideia do projeto é encontrar todas as receitas possíveis a partir da informação dos ingredientes que o usuário possui em casa, para que não seja necessário sair para comprar novos sempre que precisar cozinhar uma refeição. A aplicação também serve para expandir as receitas feitas no dia a dia
