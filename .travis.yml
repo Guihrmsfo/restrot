@@ -5,8 +5,12 @@ env:
   
 services:
     -mysql2
+
+script:
+  - bundle exec rake    
     
-before_install:
-- mysql -e "create database IF NOT EXISTS c9;"
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - mysql -e "create database IF NOT EXISTS c9;"
   - mysql -e "create database IF NOT EXISTS test;" 
   - mysql -e "create database IF NOT EXISTS production;"
