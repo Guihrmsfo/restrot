@@ -1,1 +1,12 @@
 language: ruby
+
+env:
+  - DB=mysql
+  
+services:
+    -mysql2
+    
+before_install:
+- mysql -e "create database IF NOT EXISTS c9;"
+  - mysql -e "create database IF NOT EXISTS test;" 
+  - mysql -e "create database IF NOT EXISTS production;"
