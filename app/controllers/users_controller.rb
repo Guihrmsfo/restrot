@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     include BCrypt
     
     def new
-        @user = User.new
+        @user = User.new(params)
     end
   
     def login
