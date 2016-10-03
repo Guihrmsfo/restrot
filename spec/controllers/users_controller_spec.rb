@@ -13,17 +13,17 @@ RSpec.describe UsersController, type: :controller do
     it "is valid with valid atributes" do
       get :login
       user = UsersController.new
-      expect(user).to be_valid
+      expect(user).to validate_presence_of(:name, :email, :password)
     end
     
     it "name not empty" do
       get :login, :name
-      expect(:name).not_to be_nil
+      expect(:name).not_to eq('');
     end
     
     it "user params not empty" do
-      get :login, :user
-      expect(params[:user]).to be_present
+      get :login, params
+      expect(params).to be_present
     end
     
   end
