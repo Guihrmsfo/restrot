@@ -11,14 +11,14 @@ RSpec.describe UsersController, type: :controller do
   
   describe "GET #login" do
     it "user params not empty" do
-      @user = UsersController.new
-      expect(Controller.params[@user]).to be_present
+      #user = UsersController.new
+      expect(UsersController.params[:user]).to be_present
     end
     
     it "user already exists" do
       get :login
       #@user = UsersController.new
-      @user_test = User.find_by Controller.params[:user][:name]
+      @user_test = User.find_by UsersController.params[:user][:name]
       #@user_test = User.find_by name: @user.name
       expect(@user_test).not_to be_nill
     end
@@ -28,13 +28,13 @@ RSpec.describe UsersController, type: :controller do
     it "user params not empty" do
       get :create
       #@user = UsersController.new
-      expect(Controller.params[:user]).to be_present
+      expect(UsersController.params[:user]).to be_present
     end
     
     it "username does not exist" do
       get :create
       #@user = UsersController.new
-      @user_test = User.find_by Controller.params[:user][:name]
+      @user_test = User.find_by UsersController.params[:user][:name]
       #@user_test = User.find_by name: @user.name
       expect(@user_test).to be_nill
     end
@@ -42,7 +42,7 @@ RSpec.describe UsersController, type: :controller do
     it "email does not exist" do
       get :create
       #@user = UsersController.new
-      @user_test = User.find_by Controller.params[:user][:email]
+      @user_test = User.find_by UsersController.params[:user][:email]
       #@user_test = User.find_by email: @user.email
       expect(@user_test).to be_nill
     end
