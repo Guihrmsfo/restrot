@@ -26,8 +26,8 @@ RSpec.describe UsersController, type: :controller do
   end
     
   describe "GET #create" do
-    get :create
     it "user params not empty" do
+      get :create
       @user = UsersController.new
       expect(params[@user]).to be_present
     end
