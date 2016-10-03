@@ -11,8 +11,8 @@ RSpec.describe UsersController, type: :controller do
   
   describe "GET #login" do
     it "user params not empty" do
-      #@user = UsersController.new
-      expect(controller.params[:user]).to be_present
+      @user = UsersController.new
+      expect(controller.params[@user]).to be_present
     end
     
     it "user already exists" do
