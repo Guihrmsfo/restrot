@@ -10,10 +10,40 @@ RSpec.describe UsersController, type: :controller do
   end
   
   describe "GET #login" do
+    it "user params not empty" do
+      @user = UsersController.new
+      expect(params[@user]).to be_present
+    end
+    
+    it "user already exists" do
+      @user = UsersController.new
+      @user_test = User.find_by name: @user.name
+      expect(@user_test).not_to be_nill
+    end
+  end
+    
+  describe "GET #create" do
+    it "user params not empty" do
+      @user = UsersController.new
+      expect(params[@user]).to be_present
+    end
+    
+    it "username does not exist" do
+      @user = UsersController.new
+      @user_test = User.find_by name: @user.email
+      expect(@user_test).to be_nill
+    end
+    
+    it "email does not exist" do
+      @user = UsersController.new
+      @user_test = User.find_by email: @user.email
+      expect(@user_test).to be_nill
+    end
+    
     it "returns http success" do
-      get :new
+      get :create
       expect(response).to have_http_status(:success)
     end
   end
-
+  
 end
