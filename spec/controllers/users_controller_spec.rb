@@ -17,8 +17,8 @@ RSpec.describe UsersController, type: :controller do
     end
     
     it "user params not empty" do
-      get :login, params
-      expect(params[:name]).not_to be_empty
+      get :login, :name
+      expect(:name).not_to be_empty
     end
     
   end
