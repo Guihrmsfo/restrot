@@ -16,9 +16,14 @@ RSpec.describe UsersController, type: :controller do
       expect(user).to be_valid
     end
     
-    it "user params not empty" do
+    it "name not empty" do
       get :login, :name
-      expect(:name).not_to be_empty
+      expect(:name).not_to be_nil
+    end
+    
+    it "user params not empty" do
+      get :login, :user
+      expect(params[:user]).to be_present
     end
     
   end
