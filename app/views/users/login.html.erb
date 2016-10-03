@@ -1,0 +1,12 @@
+<% @page_title = "UserAuth | Signup" %>
+<div class="Sign_Form">
+  <h1>Login</h1>
+  <%= form_for(:user, :url => {:controller => 'users', :action => 'login'}) do |f| %>
+    <p> Username:</br> <%= f.text_field :name%> </p>
+    <p> Password:</br> <%= f.password_field :password%></p>
+    <%= f.submit :Login %>
+  <% end %>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+</div>
