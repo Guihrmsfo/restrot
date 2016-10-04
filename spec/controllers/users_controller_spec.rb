@@ -13,17 +13,12 @@ RSpec.describe UsersController, type: :controller do
     context "with valid attributes" do
       it "returns http success" do
         post :login
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:redirect)
      end
     
      it "redirect to dashboard" do
        post :login
        expect(response).to redirect_to(:controller => 'dashboard')
-     end
-    
-     it "will set flash[:alert]" do
-       post :login
-       expect(flash[:alert]).to be_present
      end
      
      it "will set flash[:notice]" do
@@ -36,7 +31,7 @@ RSpec.describe UsersController, type: :controller do
   describe "POST #create" do
     context "with valid attributes" do
       it "creates a new user" do
-        expect{post :create, user: {name: 'Any Name'} }.to change(User, :count).by(1)
+        expect{post :create}.to change(User, :count).by(1)
       end
       
       it "returns http success" do
