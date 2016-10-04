@@ -27,13 +27,13 @@ class UsersController < ApplicationController
                     redirect_to :controller => 'dashboard', :action => 'dashboard' 
                     return
                 else
-                    flash[:error] = "Senha inválida"
+                    flash[:notice] = "Senha inválida"
                     flash[:color]= "Inválido"
                 end
                 
             else
                 
-                flash[:error] = "Nome de usuário inválido"
+                flash[:notice] = "Nome de usuário inválido"
                 flash[:color]= "Inválido"
                 
             end
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
                 flash[:notice] = "Cadastrado com sucesso!"
                 flash[:color]= "Válido"
             else
-                flash[:error] = "Dados inválidos"
+                flash[:notice] = "Dados inválidos"
                 flash[:color]= "Inválido"
             end
         end
