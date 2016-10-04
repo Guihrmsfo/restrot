@@ -1,0 +1,482 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container" style="margin-top: -20px;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Rest<span>rot</span></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#mainCarousel">Home</a>
+                    </li>
+                    <li>
+                        <a href="#blog">Depoimentos</a>
+                    </li>
+                    <li>
+                        <a href="/users/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/users/new">Cadastre-se</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <style>
+    
+    	.navbar-default {
+    		background-color: transparent;
+    		border-color: transparent;
+    		-webkit-transition: all 0.5s ease 0s;
+  			-o-transition: all 0.5s ease 0s;
+  			transition: all 0.5s ease 0s;
+  			height: 30px;
+    	}
+    	
+    	.navbar-nav { 
+    		margin-top: 40px;
+    		float: right;
+    	}
+    	
+    	@media screen and (max-width: 767px) {
+    	.navbar-nav {
+    		float: none;
+    		text-align: center;
+    		background: rgba(25, 33, 60, 0.5);
+    	}
+    	}
+    	
+    	.navbar-default .navbar-brand {
+    		margin-top: 40px;
+    		font-size: 28px;
+    		font-family: 'Righteous', cursive;
+    		color: #fff;
+    		letter-spacing: 1px;
+    		-moz-transition:color .5s ease-in;
+   			-o-transition:color .5s ease-in;
+    		-webkit-transition:color .5s ease-in;
+    	}
+    	
+    	.navbar-default .navbar-brand span {
+    		color: #00994d;
+    		-moz-transition:color .5s ease-in;
+   			-o-transition:color .5s ease-in;
+    		-webkit-transition:color .5s ease-in;
+    	}
+    	
+    	@media screen and (max-width: 400px) {
+    	.navbar-default .navbar-brand {
+    		font-size: 22px;
+    	}
+    	}
+    	
+    	.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand span:hover {
+    		color: #33ff99;
+    	}
+    	
+    	.navbar-default .navbar-nav>li>a {
+    		color: #fff;
+    		font-size: 14px;
+    		font-family: 'Noto Sans', sans-serif;
+    		text-transform: uppercase;
+    		letter-spacing: 1px;
+    	}
+    	
+    	.navbar-default .navbar-nav>li>a:hover {
+    		color: #33ff99;
+    	}
+    	
+    	.navbar-default .navbar-nav>li>a:focus {
+    		color: #33ff99;
+    	}
+    	
+    	.navbar-default .navbar-toggle {
+    		margin-top: 40px;
+    		border: none;
+    	}
+    	
+		.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+			background: none;
+		}
+    	
+    	.navbar-default .navbar-toggle .icon-bar {
+    		height: 4px;
+    		width: 28px;
+    		background: #33ff99;
+		}
+    	
+    	.navbar-default.shrink {
+    		background:rgba(25, 33, 60, 0.8)
+		}
+		
+		.navbar-default.shrink .navbar-nav {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		
+		.navbar-default.shrink .navbar-brand {
+			margin-top: 20px;
+		}
+		
+		.navbar-default.shrink .navbar-toggle {
+			margin-top: 25px;
+		}
+
+    
+    </style>
+
+    <!-- Full Page Image Background Carousel Header -->
+    <header id="mainCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mainCarousel" data-slide-to="1"></li>
+            <li data-target="#mainCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+            <div class="slider_overlay"></div>
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url(<%= asset_path 'geladeira.jpg' %>);">
+                    <div class="hero">
+                        <hgroup>
+                            <h1>BATEU A FOME?</h1>
+                            <h3>Não aguenta mais comidas prontas?</h3>
+                            <h3>Está afim de cozinhar algo bem gostoso?</h3>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+
+            <div class="slider_overlay"></div>
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url(<%= asset_path 'ingredientes.jpg' %>);">
+                    <div class="hero">
+                        <hgroup>
+                            <h1>O QUE TEM EM CASA?</h1>
+                            <h3>Fale para nós quais ingredientes você tem a sua disposição e em quais quantidades.</h3>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <div class="item">    
+            <div class="slider_overlay"></div>
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url(<%= asset_path 'cozinhar.jpg' %>);">
+                    <div class="hero">
+                        <hgroup>
+                            <h1>BORA COZINHAR!</h1>
+                            <h3>Saiba as receitas mais gostosas e mais simples de se fazer com o que você tem na sua casa!</h3>
+                        </hgroup>
+                        <button class="btn btn-hero btn-lg" role="button">Inscreva-se</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#mainCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#mainCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+    
+    <div id="blog">
+    	<div class="container">
+    		<h2>Depoimentos</h2>
+    		<hr>
+    		<div class="carousel slide" id="myCarousel">
+        		<div class="carousel-inner">
+           			<div class="item active">
+            		 	<ul class="thumbnails">
+                        	<li class="col-sm-4">
+    							<div class="fff">
+									<div class="thumbnail">
+										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+									</div>
+									<div class="caption">
+										<h4>Beltrano Alfeu</h4>
+										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
+										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									</div>
+                           	 	</div>
+                        	</li>
+                        	<li class="col-sm-4">
+								<div class="fff">
+									<div class="thumbnail">
+										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+									</div>
+									<div class="caption">
+										<h4>Ciclano Alves</h4>
+										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
+										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									</div>
+                            	</div>
+                        	</li>
+                        	<li class="col-sm-4">
+								<div class="fff">
+									<div class="thumbnail">
+										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+									</div>
+									<div class="caption">
+										<h4>Diego Arnaldo</h4>
+										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
+										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									</div>
+                            	</div>
+                        	</li>
+                    	</ul>
+             		</div><!-- /Slide1 --> 
+            		<div class="item">
+                    	<ul class="thumbnails">
+                       		<li class="col-sm-4">
+								<div class="fff">
+									<div class="thumbnail">
+										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+									</div>
+									<div class="caption">
+										<h4>Sed dico menandri</h4>
+										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
+										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									</div>
+                            	</div>
+                        	</li>
+                        	<li class="col-sm-4">
+								<div class="fff">
+									<div class="thumbnail">
+										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+									</div>
+									<div class="caption">
+										<h4>Sed dico menandri</h4>
+										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
+										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									</div>
+                            	</div>
+                        	</li>
+                        	<li class="col-sm-4">
+								<div class="fff">
+									<div class="thumbnail">
+										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+									</div>
+									<div class="caption">
+										<h4>Sed dico menandri</h4>
+										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
+										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									</div>
+                            	</div>
+                        	</li>
+                    	</ul>
+            		</div><!-- /Slide2 --> 
+        		</div>
+        
+       
+	   		<nav>
+				<ul class="control-box pager">
+					<li><a data-slide="prev" href="#myCarousel" class=""><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+					<li><a data-slide="next" href="#myCarousel" class=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+				</ul>
+			</nav>
+	   		<!-- /.control-box -->   
+                              
+   	 		</div><!-- /#myCarousel -->
+    	</div>
+    </div>
+    
+    
+    <div id="contact">
+    	<div class="container">
+    		<h2>Cadastre-se!</h2>  
+    		<p>Quando você está cadastrado, consegue salvar ingredientes, acessar seu histórico e suas receitas favoritas.</p>
+    		<div class="col-md-6">
+    			<div class="Sign_Form contact form">
+                    <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+                        <p> Usuário:  <%= f.text_field :name%> </p>
+                        <p> Email:  <%= f.text_field :email%> </p>
+                        <p> Senha:  <%= f.password_field :password%></p>
+                        <p> Confirme sua senha:  <%= f.password_field :password_confirmation%> </p>
+                        <%= f.submit :Cadastrar %>
+                    <% end %>
+                    <% flash.each do |name, msg| -%>
+                        <%= content_tag :div, msg, class: name %>
+                    <% end -%>
+                    <% if @user && @user.errors.any? %>
+                        <ul class="Signup_Errors">
+                        <% for message_error in @user.errors.full_messages %>
+                            <li>* <%= message_error %></li>
+                        <% end %>
+                        </ul>
+                    <% end %>
+                </div>
+    			<!--<div class="contact-form">
+					<form action="#" method="post">
+						<input id="name" name="name" type="text" placeholder="Name:" required>
+						<input id="email" name="email" type="text" placeholder="Email:" required>
+						<input id="subject" name="subject" type="subject" placeholder="Subject:" required>
+						<textarea id="message" name="message" placeholder="Your Message:" rows="5" required></textarea>
+						<br>
+						<button name="submit" id="submit" type="submit">Send Message</button>
+					</form>
+				</div>-->
+			</div>	
+			<div class="col-md-6">
+				<div class="image">
+					<img src="http://inhabitat.com/wp-content/blogs.dir/1/files/2015/10/The-R%C3%B6nesans-Mecidiyek%C3%B6y-Office-by-Muum-1.jpg" class="img-responsive">
+				</div>
+			</div>
+    	</div>
+    </div>
+    
+    
+    <div id="subscribe">
+    	<div class="container">
+    	    <h2>Assine nossa newsletter</h2>
+    	    <p>Ex per oblique corpora concludaturque, consulatu incorrupte an eum. In his offendit scribentur, eam ne autem tractatos. Affert molestie phaedrum vel ad, dicit audire expetendis qui ut, ne minim deleniti eum. </p>
+			<div class="col-md-8 col-md-offset-2">
+             	<form action="#">
+              		<div class="input-group">
+                 		<input class="btn btn-lg" name="email" id="email" type="email" placeholder="Enter your email address" required>
+                 		<button class="btn btn-info btn-lg" type="submit">Submit</button>
+             		 </div>
+            	</form>
+			</div>  
+    	</div>
+    </div>
+    
+	<div class="footer">
+  		<div class="container">
+   			<p class="text-muted">All Rights Reserved <a href="http://freedesignz.com">Free Designz</a></p>
+  		</div>
+	</div>
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/jquery.isotope.js"></script>
+    
+    <script src="js/jquery.scrollUp.min.js"></script>
+    
+    
+	<script type="text/javascript">
+	
+	$('a[href^="#"]').on('click', function(event) {
+    	var target = $(this.getAttribute('href'));
+    	if( target.length ) {
+       		event.preventDefault();
+        	$('html, body').stop().animate({
+            	scrollTop: target.offset().top
+        	}, 1000);
+    	}
+	});
+
+	</script>
+    
+    
+    <!-- Navbar Change on Scroll -->
+	<script type="text/javascript">
+		$(function(){
+ 		var shrinkHeader = 100;
+  		$(window).scroll(function() {
+    		var scroll = getCurrentScroll();
+      		if ( scroll >= shrinkHeader ) {
+           		$('.navbar-default').addClass('shrink');
+        	}
+       		else {
+            	$('.navbar-default').removeClass('shrink');
+        	}
+  		});
+		function getCurrentScroll() {
+    		return window.pageYOffset || document.documentElement.scrollTop;
+    	}
+	});
+
+	</script>    
+
+
+	<!-- Portfolio Isotope Settings -->
+	<script type="text/javascript">
+
+	$(window).load(function(){
+  
+  
+ 	 var $container = $('.portfolioContainer'),
+     	$body = $('body'),
+     	colW = 375,
+      	columns = null;
+
+  
+  	$container.isotope({
+    // disable window resizing
+    	resizable: true,
+   	 	masonry: {
+        columnWidth: colW
+    	}
+  	});
+  
+  	$(window).smartresize(function(){
+    // check if columns has changed
+    	var currentColumns = Math.floor( ( $body.width() -30 ) / colW );
+    	if ( currentColumns !== columns ) {
+      	// set new column count
+      	columns = currentColumns;
+      	// apply width to container manually, then trigger relayout
+      	$container.width( columns * colW )
+        	.isotope('reLayout');
+    	}
+    
+  	}).smartresize(); // trigger resize to set container width
+  	$('.portfolioFilter a').click(function(){
+        	$('.portfolioFilter .current').removeClass('current');
+        	$(this).addClass('current');
+ 
+        	var selector = $(this).attr('data-filter');
+        	$container.isotope({
+			
+            filter: selector,
+         });
+        	 return false;
+   	 	});
+  
+	});
+
+	</script>
+	
+	
+	<!-- Scroll To Top Settings -->
+    <script type="text/javascript">
+    
+    $(function () {
+  		$.scrollUp({
+    		scrollName: 'scrollUp', // Element ID
+    		topDistance: '300', // Distance from top before showing element (px)
+    		topSpeed: 600, // Speed back to top (ms)
+    		animation: 'fade', // Fade, slide, none
+    		animationInSpeed: 200, // Animation in speed (ms)
+    		animationOutSpeed: 200, // Animation out speed (ms)
+    		activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+    		scrollImg: true,
+  		});
+	});
+    
+    </script>

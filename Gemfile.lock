@@ -40,6 +40,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.1.1)
+    autoprefixer-rails (6.5.0.1)
+      execjs
+    bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.8.1)
@@ -128,6 +134,10 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.0.1)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.1)
+      actionpack (~> 5.x)
+      actionview (~> 5.x)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
@@ -167,6 +177,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -203,6 +215,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
+  bcrypt (~> 3.1.7)
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   cucumber-rails
@@ -213,9 +228,11 @@ DEPENDENCIES
   mysql2
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rails-controller-testing (~> 1.0.1)
   rake
   rspec-rails
   sass-rails (~> 5.0)
+  shoulda-matchers (~> 3.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
@@ -224,4 +241,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.1
+   1.13.2

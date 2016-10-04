@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require js/bootstrap.min.js
+//= require js/chart.min.js
+//= require js/chart-data.js
+//= require js/easypiechart.js
+//= require js/easypiechart-data.js
+//= require js/bootstrap-datepicker.js
