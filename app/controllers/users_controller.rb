@@ -46,11 +46,16 @@ class UsersController < ApplicationController
         if (params[:user]).present?  
             params.permit!
             @user = User.new(params[:user])
-            if @user.save
-                flash[:notice] = "Cadastrado com sucesso!"
-                flash[:color]= "Válido"
+            if (/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/ =~ @user.email) != nil
+                if @user.save
+                    flash[:notice] = "Cadastrado com sucesso!"
+                    flash[:color]= "Válido"
+                else
+                    flash[:notice] = "Dados inválidos"
+                    flash[:color]= "Inválido"
+                end
             else
-                flash[:notice] = "Dados inválidos"
+                flash[:notice] = "E-mail inválido"
                 flash[:color]= "Inválido"
             end
         end
