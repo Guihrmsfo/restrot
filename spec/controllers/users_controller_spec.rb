@@ -13,7 +13,7 @@ RSpec.describe UsersController, type: :controller do
     context "with valid attributes" do
       it "returns http success" do
         post :login
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:redirect)
      end
     
      it "redirect to dashboard" do

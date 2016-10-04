@@ -50,6 +50,10 @@ group :test do
 end
 
 group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
+group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
