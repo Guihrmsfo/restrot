@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     include BCrypt
     
     def new
-        @user = User.new(params[:user])
+        @user = User.new
     end
   
     def login
@@ -27,13 +27,13 @@ class UsersController < ApplicationController
                     redirect_to :controller => 'dashboard', :action => 'dashboard' 
                     return
                 else
-                    flash[:notice] = "Senha inválida"
+                    flash[:error] = "Senha inválida"
                     flash[:color]= "Inválido"
                 end
                 
             else
                 
-                flash[:notice] = "Nome de usuário inválido"
+                flash[:error] = "Nome de usuário inválido"
                 flash[:color]= "Inválido"
                 
             end
@@ -45,12 +45,11 @@ class UsersController < ApplicationController
     def create
         if (params[:user]).present?  
             params.permit!
-            @user = User.new(params[:user])
             if @user.save
                 flash[:notice] = "Cadastrado com sucesso!"
                 flash[:color]= "Válido"
             else
-                flash[:notice] = "Dados inválidos"
+                flash[:error] = "Dados inválidos"
                 flash[:color]= "Inválido"
             end
         end
