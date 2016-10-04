@@ -45,17 +45,17 @@ RSpec.describe UsersController, type: :controller do
     context "with invalid attributes" do
       it "is missing params" do
         post :create, :user => {:name => "", :email => "email@123", :password => "Password"}
-        expect(response).to render_template("login")
+        expect(response).to render_template("users/new")
       end
       
      it "is missing params" do
         post :create, :user => {:name => "Any Name", :email => "", :password => "Password"}
-        expect(response).to render_template("login")
+        expect(response).to render_template("users/new")
       end
       
       it "is missing params" do
         post :create, :user => {:name => "Any Name", :email => "email@123", :password => ""}
-        expect(response).to render_template("login")
+        expect(response).to render_template("users/new")
       end
     end
   end
