@@ -20,18 +20,14 @@ RSpec.describe UsersController, type: :controller do
        post :login
        expect(response).to render_template('dashboard')
      end
-     
-     it "will set flash[:notice]" do
-       post :login
-       expect(controller).to set_flash[:notice]
-     end
     end
   end
   
   describe "POST #create" do
     context "with valid attributes" do
       it "creates a new user" do
-        expect{post :create, user: {name: 'Any Name'} }.to change(User, :count).by(1)
+        post :create
+        expect{UsersController.create}.to change(User, :count).by(1)
       end
       
       it "returns http success" do
