@@ -11,13 +11,14 @@ RSpec.describe UsersController, type: :controller do
   
   describe "GET #login" do
     it "is valid with valid atributes" do
+      get:login
       user = UsersController.new
       assert_not user.create
     end
     
     it "name not empty" do
       get :login, :name
-      expect(:name).not_to eq('');
+      expect(:name).to be_present;
     end
     
     it "user params not empty" do
