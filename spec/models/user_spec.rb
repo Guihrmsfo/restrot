@@ -2,26 +2,26 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it "has valid attributes" do
-    expect(User.new).to be_valid
+    expect(User.new(:name, :email, :password)).to be_valid
   end
 
   it "has empty email" do
     u = User.new(:email=> nil)
-    expect(u).to have(1).errors_on(:email)
+    expect(u).not_to be_valid
   end
   
   it "has empty name" do
     u = User.new(:name=> nil)
-    expect(u).to have(1).errors_on(:name)
+    expect(u).not_to be_valid
   end
   
   it "has passwords that dont match" do
     u = User.new(:password => "p1", :confirmation => "p2")
-    expect(u).to have(1).errors_on(:password)
+    expect(u).not_to be_valid
   end
   
   it "username already taken" do
-    u = User.new(:name)
+    u = User.new(:name, :password, :email)
     user_test = User.find_by name: u.name
     expect(user_test).to be_nill
   end
