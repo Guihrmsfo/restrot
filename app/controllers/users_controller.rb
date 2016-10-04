@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     def create
         if (params[:user]).present?  
             params.permit!
-             @user = User.new(params[:user])
             if @user.save
                 flash[:notice] = "Cadastrado com sucesso!"
                 flash[:color]= "Válido"
