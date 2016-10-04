@@ -18,7 +18,7 @@ RSpec.describe UsersController, type: :controller do
     
      it "redirect to dashboard" do
        post :login
-       expect(response).to redirect_to(dashboard)
+       expect(response).to redirect_to(:controller => 'dashboard')
      end
     
      it "will set flash[:notice]" do
