@@ -13,17 +13,12 @@ RSpec.describe UsersController, type: :controller do
     context "with valid attributes" do
       it "returns http success" do
         post :login
-        expect(response).to have_http_status(:redirect)
+        expect(response).to have_http_status(:success)
      end
     
      it "redirect to dashboard" do
        post :login
-       expect(response).to redirect_to(:controller => 'dashboard')
-     end
-    
-     it "will set flash[:alert]" do
-       post :login
-       expect(flash[:alert]).to be_present
+       expect(response).to render_template('dashboard')
      end
      
      it "will set flash[:notice]" do
@@ -42,11 +37,6 @@ RSpec.describe UsersController, type: :controller do
       it "returns http success" do
         post :create
         expect(response).to have_http_status(:success)
-      end
-      
-      it "will set flash[:notice]" do
-        post :create
-        expect(flash[:notice]).to be_present
       end
     end
     
