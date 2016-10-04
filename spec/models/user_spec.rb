@@ -18,15 +18,15 @@ RSpec.describe User, type: :model do
   
   it "username already taken" do
     user_test = User.find_by name: subject.name
-    expect(user_test).to be_nill
+    expect(user_test).to be_nil
   end
   
   it "email already taken" do
     user_test = User.find_by email: subject.email
-    expect(user_test).to be_nill
+    expect(user_test).to be_nil
   end
   
   it "password too short" do
-    expect(subject.password).to have(6).characters
+    expect(subject.password.length).to be(6)
   end
 end
