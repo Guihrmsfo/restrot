@@ -21,9 +21,14 @@ RSpec.describe UsersController, type: :controller do
        expect(response).to redirect_to(:controller => 'dashboard')
      end
     
+     it "will set flash[:alert]" do
+       post :login
+       expect(flash[:alert]).to be_present
+     end
+     
      it "will set flash[:notice]" do
        post :login
-       expect(flash[:notice]).to be_present
+       expect(controller).to set_flash[:notice]
      end
     end
   end
