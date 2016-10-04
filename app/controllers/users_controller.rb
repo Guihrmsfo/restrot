@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     def create
         if (params[:user]).present?  
             params.permit!
-<<<<<<< HEAD
             @user = User.new(params[:user])
             if (/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/ =~ @user.email) != nil
                 if @user.save
@@ -55,12 +54,6 @@ class UsersController < ApplicationController
                     flash[:notice] = "Dados inválidos"
                     flash[:color]= "Inválido"
                 end
-=======
-             @user = User.new(params[:user])
-            if @user.save
-                flash[:notice] = "Cadastrado com sucesso!"
-                flash[:color]= "Válido"
->>>>>>> origin/lv-register
             else
                 flash[:notice] = "E-mail inválido"
                 flash[:color]= "Inválido"
