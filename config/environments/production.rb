@@ -56,6 +56,16 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "restrot_#{Rails.env}"
   config.action_mailer.default_url_options = { :host => "www.restrot.herokuapp.com" }
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.mailgun.org",
+    :port => "2525",
+    :domain => "sandboxb9f1e72936704dfeb825d6dd59d868eb.mailgun.org",
+    :user_name => "postmaster@sandboxb9f1e72936704dfeb825d6dd59d868eb.mailgun.org",
+    :password => "c70e248ed2914e51dc001c33d2e22139",
+    :authentication => :plain,
+    :enable_starttls_auto => true,
+    :ssl =>false
+  } 
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
