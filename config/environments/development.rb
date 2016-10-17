@@ -26,8 +26,20 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_mailer.default_url_options = { :host => "restrot-guihrmsfo.c9users.io" }
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.mailgun.org",
+    :port => "2525",
+    :domain => "sandboxb9f1e72936704dfeb825d6dd59d868eb.mailgun.org",
+    :user_name => "postmaster@sandboxb9f1e72936704dfeb825d6dd59d868eb.mailgun.org",
+    :password => "c70e248ed2914e51dc001c33d2e22139",
+    :authentication => :plain,
+    :enable_starttls_auto => true,
+    :ssl =>false
+  } 
+
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 

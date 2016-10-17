@@ -18,3 +18,9 @@
 ### Problema a ser resolvido:
 
 Criação de uma aplicação web baseada na busca inteligente de receitas. A ideia do projeto é encontrar todas as receitas possíveis a partir da informação dos ingredientes que o usuário possui em casa, para que não seja necessário sair para comprar novos sempre que precisar cozinhar uma refeição. A aplicação também serve para expandir as receitas feitas no dia a dia
+
+### Recursos Utilizados
+
+# Template Bootstrap
+* [AdminLTE gem](https://github.com/nicolas-besnard/adminlte2-rails)
+* [AdminLTE](https://github.com/almasaeed2010/AdminLTE)

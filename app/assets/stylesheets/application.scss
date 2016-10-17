@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
- *= require css/bootstrap.min.css
- *= require css/datepicker3.css
- *= require css/styles.css
+ * require css/bootstrap.min.css
+ *= require AdminLTE/AdminLTE
+ *= require AdminLTE/skins/skin-blue
+ * require css/datepicker3.css
+ * require css/styles.css
  */
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap-sprockets";
+@import "bootstrap";

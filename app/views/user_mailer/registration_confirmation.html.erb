@@ -1,0 +1,9 @@
+Olá, <%= @user.name %>!
+<br>
+<br>
+Para confirmar seu cadastro, por favor clique no link abaixo:
+<br>
+<a href="<%= confirm_email_user_url(@user.confirm_token) %>"><%= confirm_email_user_url(@user.confirm_token) %></a>
+<br>
+<br>
+<b>Restrot</b>

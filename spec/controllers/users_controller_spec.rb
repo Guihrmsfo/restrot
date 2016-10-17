@@ -43,7 +43,7 @@ RSpec.describe UsersController, type: :controller do
   
   describe "POST #create" do
     context "with valid attributes" do
-      before {post :create, :user => {:name => "Any Name", :email => "email@123", :password => "Password"} }
+      before {post :create, :user => {:name => "Any Name", :email => "email@123.com", :password => "Password"} }
       
       it "returns http success" do
         expect(response).to have_http_status(:success)

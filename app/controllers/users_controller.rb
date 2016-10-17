@@ -1,4 +1,5 @@
 require 'bcrypt'
+
 class UsersController < ApplicationController
     include BCrypt
     
@@ -9,8 +10,11 @@ class UsersController < ApplicationController
     def login
         
         if !session[:user_id].nil?
-            redirect_to :controller => 'dashboard', :action => 'dashboard' 
-            return
+            @user = User.find_by id: session[:user_id]
+            if !@user.nil?
+                redirect_to :controller => 'dashboard', :action => 'dashboard' 
+                return
+            end
         end
         
         if (params[:user]).present?  
@@ -19,22 +23,24 @@ class UsersController < ApplicationController
             if !@user.nil?
             
                 @password = BCrypt::Engine.hash_secret(params[:user][:password], @user.salt)
-                
                 if @password == @user.password
-                    flash[:notice] = "Login realizado com sucesso!"
-                    flash[:color]= "Válido"
-                    session[:user_id] = @user.id
-                    redirect_to :controller => 'dashboard', :action => 'dashboard' 
-                    return
+                    if @user.confirmed_email
+                        flash[:notice] = "Login realizado com sucesso!"
+                        flash[:color]= "Válido"
+                        session[:user_id] = @user.id
+                        redirect_to :controller => 'dashboard', :action => 'dashboard' 
+                        return
+                    else
+                        flash.now[:error] = "Por favor, confirme seu e-mail para ativar sua conta"
+                    end
+                    
                 else
-                    flash[:notice] = "Senha inválida"
-                    flash[:color]= "Inválido"
+                    flash.now[:error] = "Senha inválida"
                 end
                 
             else
                 
-                flash[:notice] = "Nome de usuário inválido"
-                flash[:color]= "Inválido"
+                flash.now[:error] = "Nome de usuário inválido"
                 
             end
             
@@ -46,19 +52,31 @@ class UsersController < ApplicationController
         if (params[:user]).present?  
             params.permit!
             @user = User.new(params[:user])
-            if (/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/ =~ @user.email) != nil
-                if @user.save
-                    flash[:notice] = "Cadastrado com sucesso!"
-                    flash[:color]= "Válido"
-                else
-                    flash[:notice] = "Dados inválidos"
-                    flash[:color]= "Inválido"
-                end
+    
+            if @user.save
+                UserMailer.registration_confirmation(@user).deliver
+                flash[:success] = "Por favor, confirme seu e-mail para ativar sua conta"
+                render "login"
+                return
             else
-                flash[:notice] = "E-mail inválido"
-                flash[:color]= "Inválido"
+                flash.now[:error] = "Dados inválidos"
             end
+            
         end
+        
         render "new"
     end
+    
+    def confirm_email
+    user = User.find_by confirm_token: params[:id]
+        if user
+            user.email_activate
+            flash[:success] = "Seja bem-vindo ao Restrot. Faça login para continuar"
+            render "login"
+        else
+            flash[:error] = "Usuário inexistente"
+            redirect_to :controller => 'home', :action => 'index' 
+        end
+    end
+    
 end
