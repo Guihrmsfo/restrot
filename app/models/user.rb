@@ -17,7 +17,7 @@ class User < ApplicationRecord
     
     private
     def encrypt_password
-        if password.present?
+        if password.present? && salt.nil?
             self.salt = BCrypt::Engine.generate_salt
             self.password = BCrypt::Engine.hash_secret(password, salt)
         end
