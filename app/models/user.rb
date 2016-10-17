@@ -6,6 +6,7 @@ class User < ApplicationRecord
     
     validates :name, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
     validates :email, :presence => true, :uniqueness => true
+    validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
     validates :password, :confirmation => true
     validates_length_of :password, :in => 6..20, :on => :create
     
