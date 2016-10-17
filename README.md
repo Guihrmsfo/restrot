@@ -5,7 +5,7 @@
 
 ### Links:
 * Heroku: http://restrot.herokuapp.com
-* Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1857719
+* Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1862751
 
 ### Integrantes do Projeto:
 * Gabriel Pioto Gomes - 8921795        
