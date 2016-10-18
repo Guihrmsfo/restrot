@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'dashboard/dashboard'
 
   get 'home/index'
+  
+  get 'home/' => 'home#index'
 
   get 'users/new'
   
