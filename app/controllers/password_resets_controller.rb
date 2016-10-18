@@ -19,13 +19,17 @@ class PasswordResetsController < ApplicationController
     else
       if (params[:user]).present?
         if params[:user][:password] == params[:user][:password_confirmation]
-          @user.salt = nil
-          @user.password = params[:user][:password]
-
-          if @user.save
-             redirect_to root_path, :notice => "Senha redefinida com sucesso!"
+          if(params[:user][:password].length < 6 || params[:user][:password].length > 20)
+            render :edit, :notice => "Senha deve ter entre 6 e 20 caracteres"
           else
-            flash[:notice] = "Erro!"
+            @user.salt = nil
+            @user.password = params[:user][:password]
+
+            if @user.save
+               redirect_to root_path, :notice => "Senha redefinida com sucesso!"
+            else
+              flash[:notice] = "Erro!"
+            end
           end
         else
           flash[:notice] = "Nova senha e confirmação de senha não são iguais"
