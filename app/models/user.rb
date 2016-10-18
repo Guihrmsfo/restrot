@@ -8,7 +8,7 @@ class User < ApplicationRecord
     validates :email, :presence => true, :uniqueness => true
     validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
     validates :password, :confirmation => true
-    validates_length_of :password, :in => 6..20, :on => :create, :on => :password, :on => :update
+    validates_length_of :password, :in => 6..20, :on => (:create; :password)
     
     def email_activate
         self.confirmed_email = true
