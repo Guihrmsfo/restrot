@@ -11,7 +11,6 @@ include BCrypt
         @user = User.find(session[:user_id])
         puts @user.name
         if (params[:user]).present?
-            puts params[:user][:oldPassword]
             @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
             if @password == @user.password
                 if params[:user][:password] == params[:user][:passwordConfirmation]
