@@ -35,6 +35,8 @@
 					<%= f.password_field :password, class: 'form-control', autocomplete: 'off' %>
 					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
+				<!-- LINK DE RECUPERAÇÃO DE SENHA -->
+				<p><%= link_to "Esqueci minha senha", new_password_reset_path %></p>
 				<div class="row">
 					<div class="col-xs-8">
 						<!-- Uncomment next section when we implement remember me option -->

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
         get :confirm_email
     end
   end
+
   get 'preferences/password'
   
   post 'preferences/password'
@@ -29,6 +30,9 @@ Rails.application.routes.draw do
   get 'preferences/preferences'
   
   post 'preferences/preferences'
+
+  
+  resources :password_resets
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
