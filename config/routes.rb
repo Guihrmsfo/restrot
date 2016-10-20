@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'dashboard/dashboard'
 
   get 'home/index'
+  
+  get 'home/' => 'home#index'
 
   get 'users/new'
   
@@ -20,6 +22,13 @@ Rails.application.routes.draw do
         get :confirm_email
     end
   end
+  get 'preferences/password'
+  
+  post 'preferences/password'
+
+  get 'preferences/preferences'
+  
+  post 'preferences/preferences'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
