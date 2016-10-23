@@ -20,7 +20,8 @@ class PasswordResetsController < ApplicationController
       if (params[:user]).present?
         if params[:user][:password] == params[:user][:password_confirmation]
           if(params[:user][:password].length < 6 || params[:user][:password].length > 20)
-            render :edit, :notice => "Senha deve ter entre 6 e 20 caracteres"
+            flash[:notice] = "Senha deve ter entre 6 e 20 caracteres"
+            render :edit
           else
             @user.salt = nil
             @user.password = params[:user][:password]
