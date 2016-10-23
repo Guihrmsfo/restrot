@@ -17,9 +17,9 @@
                     <li>
                         <a href="#mainCarousel">Home</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#blog">Depoimentos</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="/users/login">Login</a>
                     </li>
@@ -32,9 +32,9 @@
         </div>
         <!-- /.container -->
     </nav>
-    
+
     <style>
-    
+
     	.navbar-default {
     		background-color: transparent;
     		border-color: transparent;
@@ -43,12 +43,12 @@
   			transition: all 0.5s ease 0s;
   			height: 30px;
     	}
-    	
-    	.navbar-nav { 
+
+    	.navbar-nav {
     		margin-top: 40px;
     		float: right;
     	}
-    	
+
     	@media screen and (max-width: 767px) {
     	.navbar-nav {
     		float: none;
@@ -56,7 +56,7 @@
     		background: rgba(25, 33, 60, 0.5);
     	}
     	}
-    	
+
     	.navbar-default .navbar-brand {
     		margin-top: 40px;
     		font-size: 28px;
@@ -67,24 +67,24 @@
    			-o-transition:color .5s ease-in;
     		-webkit-transition:color .5s ease-in;
     	}
-    	
+
     	.navbar-default .navbar-brand span {
     		color: #00994d;
     		-moz-transition:color .5s ease-in;
    			-o-transition:color .5s ease-in;
     		-webkit-transition:color .5s ease-in;
     	}
-    	
+
     	@media screen and (max-width: 400px) {
     	.navbar-default .navbar-brand {
     		font-size: 22px;
     	}
     	}
-    	
+
     	.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand span:hover {
     		color: #33ff99;
     	}
-    	
+
     	.navbar-default .navbar-nav>li>a {
     		color: #fff;
     		font-size: 14px;
@@ -92,48 +92,48 @@
     		text-transform: uppercase;
     		letter-spacing: 1px;
     	}
-    	
+
     	.navbar-default .navbar-nav>li>a:hover {
     		color: #33ff99;
     	}
-    	
+
     	.navbar-default .navbar-nav>li>a:focus {
     		color: #33ff99;
     	}
-    	
+
     	.navbar-default .navbar-toggle {
     		margin-top: 40px;
     		border: none;
     	}
-    	
+
 		.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
 			background: none;
 		}
-    	
+
     	.navbar-default .navbar-toggle .icon-bar {
     		height: 4px;
     		width: 28px;
     		background: #33ff99;
 		}
-    	
+
     	.navbar-default.shrink {
     		background:rgba(25, 33, 60, 0.8)
 		}
-		
+
 		.navbar-default.shrink .navbar-nav {
 			margin-top: 20px;
 			margin-bottom: 10px;
 		}
-		
+
 		.navbar-default.shrink .navbar-brand {
 			margin-top: 20px;
 		}
-		
+
 		.navbar-default.shrink .navbar-toggle {
 			margin-top: 25px;
 		}
 
-    
+
     </style>
 
     <!-- Full Page Image Background Carousel Header -->
@@ -173,7 +173,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item">    
+            <div class="item">
             <div class="slider_overlay"></div>
                 <!-- Set the third background image using inline CSS below. -->
                 <div class="fill" style="background-image:url(<%= asset_path 'cozinhar.jpg' %>);">
@@ -197,144 +197,67 @@
         </a>
 
     </header>
-    
-    <div id="blog">
-    	<div class="container">
-    		<h2>Depoimentos</h2>
-    		<hr>
-    		<div class="carousel slide" id="myCarousel">
-        		<div class="carousel-inner">
-           			<div class="item active">
-            		 	<ul class="thumbnails">
-                        	<li class="col-sm-4">
-    							<div class="fff">
-									<div class="thumbnail">
-										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-									</div>
-									<div class="caption">
-										<h4>Beltrano Alfeu</h4>
-										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
-										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-									</div>
-                           	 	</div>
-                        	</li>
-                        	<li class="col-sm-4">
-								<div class="fff">
-									<div class="thumbnail">
-										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-									</div>
-									<div class="caption">
-										<h4>Ciclano Alves</h4>
-										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
-										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-									</div>
-                            	</div>
-                        	</li>
-                        	<li class="col-sm-4">
-								<div class="fff">
-									<div class="thumbnail">
-										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-									</div>
-									<div class="caption">
-										<h4>Diego Arnaldo</h4>
-										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
-										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-									</div>
-                            	</div>
-                        	</li>
-                    	</ul>
-             		</div><!-- /Slide1 --> 
-            		<div class="item">
-                    	<ul class="thumbnails">
-                       		<li class="col-sm-4">
-								<div class="fff">
-									<div class="thumbnail">
-										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-									</div>
-									<div class="caption">
-										<h4>Sed dico menandri</h4>
-										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
-										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-									</div>
-                            	</div>
-                        	</li>
-                        	<li class="col-sm-4">
-								<div class="fff">
-									<div class="thumbnail">
-										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-									</div>
-									<div class="caption">
-										<h4>Sed dico menandri</h4>
-										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
-										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-									</div>
-                            	</div>
-                        	</li>
-                        	<li class="col-sm-4">
-								<div class="fff">
-									<div class="thumbnail">
-										<a href="#"><img src="http://placehold.it/360x240" alt=""></a>
-									</div>
-									<div class="caption">
-										<h4>Sed dico menandri</h4>
-										<p>Vim ad novum solet, sit id cetero latine pertinax. Pri soleat vocent suscipiantur id, cu qui postea civibus assentior, te natum scripta fastidii mei. Et sea meliore fuisset assueverit.</p>
-										<a class="btn btn-mini" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-									</div>
-                            	</div>
-                        	</li>
-                    	</ul>
-            		</div><!-- /Slide2 --> 
-        		</div>
-        
-       
-	   		<nav>
-				<ul class="control-box pager">
-					<li><a data-slide="prev" href="#myCarousel" class=""><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
-					<li><a data-slide="next" href="#myCarousel" class=""><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-				</ul>
-			</nav>
-	   		<!-- /.control-box -->   
-                              
-   	 		</div><!-- /#myCarousel -->
-    	</div>
-    </div>
-    
-    
+
+    <!-- TODO: render blog -->
+
+
     <div id="contact">
     	<div class="container">
-    		<h2>Cadastre-se!</h2>  
+    		<h2>Cadastre-se!</h2>
     		<p>Quando você está cadastrado, consegue salvar ingredientes, acessar seu histórico e suas receitas favoritas.</p>
     		<div class="col-md-6">
-    			<div class="Sign_Form contact form">
-                    <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
-                        <p> Usuário:  <%= f.text_field :name%> </p>
-                        <p> Email:  <%= f.text_field :email%> </p>
-                        <p> Senha:  <%= f.password_field :password%></p>
-                        <p> Confirme sua senha:  <%= f.password_field :password_confirmation%> </p>
-                        <%= f.submit :Cadastrar %>
-                    <% end %>
-                    <% flash.each do |name, msg| -%>
-                        <%= content_tag :div, msg, class: name %>
-                    <% end -%>
-                    <% if @user && @user.errors.any? %>
-                        <ul class="Signup_Errors">
-                        <% for message_error in @user.errors.full_messages %>
-                            <li>* <%= message_error %></li>
-                        <% end %>
-                        </ul>
-                    <% end %>
-                </div>
-    			<!--<div class="contact-form">
-					<form action="#" method="post">
-						<input id="name" name="name" type="text" placeholder="Name:" required>
-						<input id="email" name="email" type="text" placeholder="Email:" required>
-						<input id="subject" name="subject" type="subject" placeholder="Subject:" required>
-						<textarea id="message" name="message" placeholder="Your Message:" rows="5" required></textarea>
-						<br>
-						<button name="submit" id="submit" type="submit">Send Message</button>
-					</form>
-				</div>-->
-			</div>	
+
+          <!--TODO: extract to partial -->
+          <div class="login-panel panel panel-default">
+      			<div class="panel-heading">Register a new membership</div>
+      			<div class="panel-body">
+      				<%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+      				<fieldset>
+      					<div class="form-group has-feedback">
+      						<%= f.text_field :name, placeholder: "Username", class: 'form-control', autofocus: true%>
+      						<span class="glyphicon glyphicon-user form-control-feedback"></span>
+      					</div>
+      					<div class="form-group has-feedback">
+      						<%= f.text_field :email, placeholder: "Email", class: 'form-control'%>
+      						<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      					</div>
+      					<div class="form-group has-feedback">
+      						<%= f.password_field :password, placeholder: "Password", class: 'form-control', autocomplete: 'off'%>
+      		        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      					</div>
+      					<div class="form-group has-feedback">
+      						<%= f.password_field :password_confirmation, placeholder: "Confirm your password", class: 'form-control', autocomplete: 'off'%>
+      		        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+      					</div>
+      					<div class="row">
+      		        <div class="col-xs-8">
+      							<!-- Uncomment next section when we implement agree terms -->
+      		          <!-- <div class="checkbox icheck">
+      		            <label>
+      		              <input type="checkbox"> I agree to the <a href="#">terms</a>
+      		            </label>
+      		          </div> -->
+      		        </div><!-- /.col -->
+      		        <div class="col-xs-4">
+      							<%= f.submit :Register, class: 'btn btn-primary btn-block btn-flat' %>
+      		        </div><!-- /.col -->
+      		      </div>
+      				</fieldset>
+      				<% end %>
+      				<% flash.each do |name, msg| -%>
+      				<%= content_tag :div, msg, class: name %>
+      				<% end -%>
+      				<% if @user && @user.errors.any? %>
+      				<ul class="Signup_Errors">
+      					<% for message_error in @user.errors.full_messages %>
+      					<li>* <%= message_error %></li>
+      					<% end %>
+      				</ul>
+      				<% end %>
+      			</div>
+      		</div>
+
+			  </div>
 			<div class="col-md-6">
 				<div class="image">
 					<img src="http://inhabitat.com/wp-content/blogs.dir/1/files/2015/10/The-R%C3%B6nesans-Mecidiyek%C3%B6y-Office-by-Muum-1.jpg" class="img-responsive">
@@ -342,26 +265,13 @@
 			</div>
     	</div>
     </div>
-    
-    
-    <div id="subscribe">
-    	<div class="container">
-    	    <h2>Assine nossa newsletter</h2>
-    	    <p>Ex per oblique corpora concludaturque, consulatu incorrupte an eum. In his offendit scribentur, eam ne autem tractatos. Affert molestie phaedrum vel ad, dicit audire expetendis qui ut, ne minim deleniti eum. </p>
-			<div class="col-md-8 col-md-offset-2">
-             	<form action="#">
-              		<div class="input-group">
-                 		<input class="btn btn-lg" name="email" id="email" type="email" placeholder="Enter your email address" required>
-                 		<button class="btn btn-info btn-lg" type="submit">Submit</button>
-             		 </div>
-            	</form>
-			</div>  
-    	</div>
-    </div>
-    
+
+
+    <!--TODO: render newsletter -->
+
 	<div class="footer">
   		<div class="container">
-   			<p class="text-muted">All Rights Reserved <a href="http://freedesignz.com">Free Designz</a></p>
+   			<p class="text-muted">All Rights Reserved <a href="#">Restrot</a></p>
   		</div>
 	</div>
 
@@ -372,14 +282,14 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
+
     <script src="js/jquery.isotope.js"></script>
-    
+
     <script src="js/jquery.scrollUp.min.js"></script>
-    
-    
+
+
 	<script type="text/javascript">
-	
+
 	$('a[href^="#"]').on('click', function(event) {
     	var target = $(this.getAttribute('href'));
     	if( target.length ) {
@@ -391,8 +301,8 @@
 	});
 
 	</script>
-    
-    
+
+
     <!-- Navbar Change on Scroll -->
 	<script type="text/javascript">
 		$(function(){
@@ -411,21 +321,21 @@
     	}
 	});
 
-	</script>    
+	</script>
 
 
 	<!-- Portfolio Isotope Settings -->
 	<script type="text/javascript">
 
 	$(window).load(function(){
-  
-  
+
+
  	 var $container = $('.portfolioContainer'),
      	$body = $('body'),
      	colW = 375,
       	columns = null;
 
-  
+
   	$container.isotope({
     // disable window resizing
     	resizable: true,
@@ -433,7 +343,7 @@
         columnWidth: colW
     	}
   	});
-  
+
   	$(window).smartresize(function(){
     // check if columns has changed
     	var currentColumns = Math.floor( ( $body.width() -30 ) / colW );
@@ -444,28 +354,28 @@
       	$container.width( columns * colW )
         	.isotope('reLayout');
     	}
-    
+
   	}).smartresize(); // trigger resize to set container width
   	$('.portfolioFilter a').click(function(){
         	$('.portfolioFilter .current').removeClass('current');
         	$(this).addClass('current');
- 
+
         	var selector = $(this).attr('data-filter');
         	$container.isotope({
-			
+
             filter: selector,
          });
         	 return false;
    	 	});
-  
+
 	});
 
 	</script>
-	
-	
+
+
 	<!-- Scroll To Top Settings -->
     <script type="text/javascript">
-    
+
     $(function () {
   		$.scrollUp({
     		scrollName: 'scrollUp', // Element ID
@@ -478,5 +388,5 @@
     		scrollImg: true,
   		});
 	});
-    
+
     </script>
