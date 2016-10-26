@@ -26,6 +26,16 @@
 				    <%= submit_tag "Recuperar Senha" %>
 				</div>
 			<% end %>
+			<% flash.each do |name, msg| %>
+                  <%= content_tag :div, msg, class: name %>
+            <% end %>
+            <% if @user && @user.errors.any? %>
+              <ul class="Reset_Errors">
+              <% for message_error in @user.errors.full_messages %>
+                  <li>* <%= message_error %></li>
+              <% end %>
+              </ul>
+            <% end %>
 		</div>
 	</div>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
