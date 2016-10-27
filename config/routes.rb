@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   
   get 'users/create'
   
+  get 'password_resets/edit'
+  
   post 'users/create'
   
   get 'users/login'

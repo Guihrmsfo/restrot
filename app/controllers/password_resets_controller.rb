@@ -10,19 +10,24 @@ class PasswordResetsController < ApplicationController
         render :new
       else
         user.send_password_reset
-        redirect_to root_path, :notice => "Um email foi enviado com as intruções de recuperação"
+        redirect_to root_path, :notice => "Um email foi enviado com as intruções de recuperação" and return
       end
     end
   end
   
   def edit
     @user = User.find_by_password_reset_token!(params[:id])
+    if @user.password_reset_sent_at < 2.hours.ago
+      flash[:notice] = "Recuperação de senha expirada, solicite um novo link"
+      render :new
+    end
   end
   
   def update
     @user = User.find_by_password_reset_token!(params[:id])
     if @user.password_reset_sent_at < 2.hours.ago
-      redirect_to new_password_reset_path, :alert => "Recuperação de Senha Expirada!"
+      flash[:notice] = "Recuperação de senha expirada, solicite um novo link"
+      render :new
     else
       if (params[:user]).present?
         if params[:user][:password] == params[:user][:password_confirmation]
