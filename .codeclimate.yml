@@ -1,0 +1,8 @@
+languages:
+  Ruby: true
+  JavaScript: true
+exclude_paths:
+- "app/assets/*"
+- "vendor/assets/*"
+- "spec/*"
+- "features/*"
