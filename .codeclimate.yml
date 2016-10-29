@@ -4,5 +4,6 @@ languages:
 exclude_paths:
 - "app/assets/*"
 - "vendor/assets/*"
+- "public/assets/*"
 - "spec/*"
 - "features/*"
