@@ -3,10 +3,6 @@ Given(/^that I am not a user with email "([^"]*)"$/) do |email|
    @user = nil
 end
 
-Given(/^I am on "Cadastre-se"$/) do 
-    visit ('users/create')
-end
-
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, content|
   fill_in field, :with => content
 end
