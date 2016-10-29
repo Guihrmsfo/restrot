@@ -1,5 +1,5 @@
 require 'bcrypt'
-class PreferencesController < ApplicationController
+class PreferencesController < SessionController
 include BCrypt
     def new
         @user = User.new
