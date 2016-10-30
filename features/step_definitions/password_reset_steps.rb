@@ -1,3 +1,17 @@
+Given(/^I am a registered user with the email "([^"]*)"$/) do |email|
+  @user = User.new(name: 'username', email: email, password: 'password') 
+  @user.save  
+  @user.confirmed_email = true
+  @user.save
+end
+
+Given(/^I am not a registered user with the email "([^"]*)"$/) do |email|
+  @user = User.new(name: 'username', email: 'other_email@email.com', password: 'password') 
+  @user.save  
+  @user.confirmed_email = true
+  @user.save
+end
+
 Given(/^that I go to "Login"$/) do
   visit ('users/login')
 end
