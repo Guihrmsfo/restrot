@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'ingredientes/create'
+
+  get 'ingredientes/edit'
+
+  get 'ingredientes/remove'
+
   root 'home#index'
   
   get 'session/require_login'
