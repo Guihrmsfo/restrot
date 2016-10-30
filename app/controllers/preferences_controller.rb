@@ -8,7 +8,7 @@ include BCrypt
     def preferences
         
         if session[:user_id].nil?
-            redirect_to :controller => 'users', :action => 'login' 
+            redirect_to :controller => 'users', :action => 'login'
             return
         else
             render "preferences"
@@ -19,14 +19,14 @@ include BCrypt
     def password
 
         if session[:user_id].nil?
-            redirect_to :controller => 'users', :action => 'login' 
+            redirect_to :controller => 'users', :action => 'login'
             return
         else
             @user = User.find(session[:user_id])
             if (params[:user]).present?
                 if(params[:user][:password].present? && params[:user][:oldPassword].present? && params[:user][:passwordConfirmation].present? )
                     if(params[:user][:password].length < 6 || params[:user][:password].length > 20)
-                        flash[:notice] = "Nova senha deve ter entre 6 e 20 caracteres"
+                        flash.now[:notice] = "Nova senha deve ter entre 6 e 20 caracteres"
                     else
                         @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
                         if @password == @user.password
@@ -34,22 +34,22 @@ include BCrypt
                                 @user.salt = nil
                                 @user.password = params[:user][:password]
                                 if @user.save
-                                    flash[:notice] = "Senha alterada com sucesso!"
-                                    redirect_to root_path
+                                    flash.now[:notice] = "Senha alterada com sucesso!"
                                 else
-                                    flash[:notice] = "Erro!"
+                                    flash.now[:notice] = "Erro!"
                                 end
                             else
-                                flash[:notice] = "Senha nova e confirmação não combinam"
-                                render :password
+                                flash.now[:notice] = "Senha nova e confirmação não combinam"
                             end
                         else
-                            flash[:notice] = "Senha antiga incorreta"
-                            render :password
+                            flash.now[:notice] = "Senha antiga incorreta"
                         end
                     end
+                else
+                    flash.now[:notice] = "Digite todos os dados"
                 end
             end
         end
     end
+    render "password"
 end
