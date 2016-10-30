@@ -10,14 +10,26 @@ RSpec.describe PasswordResetsController, type: :controller do
   end
   
   describe "GET #create" do
-    it "is successfull" do
+    it "não envia email se usuario não existe" do
       get :create
-      expect(response).to have_http_status(302)
+      user = User.create(name: 'Laura', email: '123@test.com', password: 'password')
+      user = nil
+      expect(response).to render_template("password_resets/create")
     end
     
-    it "redirects to home" do
+    it "envia email recuperacao se usuario existe" do
       get :create
-      expect(response).to redirect_to(root_path)
+      user = User.create(name: 'Laura', email: '123@test.com', password: 'password')
+      user.send_password_reset
+      expect(response).to render_template(root_path)
     end
   end
+  
+  #describe "GET #edit" do
+  #  it "checa se link expirou" do
+  #    get :edit 
+  #   user = User.create(name: 'Laura', email: '123@test.com', password: 'password')
+  #   expect(response).to render_template("password_resets/new")
+  #  end
+  #end
 end

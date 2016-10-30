@@ -7,5 +7,5 @@ Feature: Homepage should be displayed
   
   Scenario: Viewing the homepage
     Given I visit the homepage
-    Then I should see "Login"
-    And I should see "Cadastre-se"
+    Then I should see the button "Login"
+    And I should see the button "Cadastre-se"

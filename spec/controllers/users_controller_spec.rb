@@ -16,7 +16,6 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to have_http_status(:success)
       end
       
-      #it is expected to redirect, but since Dashboard is not implemented yet, it does not pass the test. 
       #it "redirect to dashboard" do
       #  post :login
       #  expect(response).to redirect_to(:controller => 'dashboard')
