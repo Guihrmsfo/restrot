@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'ingredientes/create'
+  get 'ingredients/create'
 
-  get 'ingredientes/edit'
+  get 'ingredients/edit'
 
-  get 'ingredientes/remove'
+  get 'ingredients/remove'
+  
+  get 'ingredients/index'
 
   root 'home#index'
   

@@ -1,4 +1,4 @@
-class Appointment < ApplicationRecord
+class IngredientsUser < ApplicationRecord
   belongs_to :user
   belongs_to :ingredient
 end
