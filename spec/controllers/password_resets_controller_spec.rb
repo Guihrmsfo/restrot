@@ -25,10 +25,10 @@ RSpec.describe PasswordResetsController, type: :controller do
     end
   end
   
-  #describe "GET #edit" do
-  #  it "checa se link expirou" do
-  #    get :edit 
-  #    expect(response).to render_template("password_resets/new")
-  #  end
-  #end
+  describe "GET #edit" do
+    it "checa se link expirou" do
+      get :edit 
+      expect(response).to render_template("password_resets/new")
+    end
+  end
 end
