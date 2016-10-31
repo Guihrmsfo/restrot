@@ -1,7 +1,8 @@
 # README
 
-[![Code Climate](https://codeclimate.com/github/jhonnyzao/restrot/badges/gpa.svg)](https://codeclimate.com/github/jhonnyzao/restrot)
-[![Build Status](https://travis-ci.org/jhonnyzao/restrot.svg?branch=master)](https://travis-ci.org/jhonnyzao/restrot)
+[![Code Climate](https://codeclimate.com/github/Guihrmsfo/restrot/badges/gpa.svg)](https://codeclimate.com/github/Guihrmsfo/restrot)
+[![Test Coverage](https://codeclimate.com/github/Guihrmsfo/restrot/badges/coverage.svg)](https://codeclimate.com/github/Guihrmsfo/restrot/coverage)
+[![Build Status](https://travis-ci.org/Guihrmsfo/restrot.svg?branch=master)](https://travis-ci.org/Guihrmsfo/restrot)
 
 ### Links:
 * Heroku: http://restrot.herokuapp.com
