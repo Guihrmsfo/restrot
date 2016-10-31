@@ -45,26 +45,13 @@
         </div><!-- /.box-header -->
         <div class="box-body">
             <ul class="list-group">
+              <% @listaIngredientes = IngredientsUser.where(user_id: current_user.id) %>
+              <% @listaIngredientes.each do |ingredient| %>
                 <li class="list-group-item">
                     <a href="#" class="btn-xs pull-right"><i class="fa fa-remove"></i></a>
-                    Arroz Integral
+                    <%= current_user.id %>
                 </li>
-                <li class="list-group-item">
-                    <a href="#" class="btn-xs pull-right"><i class="fa fa-remove"></i></a>
-                    Tomates Frescos
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="btn-xs pull-right"><i class="fa fa-remove"></i></a>
-                    Manjericão
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="btn-xs pull-right"><i class="fa fa-remove"></i></a>
-                    Peito de Frango
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="btn-xs pull-right"><i class="fa fa-remove"></i></a>
-                    Alecrim
-                </li>
+              <% end %>
             </ul>
           <a href="#" class="btn btn-primary">Ver todos</a>
         </div><!-- /.box-body -->
