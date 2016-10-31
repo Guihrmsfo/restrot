@@ -1,9 +1,5 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  
-  
-  # Code Climate Test Coverage
-  config.CODECLIMATE_REPO_TOKEN = ba52bc07d4c3939626e98650e5453ca09f2d440eadae6b451d084bf1591c6309 bundle exec rake
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
