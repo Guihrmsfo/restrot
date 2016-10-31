@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20161031015031) do
     t.datetime "password_reset_sent_at"
     t.string   "profile_name"
     t.string   "profile_last_name"
-    t.string   "profile_image"
   end
 
 end

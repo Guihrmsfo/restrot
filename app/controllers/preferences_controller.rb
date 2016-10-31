@@ -25,6 +25,17 @@ include BCrypt
         if params[:user]
             @user.profile_name = params[:user][:profile_name]
             @user.profile_last_name = params[:user][:profile_last_name]
+            
+            uploaded_io = params[:user][:profile_image]
+            
+            if !uploaded_io.nil?
+                File.open(Rails.root.join('public', 'assets', 'profile_images', @user.name + ".jpg"), 'wb') do |file|
+                    file.write(uploaded_io.read)
+                end
+            end
+            
+            Rails.cache.clear
+            
             @user.save
             flash[:notice] = "Perfil atualizado com sucesso!"
         end
