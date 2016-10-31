@@ -44,16 +44,16 @@ RSpec.describe PreferencesController, type: :controller do
         expect(@current_user.profile_last_name).to eq("Lastname")
       end
       
-      it "can upload a profile image" do
-        @file = fixture_file_upload('files/user_profile.jpg', 'image/jpg')
-        file = Hash.new
-        file['datafile'] = @file
-        post :profile, :user => {:profile_image => Rack::Test::UploadedFile.new('spec/fixtures/files/user_profile.jpg', 'image/jpg')}
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
-        expect(@current_user.profile_image).to eq("/assets/profile_images/"+@current_user.name+".jpg")
-        fileName = @current_user.name+".jpg"  
-        FileUtils.rm(Rails.root+"public/assets/profile_images/"+fileName)
-      end
+      # it "can upload a profile image" do
+      #   @file = fixture_file_upload('files/user_profile.jpg', 'image/jpg')
+      #   file = Hash.new
+      #   file['datafile'] = @file
+      #   post :profile, :user => {:profile_image => Rack::Test::UploadedFile.new('spec/fixtures/files/user_profile.jpg', 'image/jpg')}
+      #   @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      #   expect(@current_user.profile_image).to eq("/assets/profile_images/"+@current_user.name+".jpg")
+      #   fileName = @current_user.name+".jpg"  
+      #   FileUtils.rm(Rails.root+"public/assets/profile_images/"+fileName)
+      # end
       
     end
     
