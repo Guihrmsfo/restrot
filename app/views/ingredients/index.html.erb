@@ -1,3 +1,24 @@
-<p>
-  <%= @user.name %>
-</p>
+<container>
+    <div class ="row">
+        <div class="col-sm-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Meus Ingredientes</h3>
+                </div>
+                <div class="box-body">
+                    <table class="table table-striped">
+                        <% @ingredients.each do |ingredient| %>
+                        <tr>
+                            <td><class "img"><%= image_tag("#{ingredient.picture}") %> </class></td>
+                            <td><%= ingredient.name %></td>
+                            <td><%= ingredient.unit_of_measure %></td>
+                            <td><spam class="glyphicon glyphicon-edit btn btn-primary"></spam></td>
+                            <td><spam class="glyphicon glyphicon-trash btn btn-danger"></spam></td>
+                        </tr>
+                        <% end %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</container>

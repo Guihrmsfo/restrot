@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
   layout 'admin_lte_2'
   def index
-    @user = User.find(6)
+    @ingredients = [Ingredient.find(1), Ingredient.find(2)]
   end
   
   def create
