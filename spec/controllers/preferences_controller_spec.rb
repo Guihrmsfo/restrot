@@ -44,6 +44,8 @@ RSpec.describe PreferencesController, type: :controller do
         expect(@current_user.profile_last_name).to eq("Lastname")
       end
       
+      # File Upload has been deprecated, heroku doesn't support file uploading
+      #
       # it "can upload a profile image" do
       #   @file = fixture_file_upload('files/user_profile.jpg', 'image/jpg')
       #   file = Hash.new

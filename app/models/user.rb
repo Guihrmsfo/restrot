@@ -12,12 +12,17 @@ class User < ApplicationRecord
     validates_length_of :password, :in => 6..20, :on => :password
     
     def profile_image
-        file = "assets/profile_images/"+name+".jpg"
-        if !File.exist?(Rails.root + "public"  + file)
-            return "/assets/user2-160x160.jpg" 
-        else
-            return "/"+file
-        end
+        
+        
+        
+        #File Upload has been deprecated, heroku doesn't support file uploading
+        #
+        #file = "assets/profile_images/"+name+".jpg"
+        #if !File.exist?(Rails.root + "public"  + file)
+        #    return "/assets/user2-160x160.jpg" 
+        #else
+        #    return "/"+file
+        #end
     end
     
     def email_activate
