@@ -4,19 +4,8 @@ include BCrypt
 
     layout 'admin_lte_2'
     
-    def new
-        @user = User.new
-    end
-    
     def preferences
-        
-        if session[:user_id].nil?
-            redirect_to :controller => 'users', :action => 'login' 
-            return
-        else
-            render "preferences"
-        end
-      
+       render "preferences"
     end
     
     def profile

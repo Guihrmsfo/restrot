@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PreferencesController, type: :controller do
   
-  context "user is logged" do
+  context "when user is logged in" do
     
     before(:each) do
       @password = '123456'
@@ -55,7 +55,43 @@ RSpec.describe PreferencesController, type: :controller do
       #   FileUtils.rm(Rails.root+"public/assets/profile_images/"+fileName)
       # end
       
+      before {post :password, :user => {:oldPassword => "oldPassword", :passwordConfirmation => "passwordConfirmation", 
+        :password => "Password", session: { user_id: User.minimum(:id) } } }
+        
+      it "returns http success" do
+        expect(response).to have_http_status(:success)
+      end
+      
+      it "is missing params" do
+        post :password, :user => {:oldPassword => "", :passwordConfirmation => "passwordConfirmation", 
+          :password => "password", session: { user_id: User.minimum(:id) }}
+        expect(response).to render_template("preferences/password")
+      end
+      
+      it "is missing params" do
+        post :password, :user => {:oldPassword => "oldPassword", :passwordConfirmation => "",
+          :password => "password", session: { user_id: User.minimum(:id) }}
+        expect(response).to render_template("preferences/password")
+      end
+      
+      it "is missing params" do
+        post :password, :user => {:oldPassword => "oldPassword", :passwordConfirmation => "passwordConfirmation", 
+          :password => "", session: { user_id: User.minimum(:id) }}
+        expect(response).to render_template("preferences/password")
+      end
+      
     end
     
   end
+  
+  context "when user is not logged in" do
+    describe "POST .password" do  
+        subject { post :password }
+        it "the request is unauthorized" do
+          expect(subject).to redirect_to :action => :login, :controller => :users
+        end
+    end
+    
+  end
+
 end
