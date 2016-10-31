@@ -26,7 +26,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.default_url_options = { :host => "restrot-cv-laura.c9users.io" }
+  config.action_mailer.default_url_options = { :host => "restrot-lucascorreaaa.c9users.io" }
   config.action_mailer.smtp_settings = {
     :address => "smtp.mailgun.org",
     :port => "2525",

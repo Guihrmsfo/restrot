@@ -57,12 +57,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-<<<<<<< HEAD
-    coderay (1.1.1)
-=======
     codeclimate-test-reporter (0.6.0)
       simplecov (>= 0.7.1, < 1.0.0)
->>>>>>> 9175102dc4d59c2f9e47ef06cb1c3b1528d266f3
+    coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -143,12 +140,8 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     multi_test (0.1.2)
-<<<<<<< HEAD
-    mysql2 (0.4.4)
-    nenv (0.3.0)
-=======
     mysql2 (0.4.5)
->>>>>>> 9175102dc4d59c2f9e47ef06cb1c3b1528d266f3
+    nenv (0.3.0)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -226,15 +219,12 @@ GEM
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
-<<<<<<< HEAD
-    slop (3.6.0)
-=======
     simplecov (0.12.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
->>>>>>> 9175102dc4d59c2f9e47ef06cb1c3b1528d266f3
+    slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -277,11 +267,8 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass
   byebug
-<<<<<<< HEAD
   capybara
-=======
   codeclimate-test-reporter
->>>>>>> 9175102dc4d59c2f9e47ef06cb1c3b1528d266f3
   coffee-rails (~> 4.2)
   cucumber-rails
   database_cleaner
@@ -310,4 +297,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.13.5
+   1.13.6

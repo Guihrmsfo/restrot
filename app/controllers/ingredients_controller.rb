@@ -5,6 +5,12 @@ class IngredientsController < ApplicationController
   end
   
   def create
+    @ingredient = Ingredient.new(ingredient_params)
+    if @ingredient.save
+      flash[:success] = "Ingrediente criado com sucesso!"
+    else
+      render new
+    end
   end
 
   def edit
