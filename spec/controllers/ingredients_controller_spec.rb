@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe IngredientesController, type: :controller do
+RSpec.describe IngredientsController, type: :controller do
 
   describe "GET #create" do
     it "returns http success" do
