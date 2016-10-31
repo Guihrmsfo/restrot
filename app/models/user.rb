@@ -10,14 +10,19 @@ class User < ApplicationRecord
     validates :password, :confirmation => true 
     validates_length_of :password, :in => 6..20, :on => :create
     validates_length_of :password, :in => 6..20, :on => :password
+    validates :profile_image, :format => { :allow_nil => true, :with => URI::regexp(%w(http https)), :message => "Precisa ser uma URL válida iniciada com http ou https"}
     
-    def profile_image
-        file = "assets/profile_images/"+name+".jpg"
-        if !File.exist?(Rails.root + "public"  + file)
-            return "/assets/user2-160x160.jpg" 
-        else
-            return "/"+file
-        end
+    def profile_image_url
+        @profile_image_url = profile_image.nil? ? "/assets/user2-160x160.jpg" : profile_image;
+        
+        #File Upload has been deprecated, heroku doesn't support file uploading
+        #
+        #file = "assets/profile_images/"+name+".jpg"
+        #if !File.exist?(Rails.root + "public"  + file)
+        #    return "/assets/user2-160x160.jpg" 
+        #else
+        #    return "/"+file
+        #end
     end
     
     def email_activate

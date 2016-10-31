@@ -40,13 +40,42 @@ RSpec.describe UsersController, type: :controller do
     end
   end
   
-  describe "POST #create" do
-    context "with valid attributes" do
-      before {post :create, :user => {:name => "Any Name", :email => "email@123.com", :password => "Password"} }
+  context "registered user" do
+    
+    before(:each) do
+      @password = '123456'
+      @user = User.new(id: 1, name: "Any Name", email: "anyemaik@gmail.com", password: @password)
+      @user.save
+      session[:user_id] = 1
+    end
+    
+    describe "GET #confirm_email" do
       
       it "returns http success" do
+        get :confirm_email,  :id => @user.confirm_token
         expect(response).to have_http_status(:success)
       end
+      
+      it "redirects to home" do
+        #invalid confirm_token
+        @confirm_token = 1
+        get :confirm_email,  :id => @confirm_token
+        expect(response).to redirect_to(:controller => 'home', :action => 'index')
+      end
+      
+  end
+  
+  context "with valid attributes" do
+    before {post :create, :user => {:id => 1, :name => "Any Name", :email => "email@123.com", :password => "Password"} }
+    
+    describe "GET #create" do
+      
+      it "returns http success" do
+        get :create
+        expect(response).to have_http_status(:success)
+      end
+      
+    end
       
       #it is expected to redirect, but since Dashboard is not implemented yet, it does not pass the test. 
       #it "redirect to dashboard" do
