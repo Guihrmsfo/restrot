@@ -33,12 +33,12 @@
     <ul class="sidebar-menu">
       <li class="header">Opções</li>
         <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="#"><i class='fa fa-link'></i> <span>Home</span></a></li>
+      <li id="dashboard_menu"><a href="../dashboard/dashboard"><i class='fa fa-link'></i> <span>Home</span></a></li>
       <li><a href="#"><i class='fa fa-link'></i> <span>Nova Busca</span></a></li>
       <li><a href="#"><i class='fa fa-link'></i> <span>Meus Ingredientes</span></a></li>
       <li><a href="#"><i class='fa fa-link'></i> <span>Favoritos</span></a></li>
       <li><a href="#"><i class='fa fa-link'></i> <span>Histórico</span></a></li>
-      <li><a href="../preferences/preferences"><i class='fa fa-link'></i> <span>Preferências</span></a></li>
+      <li id="preferences_menu"><a href="../preferences/preferences"><i class='fa fa-link'></i> <span>Preferências</span></a></li>
       <<!--li class="treeview">
         <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
@@ -48,5 +48,16 @@
       </l-->i>
     </ul><!-- /.sidebar-menu -->
   </section>
+  <script type="text/javascript">
+  		function cssHelper(){
+     		var path = window.location.pathname;
+     		if(path.indexOf("preferences")>=0){
+     		  document.getElementById("preferences_menu").classList.add("active");
+     		} else if(path.indexOf("dashboard")>=0){
+     		  document.getElementById("dashboard_menu").classList.add("active");
+     		}
+  		}
+  		window.onload = cssHelper();
+  </script>
   <!-- /.sidebar -->
 </aside>

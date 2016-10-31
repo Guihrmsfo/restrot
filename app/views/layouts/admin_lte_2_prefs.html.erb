@@ -15,7 +15,6 @@
   <![endif]-->
   <%= csrf_meta_tags %>
 </head>
-
 <body class="skin-blue sidebar-mini fixed <%= params[:controller].parameterize %> <%= action_name %>">
   <div class="wrapper">
 
@@ -31,8 +30,8 @@
           Preferências
         </h1>
         <ul class="nav nav-pills">
-  				<li role="presentation" id="password"><a href="password">Segurança</a></li>
-  				<li role="presentation" id="email"><a href="#">E-mail</a></li>
+  				<li role="presentation" id="password_menu"><a href="password">Segurança</a></li>
+  				<li role="presentation" id="email_menu"><a href="#">E-mail</a></li>
 			  </ul>
       </section>
 
@@ -71,5 +70,15 @@
   </div><!-- ./wrapper -->
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <script type="text/javascript">
+  		function cssHelper(){
+     		var path = window.location.pathname;
+     		if(path.indexOf("password")>=0){
+     		  document.getElementById("password_menu").classList.add("active");
+     		}
+  		}
+  		window.onload = cssHelper();
+  </script>
 </body>
 </html>
