@@ -28,7 +28,7 @@ include BCrypt
             
             uploaded_io = params[:user][:profile_image]
             
-            if !uploaded_io.nil?
+            if !uploaded_io.nil? && !@user.name.nil?
                 File.open(Rails.root.join('public', 'assets', 'profile_images', @user.name + ".jpg"), 'wb') do |file|
                     file.write(uploaded_io.read)
                 end

@@ -14,9 +14,9 @@ class User < ApplicationRecord
     def profile_image
         file = "assets/profile_images/"+name+".jpg"
         if !File.exist?(Rails.root + "public"  + file)
-            profile_image = "/assets/user2-160x160.jpg" 
+            return "/assets/user2-160x160.jpg" 
         else
-            profile_image = "/"+file
+            return "/"+file
         end
     end
     
