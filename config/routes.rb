@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
   
+  get 'session/require_login'
+  
+  get 'session/logout'
+  
   get 'dashboard/dashboard'
 
   get 'home/index'
@@ -24,6 +28,10 @@ Rails.application.routes.draw do
         get :confirm_email
     end
   end
+  
+  get 'preferences/profile'
+  
+  post 'preferences/profile'
 
   get 'preferences/password'
   
@@ -33,7 +41,6 @@ Rails.application.routes.draw do
   
   post 'preferences/preferences'
 
-  
   resources :password_resets
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

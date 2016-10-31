@@ -11,6 +11,15 @@ class User < ApplicationRecord
     validates_length_of :password, :in => 6..20, :on => :create
     validates_length_of :password, :in => 6..20, :on => :password
     
+    def profile_image
+        file = "assets/profile_images/"+name+".jpg"
+        if !File.exist?(Rails.root + "public"  + file)
+            return "/assets/user2-160x160.jpg" 
+        else
+            return "/"+file
+        end
+    end
+    
     def email_activate
         self.confirmed_email = true
         self.confirm_token = nil
