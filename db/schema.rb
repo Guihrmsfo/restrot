@@ -12,16 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20161031015031) do
 
-  create_table "ingredientes_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "ingredients_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "user_id",        null: false
-    t.integer "ingrediente_id", null: false
-    t.integer "quantidade"
+    t.integer "ingredient_id", null: false
+    t.integer "quantity"
   end
 
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "nome"
-    t.string   "unidade_medida"
-    t.string   "foto"
+    t.string   "name"
+    t.string   "unity_of_measure"
+    t.string   "picture"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

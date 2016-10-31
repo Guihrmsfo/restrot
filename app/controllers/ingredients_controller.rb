@@ -9,7 +9,6 @@ class IngredientsController < ApplicationController
     if @ingredient.save
       flash[:success] = "Ingrediente criado com sucesso!"
     else
-      render new
     end
   end
 
