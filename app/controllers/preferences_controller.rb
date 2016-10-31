@@ -1,6 +1,9 @@
 require 'bcrypt'
 class PreferencesController < SessionController
 include BCrypt
+
+    layout 'admin_lte_2'
+    
     def new
         @user = User.new
     end
@@ -14,6 +17,19 @@ include BCrypt
             render "preferences"
         end
       
+    end
+    
+    def profile
+        @user = current_user
+        
+        if params[:user]
+            @user.profile_name = params[:user][:profile_name]
+            @user.profile_last_name = params[:user][:profile_last_name]
+            @user.save
+            flash[:notice] = "Perfil atualizado com sucesso!"
+        end
+        
+        params[:user] = current_user
     end
     
     def password
