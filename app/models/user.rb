@@ -11,9 +11,8 @@ class User < ApplicationRecord
     validates_length_of :password, :in => 6..20, :on => :create
     validates_length_of :password, :in => 6..20, :on => :password
     
-    def profile_image
-        
-        
+    def profile_image_url
+        @profile_image_url = profile_image.nil? ? "/assets/user2-160x160.jpg" : profile_image;
         
         #File Upload has been deprecated, heroku doesn't support file uploading
         #

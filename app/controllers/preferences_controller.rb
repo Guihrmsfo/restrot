@@ -14,6 +14,7 @@ include BCrypt
         if params[:user]
             @user.profile_name = params[:user][:profile_name]
             @user.profile_last_name = params[:user][:profile_last_name]
+            @user.profile_image = params[:user][:profile_image_url]
             
             # File Upload has been deprecated, heroku doesn't support file uploading
             # uploaded_io = params[:user][:profile_image]
