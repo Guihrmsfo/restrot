@@ -1,6 +1,9 @@
 require 'bcrypt'
 class PreferencesController < ApplicationController
 include BCrypt
+    
+    layout 'admin_lte_2_prefs'
+    
     def new
         @user = User.new
     end
@@ -11,7 +14,7 @@ include BCrypt
             redirect_to :controller => 'users', :action => 'login'
             return
         else
-            render "preferences"
+            # render "preferences"
         end
       
     end
@@ -51,5 +54,4 @@ include BCrypt
             end
         end
     end
-    render "password"
 end
