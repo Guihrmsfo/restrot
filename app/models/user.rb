@@ -4,6 +4,9 @@ class User < ApplicationRecord
     before_create :confirmation_token
     before_save :encrypt_password
     
+    has_many :ingredients_user
+    has_many :ingredient, through: :ingredients_user
+    
     validates :name, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
     validates :email, :presence => true, :uniqueness => true
     validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/

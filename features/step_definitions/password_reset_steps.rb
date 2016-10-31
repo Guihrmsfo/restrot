@@ -49,3 +49,6 @@ end
 When(/^I click on the link, I am on the recover password update page$/) do
   visit ('/password_resets/'+@user.password_reset_token+'/edit')
 end
+
+#test 
+#testing
