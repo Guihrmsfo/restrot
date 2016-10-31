@@ -1,6 +1,7 @@
 class Ingredient < ApplicationRecord
-    has_many :ingredients_user
-    has_many :user, through: :ingredients_user
+    has_and_belongs_to_many :users
+    has_many :ingredients_users
+    has_many :users, through: :ingredients_users
     
     validates :name, :presence => true
     validates :unit_of_measure, :presence => true

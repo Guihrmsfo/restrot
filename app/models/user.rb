@@ -4,8 +4,9 @@ class User < ApplicationRecord
     before_create :confirmation_token
     before_save :encrypt_password
     
-    has_many :ingredients_user
-    has_many :ingredient, through: :ingredients_user
+    has_and_belongs_to_many :ingredients
+    has_many :ingredients_users
+    has_many :ingredients, through: :ingredients_users
     
     validates :name, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
     validates :email, :presence => true, :uniqueness => true
