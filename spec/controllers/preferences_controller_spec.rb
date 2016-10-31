@@ -44,6 +44,19 @@ RSpec.describe PreferencesController, type: :controller do
         expect(@current_user.profile_last_name).to eq("Lastname")
       end
       
+      it "updates profile image" do
+        post :profile, :user => {:profile_image_url => "http://teste.png"}
+        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        expect(@current_user.profile_image).to eq("http://teste.png")
+      end
+      
+      it "fails updating profile image" do
+        post :profile, :user => {:profile_image_url => "teste.png"}
+        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        expect(@current_user.profile_image).to be_nil
+        expect(@current_user.profile_image_url).to eq("/assets/user2-160x160.jpg")
+      end
+      
       # File Upload has been deprecated, heroku doesn't support file uploading
       #
       # it "can upload a profile image" do

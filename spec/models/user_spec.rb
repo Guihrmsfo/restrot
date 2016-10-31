@@ -66,8 +66,14 @@ RSpec.describe User, type: :model do
     expect(subject.password.length).to be(6)
   end
   
-  it "has no uploaded image" do
-    #expect(subject.profile_image).to eq("/assets/user2-160x160.jpg")
+  it "has not defined profile image" do
+    expect(subject.profile_image_url).to eq("/assets/user2-160x160.jpg")
+  end
+  
+  it "has defined profile image" do
+    subject.profile_image = "http://teste.png"
+    expect(subject.profile_image).not_to be_nil
+    expect(subject).to be_valid
   end
   
 end

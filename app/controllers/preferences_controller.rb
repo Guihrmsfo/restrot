@@ -26,8 +26,13 @@ include BCrypt
             #    end
             # end
             
-            @user.save
-            flash[:notice] = "Perfil atualizado com sucesso!"
+            if @user.save 
+                flash[:notice] = "Perfil atualizado com sucesso!"
+            else
+                @user.errors.full_messages.each do |error| 
+                    flash[:alert] = error
+                end
+            end
         end
         
         params[:user] = current_user
