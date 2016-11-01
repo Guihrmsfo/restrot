@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031162232) do
+ActiveRecord::Schema.define(version: 20161101050307) do
+
+  create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "unit_of_measure"
+    t.string   "picture"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "ingredients_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id",       null: false
+    t.integer "ingredient_id", null: false
+    t.integer "quantity"
+    t.index ["ingredient_id"], name: "fk_rails_d73140a606", using: :btree
+    t.index ["user_id"], name: "fk_rails_ac568aa73e", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -28,4 +44,6 @@ ActiveRecord::Schema.define(version: 20161031162232) do
     t.string   "profile_image"
   end
 
+  add_foreign_key "ingredients_users", "ingredients"
+  add_foreign_key "ingredients_users", "users"
 end

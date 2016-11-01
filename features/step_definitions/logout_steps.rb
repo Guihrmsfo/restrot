@@ -9,6 +9,6 @@ Given(/^I am on "Dashboard"$/) do
   visit ('dashboard/dashboard')
 end
 
-When(/^I click on "Logout Icon"$/) do
+When(/^I click on the "Logout Icon"$/) do
   page.find("#logout").click
 end
