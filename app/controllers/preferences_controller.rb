@@ -42,25 +42,21 @@ include BCrypt
 
         @user = current_user
         if (params[:user]).present?
-            if(params[:user][:password].length < 6 || params[:user][:password].length > 20)
-                flash.now[:notice] = "Nova senha deve ter entre 6 e 20 caracteres"
-            else
-                @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
-                if @password == @user.password
-                    if params[:user][:password] == params[:user][:passwordConfirmation]
-                        @user.salt = nil
-                        @user.password = params[:user][:password]
-                        if @user.save
-                            flash.now[:notice] = "Senha alterada com sucesso!"
-                        else
-                            flash.now[:notice] = "Erro!"
-                        end
+            @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
+            if @password == @user.password
+                if params[:user][:password] == params[:user][:passwordConfirmation]
+                    @user.salt = nil
+                    @user.password = params[:user][:password]
+                    if @user.save
+                        flash.now[:notice] = "Senha alterada com sucesso!"
                     else
-                        flash.now[:notice] = "Senha nova e confirmação não combinam"
+                        flash.now[:notice] = "Erro!"
                     end
                 else
-                    flash.now[:notice] = "Senha antiga incorreta"
+                    flash.now[:notice] = "Senha nova e confirmação não combinam"
                 end
+            else
+                flash.now[:notice] = "Senha antiga incorreta"
             end
         else
             flash.now[:notice] = "Digite todos os dados"
