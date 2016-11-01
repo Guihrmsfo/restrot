@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20161031064054) do
     t.string   "confirm_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.string   "profile_name"
+    t.string   "profile_last_name"
+    t.string   "profile_image"
   end
 
   add_foreign_key "ingredients_users", "users"

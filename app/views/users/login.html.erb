@@ -27,12 +27,12 @@
 			<% end -%>
 			<%= form_for(:user,  :url => {:controller => 'users', :action => 'login'}) do |f| %>
 				<div class="form-group has-feedback">
-					<%= f.text_field :name, class: 'form-control', autofocus: true %>
+					<%= f.text_field :name, class: 'form-control', placeholder: "Username", autofocus: true %>
 					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 
 				<div class="form-group has-feedback">
-					<%= f.password_field :password, class: 'form-control', autocomplete: 'off' %>
+					<%= f.password_field :password, class: 'form-control', placeholder: "Senha", autocomplete: 'off' %>
 					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<!-- LINK DE RECUPERAÇÃO DE SENHA -->
