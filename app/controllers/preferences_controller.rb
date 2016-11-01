@@ -38,6 +38,12 @@ include BCrypt
         params[:user] = current_user
     end
     
+    validates :check_password
+    
+    def check_password
+        errors.add(:password, "Senha e confirmação de senha não são iguais") if params[:user][:password] == params[:user][:passwordConfirmation] 
+    end
+    
     def password
 
         @user = current_user
