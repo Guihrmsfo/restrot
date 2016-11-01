@@ -21,7 +21,7 @@ Feature: Ingredients and Receipts Visualization
       Then I should be on my dashboard
       And I should see my last registered ingredients
       When I click on the "Ver todos" button
-      #Then I should be on my ingredients page
+      Then I should be on my ingredients page
     
     Scenario: Option to go to My Ingredients page
       Given I am a registered user with the username "any_name" and password "123456"
@@ -31,7 +31,7 @@ Feature: Ingredients and Receipts Visualization
       And I press "Login"
       Then I should be on my dashboard
       When I click on "Meus Ingredientes" in the sidebar menu
-      #Then I should be on my ingredients page
+      Then I should be on my ingredients page
       
       
       

@@ -7,14 +7,14 @@ When(/^I should be on my dashboard$/) do
     visit('dashboard/')
 end
 
-Then(/^I should be on my ingredients page$/) do
-  visit('ingredients/index')
-end
-
 When(/^I click on the "Ver todos" button$/) do
   page.find("#ver-todos").click
 end
 
 When(/^I click on "Meus Ingredientes" in the sidebar menu$/) do
   page.find("#meus-ingredientes").click
+end
+
+Then(/^I should be on my ingredients page$/) do
+    expect(page).to have_current_path("/ingredients/index")
 end
