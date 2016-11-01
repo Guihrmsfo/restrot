@@ -50,7 +50,7 @@ include BCrypt
                     if @user.save
                         flash.now[:notice] = "Senha alterada com sucesso!"
                     else
-                        flash.now[:notice] = "Erro!"
+                        flash.now[:notice] = "Erro"
                     end
                 else
                     flash.now[:notice] = "Senha nova e confirmação não combinam"
