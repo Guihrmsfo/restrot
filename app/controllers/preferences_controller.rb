@@ -64,4 +64,5 @@ include BCrypt
             end
         end
     end
+
 end
