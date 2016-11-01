@@ -1,4 +1,4 @@
-class IngredientsController < ApplicationController
+class IngredientsController < SessionController
   layout 'admin_lte_2'
   def index
     @ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
