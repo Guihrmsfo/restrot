@@ -4,7 +4,6 @@ class CreateIngredients < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :unit_of_measure
       t.string :picture
-
       t.timestamps
     end
   end
