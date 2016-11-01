@@ -7,6 +7,14 @@ When(/^I should be on my dashboard$/) do
     visit('dashboard/')
 end
 
-And (/^I want to be able to click on "Ver todos"$/) do
-     expect(page).to have_selector(:link_or_button, 'Ver todos')
+Then(/^I should be on my ingredients page$/) do
+  visit('ingredients/index')
+end
+
+When(/^I click on the "Ver todos" button$/) do
+  page.find("#ver-todos").click
+end
+
+When(/^I click on "Meus Ingredientes" in the sidebar menu$/) do
+  page.find("#meus-ingredientes").click
 end

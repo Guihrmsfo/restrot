@@ -6,26 +6,40 @@
                     <h3 class="box-title title">Lista de Ingredientes</h3>
                 </div>
                 <div class="box-body">
-                    <table class="table table-striped">
-                        <tr>
-                            <td class="title"> Foto </td>
-                            <td class="title"> Ingrediente </td>
-                            <td class="title"> Quantidade</td>
-                            <td class="title"> Medida</td>
-                            <td class="title"> Editar</td>
-                            <td class="title"> Excluir</td>
-                        </tr>
-                        <% @ingredients.each do |ingredient| %>
-                        <tr>
-                            <td><class "img"><%= image_tag("#{ingredient.picture}") %> </class></td>
-                            <td><%= ingredient.name %></td>
-                            <td><%= ingredient.quantity %></td>
-                            <td><%= ingredient.unit_of_measure %></td>
-                            <td><spam class="glyphicon glyphicon-edit btn btn-primary"></spam></td>
-                            <td><spam class="glyphicon glyphicon-trash btn btn-danger"></spam></td>
-                        </tr>
+                    <% if @ingredients.first.nil? %>
+                        <div class = 'no-ingredient'>
+                            <br>
+                            Você ainda não possui nenhum ingrediente na sua lista! :( <br>
+                            Clique no botão abaixo para adicionar e buscar suas receitas! 
+                        </div>
+                    <% end %>
+                    <% if @ingredients.first %>
+                        <table class="table table-striped">
+                            <tr>
+                                <td class="title"> Foto </td>
+                                <td class="title"> Ingrediente </td>
+                                <td class="title"> Quantidade</td>
+                                <td class="title"> Medida</td>
+                                <td class="title"> Editar</td>
+                                <td class="title"> Excluir</td>
+                            </tr>
+                        
+                            <% @ingredients.each do |ingredient| %>
+                            <tr>
+                                <td><class "img"><%= image_tag("#{ingredient.picture}") %> </class></td>
+                                <td><%= ingredient.name %></td>
+                                <td><%= ingredient.quantity %></td>
+                                <td><%= ingredient.unit_of_measure %></td>
+                                <td><spam class="glyphicon glyphicon-edit btn btn-primary"></spam></td>
+                                <td><spam class="glyphicon glyphicon-trash btn btn-danger"></spam></td>
+                            </tr>
+                            <% end %>
                         <% end %>
                     </table>
+                    <br>
+                    <div class="col-md-12 center-block">
+                        <button type="button" class="btn btn-success center-block">Inserir Ingrediente</button>
+                    </div>
                 </div>
             </div>
         </div>
