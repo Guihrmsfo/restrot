@@ -1,0 +1,30 @@
+// Place all the styles related to the ingredientes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+img{
+    width: 45px;
+    height: 45px;
+}
+
+table{
+    font-size: 120%;
+}
+
+.box-header{
+    text-align: center;
+}
+
+.inserir-btn {
+    float: none !important;
+    margin: 0 auto;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.no-ingredient{
+    font-size: 150%;
+    text-align: center;
+}
