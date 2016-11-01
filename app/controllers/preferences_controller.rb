@@ -4,19 +4,8 @@ include BCrypt
 
     layout 'admin_lte_2'
     
-    def new
-        @user = User.new
-    end
-    
     def preferences
-        
-        if session[:user_id].nil?
-            redirect_to :controller => 'users', :action => 'login' 
-            return
-        else
-            render "preferences"
-        end
-      
+       render "preferences"
     end
     
     def profile
@@ -25,19 +14,25 @@ include BCrypt
         if params[:user]
             @user.profile_name = params[:user][:profile_name]
             @user.profile_last_name = params[:user][:profile_last_name]
+            @user.profile_image = params[:user][:profile_image_url]
             
-            uploaded_io = params[:user][:profile_image]
+            # File Upload has been deprecated, heroku doesn't support file uploading
+            # uploaded_io = params[:user][:profile_image]
+            #
+            #
+            # if !uploaded_io.nil? && !@user.name.nil?
+            #    File.open(Rails.root.join('public', 'assets', 'profile_images', @user.name + ".jpg"), 'wb') do |file|
+            #        file.write(uploaded_io.read)
+            #    end
+            # end
             
-            if !uploaded_io.nil? && !@user.name.nil?
-                File.open(Rails.root.join('public', 'assets', 'profile_images', @user.name + ".jpg"), 'wb') do |file|
-                    file.write(uploaded_io.read)
+            if @user.save 
+                flash[:notice] = "Perfil atualizado com sucesso!"
+            else
+                @user.errors.full_messages.each do |error| 
+                    flash[:alert] = error
                 end
             end
-            
-            Rails.cache.clear
-            
-            @user.save
-            flash[:notice] = "Perfil atualizado com sucesso!"
         end
         
         params[:user] = current_user
