@@ -65,15 +65,4 @@ RSpec.describe User, type: :model do
   it "password too short" do
     expect(subject.password.length).to be(6)
   end
-  
-  it "has not defined profile image" do
-    expect(subject.profile_image_url).to eq("/assets/user2-160x160.jpg")
-  end
-  
-  it "has defined profile image" do
-    subject.profile_image = "http://teste.png"
-    expect(subject.profile_image).not_to be_nil
-    expect(subject).to be_valid
-  end
-  
 end

@@ -36,10 +36,6 @@ Rails.application.routes.draw do
         get :confirm_email
     end
   end
-  
-  get 'preferences/profile'
-  
-  post 'preferences/profile'
 
   get 'preferences/password'
   

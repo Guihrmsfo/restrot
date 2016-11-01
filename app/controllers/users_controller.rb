@@ -24,14 +24,16 @@ class UsersController < ApplicationController
             
                 @password = BCrypt::Engine.hash_secret(params[:user][:password], @user.salt)
                 if @password == @user.password
-                    redirect_to :controller => 'dashboard', :action => 'dashboard'
-                    session[:user_id] = @user.id
                     if @user.confirmed_email
                         flash[:notice] = "Login realizado com sucesso!"
+                        flash[:color]= "Válido"
+                        session[:user_id] = @user.id
+                        redirect_to :controller => 'dashboard', :action => 'dashboard' 
+                        return
                     else
-                        flash[:alert] = "Por favor, confirme seu e-mail para ativar sua conta"
+                        flash.now[:error] = "Por favor, confirme seu e-mail para ativar sua conta"
                     end
-                    return
+                    
                 else
                     flash.now[:error] = "Senha inválida"
                 end
