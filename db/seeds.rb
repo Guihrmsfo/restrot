@@ -1,6 +1,6 @@
 # USUÁRIOS 
-User.create(name: 'gpioto', email: 'gabriel.piotogomes@gmail.com')
-User.create(name: 'lucascorrea', email: 'lucascorreasilvaa@gmail.com')
+User.create(name: 'gpioto', email: 'gabriel.piotogomes@gmail.com', password: 'gpioto')
+User.create(name: 'lucascorrea', email: 'lucascorreasilvaa@gmail.com', password: 'lucascorrea')
 
 # INGREDIENTES
 Ingredient.create(name: 'Ovo', unity_of_measure: 'Unidade')
@@ -27,3 +27,9 @@ Ingredient.create(name: 'Alecrim', unity_of_measure: 'Grama')
 Ingredient.create(name: 'Leite', unity_of_measure: 'Mililitros')
 
 #LISTA DE INGREDIENTES
+IngredientsUser.create(user_id: 1, ingredient_id: 1, quantity: 12)
+IngredientsUser.create(user_id: 1, ingredient_id: 2, quantity: 5)
+IngredientsUser.create(user_id: 1, ingredient_id: 3, quantity: 3)
+IngredientsUser.create(user_id: 2, ingredient_id: 4, quantity: 3)
+IngredientsUser.create(user_id: 2, ingredient_id: 5, quantity: 200)
+IngredientsUser.create(user_id: 2, ingredient_id: 6, quantity: 5000)

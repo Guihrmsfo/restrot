@@ -44,15 +44,24 @@
           <h3 class="box-title">Últimos Ingredientes Cadastrados</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <ul class="list-group">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Ingrediente</th>
+                <th>Quantidade</th>
+                <th>.</th>
+              </tr>
+            </thead>
+            <tbody>
               <% @listaIngredientes = IngredientsUser.where(user_id: current_user.id) %>
-              <% @listaIngredientes.each do |ingredient| %>
-                <li class="list-group-item">
-                    <a href="#" class="btn-xs pull-right"><i class="fa fa-remove"></i></a>
-                    <%= current_user.id %>
-                </li>
+              <% @listaIngredientes.each do |ingredients| %>
+                <tr>
+                  <td><%= ingredients.ingredient.name %></td>
+                  <td><%= ingredients.quantity %></td>
+                </tr>
               <% end %>
-            </ul>
+            </tbody>
+          </table>
           <a href="#" class="btn btn-primary">Ver todos</a>
         </div><!-- /.box-body -->
       </div><!-- /.box -->
