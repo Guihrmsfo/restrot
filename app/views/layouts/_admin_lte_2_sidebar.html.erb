@@ -36,7 +36,7 @@
       <li class="<%= 'active' if params[:controller] == 'ingredients' %>"><a href="/ingredients/index" id="meus-ingredientes"><i class="fa fa-link"></i> <span>Meus Ingredientes</span></a></li>
       <li><a href="#"><i class='fa fa-link'></i> <span>Favoritos</span></a></li>
       <li><a href="#"><i class='fa fa-link'></i> <span>Histórico</span></a></li>
-      <li><a href="<%= url_for(controller: 'preferences', action: 'preferences', only_path: true) %>"><i class='fa fa-link'></i> <span>Preferências</span></a></li>
+      <li class="<%= 'active' if params[:controller] == 'preferences' %>"><a href="<%= url_for(controller: 'preferences', action: 'preferences', only_path: true) %>"><i class='fa fa-link'></i> <span>Preferências</span></a></li>
       <<!--li class="treeview">
         <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
@@ -46,16 +46,6 @@
       </l-->i>
     </ul><!-- /.sidebar-menu -->
   </section>
-  <script type="text/javascript">
-  		function cssHelper(){
-     		var path = window.location.pathname;
-     		if(path.indexOf("preferences")>=0){
-     		  document.getElementById("preferences_menu").classList.add("active");
-     		} else if(path.indexOf("dashboard")>=0){
-     		  document.getElementById("dashboard_menu").classList.add("active");
-     		}
-  		}
-  		window.onload = cssHelper();
-  </script>
+
   <!-- /.sidebar -->
 </aside>
