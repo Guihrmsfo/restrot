@@ -41,6 +41,28 @@ include BCrypt
     def password
 
         @user = current_user
+        
+        if params[:user]
+            if(params[:user][:password] == params[:user][:passwordConfirmation])
+                @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
+                if(@password == @user.password)
+                    @user.password = params[:user][:password]
+                    @user.updating_password = true;
+                    if @user.save 
+                        flash[:notice] = "Perfil atualizado com sucesso!"
+                    else
+                        @user.errors.full_messages.each do |error| 
+                            flash[:alert] = error
+                        end
+                    end
+                else
+                    flash.now[:alert] = "Senha antiga incorreta"
+                end
+            end
+        end
+        params[:user] = current_user
+    end
+=begin  
         if (params[:user]).present?
             if params[:user][:password].length > 7 && params[:user][:password].length < 21
                 @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
@@ -63,6 +85,6 @@ include BCrypt
                 flash.now[:alert] = "Nova senha invalida"
             end
         end
-    end
-
+        end
+=end
 end
