@@ -61,6 +61,5 @@ include BCrypt
         else
             flash.now[:notice] = "Digite todos os dados"
         end
-        
     end
 end
