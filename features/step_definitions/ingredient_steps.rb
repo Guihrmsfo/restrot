@@ -1,8 +1,12 @@
 
-Then(/^I should see my list of ingredients$/) do
-  expect(page).to have_content("Meus Ingredientes")
+Then(/^I should see my last registered ingredients$/) do
+  expect(page).to have_content("Últimos Ingredientes Cadastrados")
 end
 
-#When(/^I go to my ingredients dashboard$/) do
-#  visit('../ingredients/index')
-#end
+When(/^I should be on my dashboard$/) do
+    visit('dashboard/')
+end
+
+And (/^I want to be able to click on "Ver todos"$/) do
+     expect(page).to have_selector(:link_or_button, 'Ver todos')
+end

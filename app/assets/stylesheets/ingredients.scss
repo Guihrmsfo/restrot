@@ -13,5 +13,13 @@ table{
 
 .box-header{
     text-align: center;
-    font-size: 120%;
+}
+
+.centralizado {
+    float: none !important;
+    margin: 0 auto;
+}
+
+.title{
+    font-weight: bold;
 }

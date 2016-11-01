@@ -1,12 +1,20 @@
-<container>
+<container class ="centralizado">
     <div class ="row">
-        <div class="col-sm-6">
+        <div class="col-md-10 col-md-offset-1">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Meus Ingredientes</h3>
+                    <h3 class="box-title title">Lista de Ingredientes</h3>
                 </div>
                 <div class="box-body">
                     <table class="table table-striped">
+                        <tr>
+                            <td class="title"> Foto </td>
+                            <td class="title"> Ingrediente </td>
+                            <td class="title"> Quantidade</td>
+                            <td class="title"> Medida</td>
+                            <td class="title"> Editar</td>
+                            <td class="title"> Excluir</td>
+                        </tr>
                         <% @ingredients.each do |ingredient| %>
                         <tr>
                             <td><class "img"><%= image_tag("#{ingredient.picture}") %> </class></td>

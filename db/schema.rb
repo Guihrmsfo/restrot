@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20161031064054) do
     t.integer "user_id",       null: false
     t.integer "ingredient_id", null: false
     t.integer "quantity"
-    t.index ["ingredient_id"], name: "fk_rails_d73140a606", using: :btree
     t.index ["user_id"], name: "fk_rails_ac568aa73e", using: :btree
   end
 
@@ -41,6 +40,5 @@ ActiveRecord::Schema.define(version: 20161031064054) do
     t.datetime "password_reset_sent_at"
   end
 
-  add_foreign_key "ingredients_users", "ingredients"
   add_foreign_key "ingredients_users", "users"
 end
