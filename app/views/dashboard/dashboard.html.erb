@@ -53,7 +53,18 @@
                     <h3 class="box-title title">Últimos Ingredientes Cadastrados</h3>
                 </div>
                 <div class="box-body">
-                    <table class="table table-striped">
+                    <% if @ingredients.first.nil? %>
+                    <div class = 'no-ingredient'>
+                      <br>
+                      Você ainda não possui nenhum ingrediente na sua lista! :( <br>
+                      Vá até a página de ingredientes para adicionar novos. 
+                      <br>
+                      <br>
+                      <a href="/ingredients/index" id="ver-todos"><button type="button" class="btn btn-primary">Ir para página de ingredientes</button></a>
+                    </div>
+                    <% end %>
+                    <% if @ingredients.first %>
+                      <table class="table table-striped">
                         <tr>
                             <td class="title"> Ingrediente </td>
                             <td class="title"> </td>
@@ -72,10 +83,13 @@
                             <td><spam class="glyphicon glyphicon-trash btn btn-danger"></spam></td>
                         </tr>
                         <% end %>
+                        <% end %>
                     </table>
                 </div>
                 <div class="box-header">
-                    <a href="/ingredients/index" id="ver-todos"><button type="button" class="btn btn-primary">Ver todos</button></a>
+                    <% if @ingredients.first %>
+                      <a href="/ingredients/index" id="ver-todos"><button type="button" class="btn btn-primary">Ver todos</button></a>
+                    <% end %>
                 </div>
             </div>
         </div>
