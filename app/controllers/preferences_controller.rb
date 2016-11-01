@@ -1,7 +1,7 @@
 require 'bcrypt'
 class PreferencesController < SessionController
 include BCrypt
-
+    
     layout 'admin_lte_2_prefs'
     
     def preferences
@@ -42,24 +42,26 @@ include BCrypt
 
         @user = current_user
         if (params[:user]).present?
-            @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
-            if @password == @user.password
-                if params[:user][:password] == params[:user][:passwordConfirmation]
-                    @user.salt = nil
-                    @user.password = params[:user][:password]
-                    if @user.save
-                        flash.now[:notice] = "Senha alterada com sucesso!"
+            if params[:user][:password].length > 7 && params[:user][:password].length < 21
+                @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
+                if @password == @user.password
+                    if params[:user][:password] == params[:user][:passwordConfirmation]
+                        @user.salt = nil
+                        @user.password = params[:user][:password]
+                        if @user.save
+                            flash.now[:notice] = "Senha alterada com sucesso!"
+                        else
+                            flash.now[:alert] = "Erro"
+                        end
                     else
-                        flash.now[:notice] = "Erro"
+                        flash.now[:alert] = "Senha nova e confirmação não combinam"
                     end
                 else
-                    flash.now[:notice] = "Senha nova e confirmação não combinam"
+                    flash.now[:alert] = "Senha antiga incorreta"
                 end
             else
-                flash.now[:notice] = "Senha antiga incorreta"
+                flash.now[:alert] = "Nova senha invalida"
             end
-        else
-            flash.now[:notice] = "Digite todos os dados"
         end
     end
 end
