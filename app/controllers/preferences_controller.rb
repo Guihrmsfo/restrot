@@ -38,40 +38,33 @@ include BCrypt
         params[:user] = current_user
     end
     
-    validates :check_password
-    
-    def check_password
-        errors.add(:password, "Senha e confirmação de senha não são iguais") if params[:user][:password] == params[:user][:passwordConfirmation] 
-    end
-    
     def password
 
         @user = current_user
         if (params[:user]).present?
-            if(params[:user][:password].present? && params[:user][:oldPassword].present? && params[:user][:passwordConfirmation].present? )
-                if(params[:user][:password].length < 6 || params[:user][:password].length > 20)
-                    flash.now[:notice] = "Nova senha deve ter entre 6 e 20 caracteres"
-                else
-                    @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
-                    if @password == @user.password
-                        if params[:user][:password] == params[:user][:passwordConfirmation]
-                            @user.salt = nil
-                            @user.password = params[:user][:password]
-                            if @user.save
-                                flash.now[:notice] = "Senha alterada com sucesso!"
-                            else
-                                flash.now[:notice] = "Erro!"
-                            end
+            if(params[:user][:password].length < 6 || params[:user][:password].length > 20)
+                flash.now[:notice] = "Nova senha deve ter entre 6 e 20 caracteres"
+            else
+                @password = BCrypt::Engine.hash_secret(params[:user][:oldPassword], @user.salt)
+                if @password == @user.password
+                    if params[:user][:password] == params[:user][:passwordConfirmation]
+                        @user.salt = nil
+                        @user.password = params[:user][:password]
+                        if @user.save
+                            flash.now[:notice] = "Senha alterada com sucesso!"
                         else
-                            flash.now[:notice] = "Senha nova e confirmação não combinam"
+                            flash.now[:notice] = "Erro!"
                         end
                     else
-                        flash.now[:notice] = "Senha antiga incorreta"
+                        flash.now[:notice] = "Senha nova e confirmação não combinam"
                     end
+                else
+                    flash.now[:notice] = "Senha antiga incorreta"
                 end
-            else
-                flash.now[:notice] = "Digite todos os dados"
             end
+        else
+            flash.now[:notice] = "Digite todos os dados"
         end
+        
     end
 end
