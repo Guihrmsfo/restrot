@@ -33,12 +33,12 @@ class UsersController < ApplicationController
                     end
                     return
                 else
-                    flash.now[:error] = "Senha inválida"
+                    flash.now["alert alert-danger"] = "Senha inválida"
                 end
                 
             else
                 
-                flash.now[:error] = "Nome de usuário inválido"
+                flash.now["alert alert-danger"] = "Nome de usuário inválido"
                 
             end
             
