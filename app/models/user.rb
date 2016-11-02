@@ -3,7 +3,9 @@ class User < ApplicationRecord
     include BCrypt
     before_create :confirmation_token
     before_save :encrypt_password
-
+    before_update :encrypt_update_password, :if => :should_validate_password
+    attr_accessor :updating_password
+    
     has_and_belongs_to_many :ingredients
     has_many :ingredients_users
     has_many :ingredients, through: :ingredients_users
@@ -14,6 +16,10 @@ class User < ApplicationRecord
     validates_length_of :password, :in => 6..20, :on => :create, :message => " deve conter entre 6 e 20 caracteres"
     validates_length_of :password, :in => 6..20, :on => :password, :message => " deve conter entre 6 e 20 caracteres"
     validates :profile_image, :format => { :allow_nil => true, :with => URI::regexp(%w(http https)), :message => "Precisa ser uma URL válida iniciada com http ou https"}
+    
+    def should_validate_password
+        updating_password
+    end
 
     def profile_image_url
         @profile_image_url = profile_image.nil? ? "/assets/user2-160x160.jpg" : profile_image;
@@ -34,6 +40,14 @@ class User < ApplicationRecord
         save!(:validate => false)
     end
 
+    def encrypt_update_password
+        if password.present?
+            self.salt = BCrypt::Engine.generate_salt
+            self.password = BCrypt::Engine.hash_secret(password, salt)
+        end
+      
+    end
+    
     def encrypt_password
         if password.present? && salt.nil?
             self.salt = BCrypt::Engine.generate_salt
