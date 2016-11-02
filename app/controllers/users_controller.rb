@@ -46,9 +46,7 @@ class UsersController < ApplicationController
   
     def create
         if (params[:user]).present?  
-            params.require(:user).permit!
-            @user = User.new(params[:user])
-    
+            @user = User.new(user_params)
             if @user.save
                 UserMailer.registration_confirmation(@user).deliver
                 flash[:success] = "Por favor, confirme seu e-mail para ativar sua conta"
@@ -73,6 +71,11 @@ class UsersController < ApplicationController
             flash[:error] = "Usuário inexistente"
             redirect_to :controller => 'home', :action => 'index' 
         end
+    end
+    
+    private 
+    def user_params
+        params.require(:user).permit(:name, :email, :password, :password_confirmation, :created_at, :updated_at)
     end
     
 end
