@@ -29,9 +29,18 @@
         <h1>
           Preferências
         </h1>
+        <br>
         <ul class="nav nav-tabs">
-  				<li role="presentation" id="password_menu"><a href="password">Segurança</a></li>
-  				<li role="presentation" id="email_menu"><a href="#">E-mail</a></li>
+          <li role="presentation" id="profile_menu" class="<%= 'active' if params[:action] == 'profile' %>">
+            <a href="profile">
+              Perfil
+            </a>
+          </li>
+  				<li role="presentation" id="password_menu" class="<%= 'active' if params[:action] == 'password' %>">
+  				  <a href="password">
+  				    Senha
+  				  </a>
+  				</li>
 			  </ul>
       </section>
 
@@ -70,15 +79,5 @@
   </div><!-- ./wrapper -->
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-  <script type="text/javascript">
-  		function cssHelper(){
-     		var path = window.location.pathname;
-     		if(path.indexOf("password")>=0){
-     		  document.getElementById("password_menu").classList.add("active");
-     		}
-  		}
-  		window.onload = cssHelper();
-  </script>
 </body>
 </html>
