@@ -37,9 +37,7 @@ class UsersController < ApplicationController
                 end
                 
             else
-                
                 flash.now["alert alert-danger"] = "Nome de usuário inválido"
-                
             end
             
         end 
@@ -48,7 +46,7 @@ class UsersController < ApplicationController
   
     def create
         if (params[:user]).present?  
-            params.permit!
+            params.require(:user).permit!
             @user = User.new(params[:user])
     
             if @user.save
