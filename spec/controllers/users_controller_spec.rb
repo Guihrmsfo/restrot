@@ -24,17 +24,17 @@ RSpec.describe UsersController, type: :controller do
  
     context "with invalid attributes" do
       it "is missing params" do
-        post :login, :user => {:name => "", :email => "email@123", :password => "Password"}
+        post :login, params: {:user => {:name => "", :email => "email@123", :password => "Password"}}
         expect(response).to render_template("users/login")
       end
       
      it "is missing params" do
-        post :login, :user => {:name => "Any Name", :email => "", :password => "Password"}
+        post :login, params: {:user => {:name => "Any Name", :email => "", :password => "Password"}}
         expect(response).to render_template("users/login")
       end
       
       it "is missing params" do
-        post :login, :user => {:name => "Any Name", :email => "email@123", :password => ""}
+        post :login, params: {:user => {:name => "Any Name", :email => "email@123", :password => ""}}
         expect(response).to render_template("users/login")
       end
     end
@@ -52,21 +52,21 @@ RSpec.describe UsersController, type: :controller do
     describe "GET #confirm_email" do
       
       it "returns http success" do
-        get :confirm_email,  :id => @user.confirm_token
+        get :confirm_email, params: {:id => @user.confirm_token}
         expect(response).to have_http_status(:success)
       end
       
       it "redirects to home" do
         #invalid confirm_token
         @confirm_token = 1
-        get :confirm_email,  :id => @confirm_token
+        get :confirm_email, params: {:id => @confirm_token}
         expect(response).to redirect_to(:controller => 'home', :action => 'index')
       end
       
   end
   
   context "with valid attributes" do
-    before {post :create, :user => {:id => 1, :name => "Any Name", :email => "email@123.com", :password => "Password"} }
+    before {post :create, params: {:user => {:id => 1, :name => "Any Name", :email => "email@123.com", :password => "Password"}} }
     
     describe "GET #create" do
       
@@ -86,17 +86,17 @@ RSpec.describe UsersController, type: :controller do
     
     context "with invalid attributes" do
       it "is missing params" do
-        post :create, :user => {:name => "", :email => "email@123", :password => "Password"}
+        post :create, params: {:user => {:name => "", :email => "email@123", :password => "Password"}}
         expect(response).to render_template("users/new")
       end
       
      it "is missing params" do
-        post :create, :user => {:name => "Any Name", :email => "", :password => "Password"}
+        post :create, params: { :user => {:name => "Any Name", :email => "", :password => "Password"} }
         expect(response).to render_template("users/new")
       end
       
       it "is missing params" do
-        post :create, :user => {:name => "Any Name", :email => "email@123", :password => ""}
+        post :create, params: {:user => {:name => "Any Name", :email => "email@123", :password => ""} }
         expect(response).to render_template("users/new")
       end
     end
