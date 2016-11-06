@@ -33,25 +33,25 @@ RSpec.describe PreferencesController, type: :controller do
       end
       
       it "updates profile name" do
-        post :profile, :user => {:profile_name => "Name"}
+        post :profile, params: {:user => {:profile_name => "Name"}}
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
         expect(@current_user.profile_name).to eq("Name")
       end
       
       it "updates profile last name" do
-        post :profile, :user => {:profile_last_name => "Lastname"}
+        post :profile, params: {:user => {:profile_last_name => "Lastname"}}
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
         expect(@current_user.profile_last_name).to eq("Lastname")
       end
       
       it "updates profile image" do
-        post :profile, :user => {:profile_image_url => "http://teste.png"}
+        post :profile, params: {:user => {:profile_image_url => "http://teste.png"}}
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
         expect(@current_user.profile_image).to eq("http://teste.png")
       end
       
       it "fails updating profile image" do
-        post :profile, :user => {:profile_image_url => "teste.png"}
+        post :profile, params: {:user => {:profile_image_url => "teste.png"}}
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
         expect(@current_user.profile_image).to be_nil
         expect(@current_user.profile_image_url).to eq("/assets/user2-160x160.jpg")
@@ -70,28 +70,28 @@ RSpec.describe PreferencesController, type: :controller do
       #   FileUtils.rm(Rails.root+"public/assets/profile_images/"+fileName)
       # end
       
-      before {post :password, :user => {:oldPassword => "oldPassword", :passwordConfirmation => "passwordConfirmation", 
-        :password => "Password", session: { user_id: User.minimum(:id) } } }
+      before {post :password, params: {:user => {:oldPassword => "oldPassword", :passwordConfirmation => "passwordConfirmation", 
+        :password => "Password", session: { user_id: User.minimum(:id) } } }}
         
       it "returns http success" do
         expect(response).to have_http_status(:success)
       end
       
       it "is missing params" do
-        post :password, :user => {:oldPassword => "", :passwordConfirmation => "passwordConfirmation", 
-          :password => "password", session: { user_id: User.minimum(:id) }}
+        post :password, params: {:user => {:oldPassword => "", :passwordConfirmation => "passwordConfirmation", 
+          :password => "password", session: { user_id: User.minimum(:id) }}}
         expect(response).to render_template("preferences/password")
       end
       
       it "is missing params" do
-        post :password, :user => {:oldPassword => "oldPassword", :passwordConfirmation => "",
-          :password => "password", session: { user_id: User.minimum(:id) }}
+        post :password, params: {:user => {:oldPassword => "oldPassword", :passwordConfirmation => "",
+          :password => "password", session: { user_id: User.minimum(:id) }}}
         expect(response).to render_template("preferences/password")
       end
       
       it "is missing params" do
-        post :password, :user => {:oldPassword => "oldPassword", :passwordConfirmation => "passwordConfirmation", 
-          :password => "", session: { user_id: User.minimum(:id) }}
+        post :password, params: {:user => {:oldPassword => "oldPassword", :passwordConfirmation => "passwordConfirmation", 
+          :password => "", session: { user_id: User.minimum(:id) }}}
         expect(response).to render_template("preferences/password")
       end
       

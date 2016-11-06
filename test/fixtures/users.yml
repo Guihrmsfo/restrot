@@ -1,0 +1,12 @@
+userOne:
+    id: 1
+    name: foo
+    email: foo@restrot.com
+    password: foobar
+    salt: foobar
+    created_at: 2016-10-18 02:00:00
+    updated_at: 2016-10-18 02:00:00
+    confirmed_email: 1
+    confirm_token: foobar
+    password_reset_token: NULL
+    password_reset_sent_at: NULL
