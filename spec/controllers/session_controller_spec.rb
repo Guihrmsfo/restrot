@@ -34,6 +34,12 @@ RSpec.describe SessionController, type: :controller do
             expect(subject).to redirect_to :action => 'login', :controller => 'users'
         end
         
+        it "user doesn't exist" do
+            session[:user_id] = 500
+            get :require_login
+            expect(subject).to redirect_to :action => 'login', :controller => 'users'
+        end
+        
     end
     
 end
