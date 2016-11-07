@@ -11,6 +11,5 @@ Heat a grill to medium hot. Wrap 4 bricks with aluminum foil (a large heavy skil
        
         user_ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
         @recipes = [{image: "http://bit.ly/2eN63V2", name: "Lasanha", ingredients: user_ingredients, calories: 1500, servings: 4, instructions: preparation}, {image: "http://bit.ly/2eN63V2", name: "Nome da receita", ingredients: user_ingredients, calories: 1500, servings: 4, instructions: preparation2}, {image: "http://bit.ly/2eN63V2", name: "Nome da receita", ingredients: user_ingredients, calories: 1500, servings: 4, instructions: preparation3}, {image: "http://bit.ly/2eN63V2", name: "Nome da receita", ingredients: user_ingredients, calories: 1500, servings: 4, instructions: preparation2}, {image: "http://bit.ly/2eN63V2", name: "Nome da receita", ingredients: user_ingredients, calories: 1500, servings: 4, instructions: preparation3}]
-        puts @recipes.first
     end
 end
