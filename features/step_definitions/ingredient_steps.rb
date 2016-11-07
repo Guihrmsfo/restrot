@@ -1,10 +1,9 @@
+When(/^I should be on my dashboard$/) do
+    visit('dashboard/')
+end
 
 Then(/^I should see my last registered ingredients$/) do
   expect(page).to have_content("Últimos Ingredientes Cadastrados")
-end
-
-When(/^I should be on my dashboard$/) do
-    visit('dashboard/')
 end
 
 When(/^I click on the "Ver todos" button$/) do
