@@ -16,6 +16,9 @@ class IngredientsController < SessionController
 
   def edit
   end
+  
+  def update
+  end
 
   def remove
   end

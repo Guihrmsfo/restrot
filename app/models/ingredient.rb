@@ -4,7 +4,7 @@ class Ingredient < ApplicationRecord
     has_many :users, through: :ingredients_users
     
     validates :name, :presence => true
-    validates :unity_of_measure, :presence => true
+    validates :unit_of_measure, :presence => true
     
     def create
     end

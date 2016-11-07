@@ -1,0 +1,2 @@
+module IngredientsUsersHelper
+end

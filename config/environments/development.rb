@@ -31,7 +31,7 @@ Rails.application.configure do
     :address => "smtp.mailgun.org",
     :port => "2525",
     :domain => "sandboxb9f1e72936704dfeb825d6dd59d868eb.mailgun.org",
-    :user_name => "postmaster@sandboxb9f1e72936704dfeb825d6dd59d868eb.mailgun.org",
+    :user_name => "postmarails ster@sandboxb9f1e72936704dfeb825d6dd59d868eb.mailgun.org",
     :password => "c70e248ed2914e51dc001c33d2e22139",
     :authentication => :plain,
     :enable_starttls_auto => true,

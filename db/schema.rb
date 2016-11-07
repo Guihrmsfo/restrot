@@ -10,22 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161031162232) do
-
-  create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "unity_of_measure"
-    t.string   "picture"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "ingredients_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id",       null: false
-    t.integer "ingredient_id", null: false
-    t.integer "quantity"
-=======
 ActiveRecord::Schema.define(version: 20161101050307) do
 
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,7 +26,6 @@ ActiveRecord::Schema.define(version: 20161101050307) do
     t.integer "quantity"
     t.index ["ingredient_id"], name: "fk_rails_d73140a606", using: :btree
     t.index ["user_id"], name: "fk_rails_ac568aa73e", using: :btree
->>>>>>> 5dea7fdb8e0dc1c6b6b3be529d37b3ac8756aa88
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
