@@ -1,0 +1,45 @@
+<container class ="centralizado">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title title">Busca de Receitas</h3>
+                </div>
+                <div class="box-body">
+                    <% if @recipes.first.nil? %>
+                        <div class = 'no-ingredient'>
+                            <br>
+                            Você ainda não possui nenhum ingrediente na sua lista para uma busca personalizada! :( <br>
+                            Clique no botão abaixo para adicionar e buscar suas receitas! 
+                        </div>
+                    <% end %>
+                    <% if @recipes.first %>
+                        <% @recipes.each do |recipe| %>
+                            <div class="col-md-3">
+                                <div class="thumbnail">
+                                    <class "img"><%= image_tag("#{recipe[:image]}") %> </class>
+                                    <div class="caption">
+                                        <h3><%=recipe[:name]%></h3>
+                                        <p>Calorias: <%=recipe[:calories]%></p>
+                                        <p> Serve até: <%=recipe[:servings]%> </p>
+                                        <p> Ingredientes: 
+                                            <% recipe[:ingredients].each do |ingredient| %>
+                                                <%= ingredient.name %>,  
+                                    
+                                            <% end %>
+                                        </p>
+                                        <p><a href="#" class="btn btn-primary" role="button">Ver instruções</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                    <br>
+                    <div class="col-md-12 center-block">
+                        <button type="button" class="btn btn-success center-block">Inserir Ingrediente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</container>
