@@ -10,6 +10,6 @@ Feature: Log out must be successfull
         And I fill in user_password with "123456"
         And I press "Login"
         Then I should be on "dashboard/dashboard"
-        When I click on "Logout Icon"
+        When I click on the "Logout Icon"
         Then I should be on ""
   
