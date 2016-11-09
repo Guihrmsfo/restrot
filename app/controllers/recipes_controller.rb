@@ -1,7 +1,7 @@
 class RecipesController < SessionController
     layout 'admin_lte_2'
     def index
-        #crieiessas informações hard-coded só pra ver como ficaria no layout
+        #criei essas informações hard-coded só pra ver como ficaria no layout
         passo1 = "If usip 4 bricks with aluminum y skillet can also be used). Remove chickens from marinade; salt both sides. Brush grill with oil; transfer chickens to the grill, skin side up, and place bricks on top of chickens. Grill 10 to 15 minutes per side, until skin is dark brown and juices run clear when chicken is pierced. Serve garnished with lemon wedges."
         passo2 = "If using whole chickfoil (a large heavy skillet can also be used). Remove chickens from marinade; salt both sides. Brush grill with oil; transfer chickens to the grill, skin side up, and place bricks on top of chickens. Grill 10 to 15 minutes per side, until skin is dark brown and juices run clear when chicken is pierced. ."
         passo3 = " transfer chickens to the grill, skin side up, and place bricks on top of chickens. Grill 10 to 15 minutes per side, until skin is dark brown and juices run clear when chicken is pierced. Serve garnished with lemon wedges."

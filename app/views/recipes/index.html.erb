@@ -22,12 +22,10 @@
                         <h3><%=recipe[:name]%></h3>
                         <p>Calorias: <%=recipe[:calories]%></p>
                         <p> Serve até: <%=recipe[:servings]%> pessoas</p>
-                        <p> Ingredientes: 
-                           <%= recipe[:ingredients].map { |ingredient| ingredient.name }.join(', ').html_safe %>
-                        </p>
+                        
                         <div class="span4 proj-div" data-toggle="modal" data-target="#GSCCModal"><button type="button" class="btn btn-primary">Ver Instruções de Preparo</button></div>
                         <div id="GSCCModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                           <div class="modal-dialog">
+                           <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                  <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
@@ -37,8 +35,15 @@
                                     <div class ="modal-text col-md-3">
                                        <div class="model-subtitle">Ingredientes: </div>
                                        <br>
-                                       <% recipe[:ingredients].each do |ingredient| %>
-                                       <%= ingredient.name %>  <br>
+                                       <% recipe[:ingredients].each_with_index do |ingredient, i| %>
+                                       &bull; <%= ingredient.quantity%> 
+                                       <% if ingredient.quantity > 1 %>
+                                          <%= ingredient.unit_of_measure%>s of <%# COMENTARIO: adiciona um S se for mais de uma quantidade de algo %>
+                                       <% end %>
+                                       <% if ingredient.quantity == 1 %>
+                                          <%= ingredient.unit_of_measure%> of
+                                       <% end %>
+                                       <%= ingredient.name %> <br><br>
                                        <% end %>
                                     </div>
                                     <div class ="modal-text col-md-9">
