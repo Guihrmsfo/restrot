@@ -18,6 +18,10 @@ class IngredientsController < SessionController
   end
   
   def update
+    @ingredients = IngredientsUser.find(params[:id])
+    @ingredients.update_attribute(:quantity, params[:ingredient][:quantity])
+    
+    redirect_to ingredients_path
   end
 
   def remove
