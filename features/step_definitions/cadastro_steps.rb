@@ -12,6 +12,6 @@ Given(/^I press "([^"]*)"$/) do |button|
     @user = User.new(:name => 'cv.laura', :email => 'cv.laura95@gmail.com', :password => '123456', :password_confirmation => '123456')
 end
 
-Then(/^I should be on confirmation screen$/) do
-    expect(page).to have_content("Por favor, confirme seu e-mail para ativar sua conta")
+Then(/^I should be on login screen$/) do
+    expect(page).to have_content("Cadastro realizado com sucesso")
 end

@@ -1,11 +1,12 @@
 <div class="login-panel panel panel-default">
 	<div class="panel-heading">Registre-se</div>
 	<div class="panel-body">
-        <% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, class: name %>
+  	<% flash.each do |name, msg| -%>
+			<div class="alert alert-<%= name %>"><%= msg %></div>
 		<% end -%>
 		<% if @user && @user.errors.any? %>
 		<div class="alert alert-danger">
+			<p><strong>Dados Inválidos</strong></p>
 			<% for message_error in @user.errors.full_messages %>
 			<p><%= message_error %></p>
 			<% end %>
