@@ -6,11 +6,13 @@ class PasswordResetsController < ApplicationController
     if (params[:email]).present?
       user = User.find_by_email(params[:email])
       if user.nil?
-        flash[:notice] = "O e-mail digitado não corresponde a um usuário"
+        flash[:error] = "O e-mail digitado não corresponde a um usuário"
         render :new
       else
         user.send_password_reset
-        redirect_to root_path, :notice => "Um email foi enviado com as intruções de recuperação" and return
+        flash[:info] = "Um email foi enviado com as intruções de recuperação"
+        redirect_to url_for controller: :users, action: :login
+        return
       end
     end
   end
