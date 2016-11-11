@@ -39,7 +39,7 @@ RSpec.describe UsersController, type: :controller do
          
         it "inputs a wrong password" do
           post :login, params: {:user => {:name => "Any Name", :password => "1"}}
-          expect(flash["alert alert-danger"]).to match(/Senha inválida*/)
+          expect(flash[:danger]).to match(/Senha inválida*/)
         end
       
     end
@@ -108,7 +108,7 @@ RSpec.describe UsersController, type: :controller do
       it "creates a new user" do
         post :create, params: {:user => {:name => "Test", :email => "pibaworone@maileme101.com", :password => "123456", :password_confirmation => '123456'}}
         expect(response).to render_template("users/login")
-        expect(flash[:success]).to match(/Por favor, confirme seu e-mail para ativar sua conta*/)
+        expect(flash[:success]).to match(/Cadastro realizado com sucesso*/)
       end
     end
     

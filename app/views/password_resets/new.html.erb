@@ -16,8 +16,8 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">Recuperar Senha</p>
 			<% flash.each do |name, msg| %>
-                  <%= content_tag :div, msg, class: name %>
-            <% end %>
+          <div class="alert alert-<%= name %>"><%= msg %></div>
+      <% end %>
             <% if @user && @user.errors.any? %>
               <ul class="Reset_Errors">
               <% for message_error in @user.errors.full_messages %>

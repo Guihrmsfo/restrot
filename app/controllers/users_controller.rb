@@ -33,11 +33,11 @@ class UsersController < ApplicationController
                     end
                     return
                 else
-                    flash.now["alert alert-danger"] = "Senha inválida"
+                    flash.now[:danger] = "Senha inválida"
                 end
                 
             else
-                flash.now["alert alert-danger"] = "Nome de usuário inválido"
+                flash.now[:danger] = "Nome de usuário inválido"
             end
             
         end 
@@ -49,11 +49,11 @@ class UsersController < ApplicationController
             @user = User.new(user_params)
             if @user.save
                 UserMailer.registration_confirmation(@user).deliver
-                flash[:success] = "Por favor, confirme seu e-mail para ativar sua conta"
+                flash[:success] = "Cadastro realizado com sucesso"
                 render "login"
                 return
             else
-                flash.now[:error] = "Dados inválidos"
+                #flash.now[:error] = "Dados inválidos"
             end
             
         end

@@ -23,7 +23,7 @@
 		<div class="login-box-body">
 			<p class="login-box-msg">Log in</p>
 			<% flash.each do |name, msg| -%>
-				<%= content_tag :div, msg, class: name %>
+				<div class="alert alert-<%= name %>"><%= msg %></div>
 			<% end -%>
 			<%= form_for(:user,  :url => {:controller => 'users', :action => 'login'}) do |f| %>
 				<div class="form-group has-feedback">

@@ -11,4 +11,4 @@ Feature: Sign up must be successfull
     And I fill in "user_password" with "123456"
     And I fill in "user_password_confirmation" with "123456"
     And I press "Register"
-    Then I should be on confirmation screen
+    Then I should be on login screen
