@@ -25,13 +25,17 @@
                             </tr>
                         
                             <% @ingredients.each do |ingredient| %>
-                            <tr>
+                            <tr id="ingredient-<%= ingredient.id%>">
                                 <td><class "img"><%= image_tag("#{ingredient.picture}") %> </class></td>
                                 <td><%= ingredient.name %></td>
                                 <td><%= ingredient.quantity %></td>
                                 <td><%= ingredient.unit_of_measure %></td>
                                 <td><spam class="glyphicon glyphicon-edit btn btn-primary"></spam></td>
-                                <td><spam class="glyphicon glyphicon-trash btn btn-danger"></spam></td>
+                                <td>
+                                  <spam class="glyphicon glyphicon-trash btn btn-danger">
+                                    <%= link_to 'remove', url_for(action: :remove, id: ingredient.id), :method => :delete, data: {confirm: "Are you sure?"} %>
+                                  </spam>
+                                </td>
                             </tr>
                             <% end %>
                         <% end %>

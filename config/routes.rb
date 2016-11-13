@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get 'ingredients/edit'
 
-  get 'ingredients/remove'
+  #get 'ingredients/remove'
+  
+  delete 'ingredients/:id' => 'ingredients#remove'
   
   get 'ingredients/index'
 
