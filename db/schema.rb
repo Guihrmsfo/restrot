@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101050307) do
+ActiveRecord::Schema.define(version: 20161113025452) do
+
+  create_table "favorite_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "recipe_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "fk_rails_19c98a2843", using: :btree
+    t.index ["user_id"], name: "fk_rails_dc8cf51c80", using: :btree
+  end
 
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -26,6 +35,15 @@ ActiveRecord::Schema.define(version: 20161101050307) do
     t.integer "quantity"
     t.index ["ingredient_id"], name: "fk_rails_d73140a606", using: :btree
     t.index ["user_id"], name: "fk_rails_ac568aa73e", using: :btree
+  end
+
+  create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.string   "picture"
+    t.string   "source"
+    t.integer  "yield"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -44,6 +62,8 @@ ActiveRecord::Schema.define(version: 20161101050307) do
     t.string   "profile_image"
   end
 
+  add_foreign_key "favorite_recipes", "recipes"
+  add_foreign_key "favorite_recipes", "users"
   add_foreign_key "ingredients_users", "ingredients"
   add_foreign_key "ingredients_users", "users"
 end
