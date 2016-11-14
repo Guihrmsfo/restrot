@@ -1,26 +1,50 @@
 class RecipesController < SessionController
   require 'net/http'
   layout 'admin_lte_2'
-  def index
-    passo1 = "If usip 4 bricks with aluminum y skillet can also be used). Remove chickens from marinade; salt both sides. Brush grill with oil; transfer chickens to the grill, skin side up, and place bricks on top of chickens. Grill 10 to 15 minutes per side, until skin is dark brown and juices run clear when chicken is pierced. Serve garnished with lemon wedges."
-    passo2 = "If using whole chickfoil (a large heavy skillet can also be used). Remove chickens from marinade; salt both sides. Brush grill with oil; transfer chickens to the grill, skin side up, and place bricks on top of chickens. Grill 10 to 15 minutes per side, until skin is dark brown and juices run clear when chicken is pierced. ."
-    passo3 = " transfer chickens to the grill, skin side up, and place bricks on top of chickens. Grill 10 to 15 minutes per side, until skin is dark brown and juices run clear when chicken is pierced. Serve garnished with lemon wedges."
-    preparation = [passo1, passo2, passo3, passo1]
-   
-    user_ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
-    recipe = {image: "http://bit.ly/2eN63V2", name: "Lasanha", ingredients: user_ingredients, calories: 1500, servings: 4, instructions: preparation}
-    @recipes = [recipe, recipe, recipe, recipe, recipe, recipe]
-  end
   
-  def create
-    uri = URI.parse("http://api.edamam.com/search?q=chicken%20beer%20olive%20avocado&app_id=da2071e2&app_key=5dc2d144e030622c3525cf5f355d9dec&from=0&to=20")
+  APP_ID = "da2071e2"
+  APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
+  
+  def index
+    query = "chicken%20beer%20olive%20avocado"
+    uri = URI.parse("http://api.edamam.com/search?q="+query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
     http = Net::HTTP.new(uri.host, uri.port)
 
     request = Net::HTTP::Post.new(uri.request_uri)
 
     response = http.request(request)
-    #render :json => response.body
-    @resultado = JSON.parse(response.body)
+    resultado = JSON.parse(response.body)
+    
+    receita_atual = {}
+    ingrediente_atual = {}
+    ingredientes_totais_receita_atual = []
+    @receitasTotais = []
+    
+    resultado['hits'].each do |receita|
+      contador_ingredientes = 0
+      receita['recipe']['ingredients'].each do |ingrediente|
+        ingrediente_atual = {text: ingrediente['text'], quantity: ingrediente['quantity'], measure: ingrediente['measure']}
+        ingredientes_totais_receita_atual.push(ingrediente_atual)
+        contador_ingredientes += 1
+      end  
+      
+      receita_atual = {
+        image: receita['recipe']['image'], 
+        name: receita['recipe']['label'],
+        calories: receita['recipe']['calories'].to_i,
+        uri: receita['recipe']['uri'],
+        url: receita['recipe']['url'],
+        ingredients_count: contador_ingredientes,
+        ingredients: ingredientes_totais_receita_atual  
+      }
+      
+      contador_ingredientes = 0
+      @receitasTotais.push(receita_atual)
+      
+    end
+  end
+  
+  def create
   end
 
   def edit

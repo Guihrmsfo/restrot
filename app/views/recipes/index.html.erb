@@ -1,3 +1,6 @@
+<pre>
+  <%= @receitasTotais.inspect %>
+</pre>
 <container class ="centralizado">
    <div class ="row">
       <div class="col-md-12">
@@ -6,22 +9,22 @@
                <h3 class="box-title title">Busca de Receitas</h3>
             </div>
             <div class="box-body">
-               <% if @recipes.first.nil? %>
+               <% if @receitasTotais.first.nil? %>
                <div class = 'no-ingredient'>
                   <br>
                   Você ainda não possui nenhum ingrediente na sua lista para uma busca personalizada! :( <br>
                   Clique no botão abaixo para adicionar e buscar suas receitas! 
                </div>
                <% end %>
-               <% if @recipes.first %>
-               <% @recipes.each do |recipe| %>
+               <% if @receitasTotais.first %>
+               <% @receitasTotais.each do |recipe| %>
                <div class="col-md-3">
                   <div class="thumbnail">
                      <class "img"><%= image_tag("#{recipe[:image]}", :class => "img-recipe")%> </class>
                      <div class="caption">
                         <h3><%=recipe[:name]%></h3>
                         <p>Calorias: <%=recipe[:calories]%></p>
-                        <p> Serve até: <%=recipe[:servings]%> pessoas</p>
+                        <p> <%=recipe[:ingredients_count]%> ingredientes</p>
                         
                         <div class="span4 proj-div" data-toggle="modal" data-target="#GSCCModal"><button type="button" class="btn btn-primary">Ver Instruções de Preparo</button></div>
                         <div id="GSCCModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -35,23 +38,12 @@
                                     <div class ="modal-text col-md-3">
                                        <div class="model-subtitle">Ingredientes: </div>
                                        <br>
-                                       <% recipe[:ingredients].each_with_index do |ingredient, i| %>
-                                       &bull; <%= ingredient.quantity%> 
-                                       <% if ingredient.quantity > 1 %>
-                                          <%= ingredient.unit_of_measure%>s of <%# COMENTARIO: adiciona um S se for mais de uma quantidade de algo %>
-                                       <% end %>
-                                       <% if ingredient.quantity == 1 %>
-                                          <%= ingredient.unit_of_measure%> of
-                                       <% end %>
-                                       <%= ingredient.name %> <br><br>
+                                       <% recipe[:ingredients].each do |ingredient| %>
                                        <% end %>
                                     </div>
                                     <div class ="modal-text col-md-9">
                                        <div class="model-subtitle">Modo de Preparo: </div>
                                        <br>
-                                       <% recipe[:instructions].each_with_index do |step, i| %>
-                                       <%= i + 1 %>. <%= step %>  <br><br>
-                                       <% end %>
                                     </div>
                                     <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Close</button>
                                  </div>
@@ -68,3 +60,4 @@
       </div>
    </div>
 </container>
+
