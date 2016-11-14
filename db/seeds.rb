@@ -1,7 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# USUÁRIOS 
+User.create(name: 'gpioto', email: 'gabriel.piotogomes@gmail.com', password: 'gpioto')
+User.create(name: 'lucascorrea', email: 'lucascorreasilvaa@gmail.com', password: 'lucascorrea')
+
+# INGREDIENTES
+Ingredient.create(name: 'Ovo', unit_of_measure: 'Unidade')
+Ingredient.create(name: 'Tomate', unit_of_measure: 'Unidade')
+Ingredient.create(name: 'Laranja', unit_of_measure: 'Unidade')
+Ingredient.create(name: 'Maçã', unit_of_measure: 'Unidade')
+Ingredient.create(name: 'Orégano', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Arroz Integral', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Manjericão', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Peito de Frango', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Alecrim', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Bacon', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Leite Condensado', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Chocolate Granulado', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Achocolatado', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Creme de Leite', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Coco Ralado', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Queijo Ralado', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Chocolate em Pó', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Azeitona', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Farinha de Trigo', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Fermento', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Alecrim', unit_of_measure: 'Grama')
+Ingredient.create(name: 'Leite', unit_of_measure: 'Mililitros')
+
+#LISTA DE INGREDIENTES
+IngredientsUser.create(user_id: 1, ingredient_id: 1, quantity: 12)
+IngredientsUser.create(user_id: 1, ingredient_id: 2, quantity: 5)
+IngredientsUser.create(user_id: 1, ingredient_id: 3, quantity: 3)
+IngredientsUser.create(user_id: 2, ingredient_id: 4, quantity: 3)
+IngredientsUser.create(user_id: 2, ingredient_id: 5, quantity: 200)
+IngredientsUser.create(user_id: 2, ingredient_id: 6, quantity: 5000)
