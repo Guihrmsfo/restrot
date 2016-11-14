@@ -7,7 +7,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
 # Code Climate Test Coverage
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem "codeclimate-test-reporter", '= 0.6.0', group: :test, require: nil
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -40,6 +40,7 @@ gem 'rspec-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'jasmine'
 end
 
 group :development do
@@ -60,6 +61,7 @@ group :test do
 end
 
 group :test do
+  gem 'selenium-webdriver'
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'

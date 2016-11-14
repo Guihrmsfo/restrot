@@ -20,6 +20,6 @@ class IngredientsController < SessionController
     else
       flash.now[:error] = "Ingrediente não existe"
     end
-    #redirect_to action: 'index'
+    redirect_to action: 'index'
   end
 end
