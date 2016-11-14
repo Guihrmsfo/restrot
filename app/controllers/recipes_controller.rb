@@ -10,19 +10,17 @@ class RecipesController < SessionController
     user_ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
     recipe = {image: "http://bit.ly/2eN63V2", name: "Lasanha", ingredients: user_ingredients, calories: 1500, servings: 4, instructions: preparation}
     @recipes = [recipe, recipe, recipe, recipe, recipe, recipe]
-    
-    uri = URI.parse("http://api.edamam.com/search?q=chicken%20beer%20olive%20avocado&app_id=da2071e2&app_key=5dc2d144e030622c3525cf5f355d9dec")
-    http = Net::HTTP.new(uri.host, uri.port)
-
-    request = Net::HTTP::Post.new(uri.request_uri)
-    request.set_form_data({"user[name]" => "testusername", "user[email]" => "testemail@yahoo.com"})
-
-    response = http.request(request)
-    render :json => response.body
-    
   end
   
   def create
+    uri = URI.parse("http://api.edamam.com/search?q=chicken%20beer%20olive%20avocado&app_id=da2071e2&app_key=5dc2d144e030622c3525cf5f355d9dec&from=0&to=20")
+    http = Net::HTTP.new(uri.host, uri.port)
+
+    request = Net::HTTP::Post.new(uri.request_uri)
+
+    response = http.request(request)
+    #render :json => response.body
+    @resultado = JSON.parse(response.body)
   end
 
   def edit
