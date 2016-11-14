@@ -6,14 +6,12 @@ Given(/^I have at least one ingredient$/) do
 end
 
 When(/^I click on the deletion button for the first ingredient$/) do
-  Capybara.default_max_wait_time = 10
   page.find('spam.btn-danger').click
 end
 
 #Cannot "see" dialog in cucumber tests
 #http://stackoverflow.com/questions/2458632/how-to-test-a-confirm-dialog-with-cucumber
 And(/^I confirm deletion by clicking ok$/) do
-  
   page.driver.browser.switch_to.alert.accept
 end
 

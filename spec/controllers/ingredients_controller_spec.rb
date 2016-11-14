@@ -46,7 +46,6 @@ RSpec.describe IngredientsController, type: :controller do
     describe "DELETE #remove" do
       it "deletes an ingredient" do
         expect{delete :remove, id: @ingredients_users.id}.to change{@user.ingredients.count}.by(-1)
-        expect(response).to have_http_status(:success)
       end
     end
   end

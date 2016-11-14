@@ -4,7 +4,7 @@ Feature: Ingredients Removal
   I want to remove one ingredient from my ingredient list
   
   @javascript
-  Scenario: Option to see all ingredients
+  Scenario: Option to delete an ingredient
     Given I am a registered user with the username "any_name" and password "123456"
     And I am on "users/login"
     When I fill in user_name with "any_name"
