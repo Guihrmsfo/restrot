@@ -15,32 +15,43 @@ class RecipesController < SessionController
     response = http.request(request)
     resultado = JSON.parse(response.body)
     
-    receita_atual = {}
-    ingrediente_atual = {}
-    ingredientes_totais_receita_atual = []
-    @receitasTotais = []
-    
-    resultado['hits'].each do |receita|
-      contador_ingredientes = 0
-      receita['recipe']['ingredients'].each do |ingrediente|
-        ingrediente_atual = {text: ingrediente['text'], quantity: ingrediente['quantity'], measure: ingrediente['measure']}
-        ingredientes_totais_receita_atual.push(ingrediente_atual)
-        contador_ingredientes += 1
-      end  
+    if resultado.empty?
+      @receitasTotais = []
+    else
+      receita_atual = {}
+      ingrediente_atual = {}
+      ingredientes_totais_receita_atual = []
+      @receitasTotais = []
       
-      receita_atual = {
-        image: receita['recipe']['image'], 
-        name: receita['recipe']['label'],
-        calories: receita['recipe']['calories'].to_i,
-        uri: receita['recipe']['uri'],
-        url: receita['recipe']['url'],
-        ingredients_count: contador_ingredientes,
-        ingredients: ingredientes_totais_receita_atual  
-      }
-      
-      contador_ingredientes = 0
-      @receitasTotais.push(receita_atual)
-      
+      resultado['hits'].each do |receita|
+        contador_ingredientes = 0
+        receita['recipe']['ingredients'].each do |ingrediente|
+          ingrediente_atual = {text: ingrediente['text'], quantity: ingrediente['quantity'], measure: ingrediente['measure']}
+          ingredientes_totais_receita_atual.push(ingrediente_atual)
+          contador_ingredientes += 1
+        end  
+        
+        receita_atual = {
+          image: receita['recipe']['image'], 
+          name: receita['recipe']['label'],
+          calories: receita['recipe']['calories'].to_i,
+          uri: receita['recipe']['uri'],
+          url: receita['recipe']['url'],
+          ingredients_count: contador_ingredientes,
+          ingredients: ingredientes_totais_receita_atual  
+        }
+        
+        contador_ingredientes = 0
+        @receitasTotais.push(receita_atual)
+        
+        receita_insert = Recipe.new
+        receita_insert.uri = receita_atual[:uri]
+        receita_insert.url = receita_atual[:url]
+        receita_insert.picture = receita_atual[:image]
+        receita_insert.label = receita_atual[:name]
+        receita_insert.user_id = session[:user_id]
+        receita_insert.save
+      end
     end
   end
   
