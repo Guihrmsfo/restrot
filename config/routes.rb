@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   
   get 'ingredients/index'
   
-  get 'recipes/create'
+  get 'recipe/create'
 
-  get 'recipes/edit'
+  get 'recipe/edit'
 
-  get 'recipes/remove'
+  get 'recipe/remove'
   
-  get 'recipes/index'
+  get 'recipe/index'
 
   root 'home#index'
   
