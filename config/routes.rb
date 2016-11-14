@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
+
   get 'ingredients/create'
 
   get 'ingredients/edit'
