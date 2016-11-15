@@ -25,8 +25,8 @@
                             </tr>
                         
                             <% @ingredients.each do |ingredient| %>
-                            <tr id="ingredient-<%= ingredient.id%>">
-                                <td><class "img"><%= image_tag("#{ingredient.picture}") %> </class></td>
+                            <tr>
+                                <td><class "img"><%= image_tag("#{ingredient.picture}", :class => "img-ingredient") %> </class></td>
                                 <td><%= ingredient.name %></td>
                                 <td><%= ingredient.quantity %></td>
                                 <td><%= ingredient.unit_of_measure %></td>
