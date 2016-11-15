@@ -6,8 +6,14 @@ class RecipesController < SessionController
   APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
   
   def index
-    query = "chicken%20beer%20olive%20avocado"
-    uri = URI.parse("http://api.edamam.com/search?q="+query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
+    @query = ""
+    ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
+    
+    ingredients.each do |ingredient|
+      @query.concat(ingredient.name).concat(" ")
+    end  
+    
+    uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
     http = Net::HTTP.new(uri.host, uri.port)
 
     request = Net::HTTP::Post.new(uri.request_uri)
