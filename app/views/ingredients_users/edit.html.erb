@@ -1,0 +1,10 @@
+<h3> <%= @ingredients.name %> </h3>
+
+<div class="form-group">
+    <%= form_for @ingredients do |f| %>
+        <%= f.label "", "Qual a quantidade desse item que tem disponível? (em #{@ingredients.unit_of_measure})"%>
+        <%= f.text_field :quantity, class: "form-control", autofocus: true %>
+        <br>
+        <%= f.submit "Atualizar", class: "btn btn-success center-block" %>
+    <% end %>
+</div>

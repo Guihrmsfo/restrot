@@ -1,0 +1,1093 @@
+[33mcommit a694c3a76904883441adf6409646e6736532f074[m
+Author: Lucas Correa Silva <lucas.correa.silvaa@gmail.com>
+Date:   Mon Oct 31 16:48:19 2016 +0000
+
+    Adição dos Ingredientes no seeds.rb
+
+[33mcommit 3efa4c3d0f837d973ac25bf650c4331b8f361164[m
+Merge: 0c07498 072fbab
+Author: Lucas Correa Silva <lucas.correa.silvaa@gmail.com>
+Date:   Mon Oct 31 14:57:17 2016 +0000
+
+    Inclusão da lista de ingredientes
+
+[33mcommit 0c0749873c286b8c52a4dbc72bf4a13e124d404f[m
+Merge: 766c40a 9175102
+Author: Lucas Correa Silva <lucas.correa.silvaa@gmail.com>
+Date:   Mon Oct 31 13:55:41 2016 +0000
+
+    Teste RSPEC - Recuperação de Senha
+
+[33mcommit 9175102dc4d59c2f9e47ef06cb1c3b1528d266f3[m
+Merge: dc5b9df 57db21a
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 04:07:40 2016 -0200
+
+    Merge pull request #23 from Guihrmsfo/gf-profile
+    
+    Edit Profile Feature
+
+[33mcommit 57db21a5edd08c73571216bb403f5dca4b382db2[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 06:03:30 2016 +0000
+
+    removing upload profile image test
+
+[33mcommit 1e0b8222143d61880a144ec0aecb7bec5e4857f4[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 05:58:05 2016 +0000
+
+    Excluding 'Model attribute used in file name' fingerprint and new rspec tests
+
+[33mcommit 6a7c161d31cbfb783e6f823adecb1adc35289eaf[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 05:34:08 2016 +0000
+
+    [finishes #132702911]
+
+[33mcommit a5995cd20039300c6ed1fe68e343ce60834a431f[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 04:53:21 2016 +0000
+
+    Edit profile working. [#132702911]
+
+[33mcommit 36fe6f247a7320ebe138124b6dfb7acf47ba1c23[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 03:34:00 2016 +0000
+
+    Edit profile view started [#132702911]
+
+[33mcommit 072fbabb21eb1f9925032e6f68546613b81bf626[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 31 02:30:10 2016 +0000
+
+    errei o anterior
+
+[33mcommit 6a99d133b6ee52d128af92ffd9dccaa93198eb14[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 31 02:24:30 2016 +0000
+
+    mudanças mínimas
+
+[33mcommit 44c43ab8ab62307a2bd3d06e6a768ff384b88a93[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 01:57:20 2016 +0000
+
+    [Starts #132702911]
+
+[33mcommit 9abf640c9c187bf441a8693a7aa033e34c126713[m
+Merge: 2464d28 a552200
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 31 01:16:11 2016 +0000
+
+    Merge branch 'lv-listaIngredientes' of github.com:jhonnyzao/restrot into lv-listaIngredientes
+
+[33mcommit a552200358f05067cc63f411963af5b925cc1e94[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Oct 31 01:12:36 2016 +0000
+
+    Limpa mais lixo que havia passado com nomes antigos do Ingredients
+
+[33mcommit 2464d28f84034e82ebd24090306381e93b992e8b[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 31 01:12:21 2016 +0000
+
+    layout da listagem de ingredientes
+
+[33mcommit f2d82e278d41d6a0a919fd1ed4876743aa85d120[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Oct 31 01:03:41 2016 +0000
+
+    Corrige spec
+
+[33mcommit 8c758efecb2263c7134bf2e8163c0f217e7dad78[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 00:58:11 2016 +0000
+
+    updated readme: issue count badge
+
+[33mcommit dc5b9df85efdeab260fe71a82661b13c816fcf10[m
+Merge: bbf256a ef22843
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 30 22:48:41 2016 -0200
+
+    Merge pull request #22 from Guihrmsfo/gf-readme
+    
+    Updated ReadMe.md: test coverage and repository owner
+
+[33mcommit 1b12defa1b5d5a4082392eeaf23959fc6fb8b3e0[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Oct 31 00:48:11 2016 +0000
+
+    Testa o helper_spec
+
+[33mcommit ef22843d8d9e8b9b8dc56d0a5a9b77b9a0f0069b[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 31 00:45:08 2016 +0000
+
+    updated ReadMe.md: test coverage and repository owner
+
+[33mcommit 99ae1c3e8c496efaddf69706aa12d2fce0902d0e[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Oct 31 00:22:01 2016 +0000
+
+    Corrige as nomenclaturas dos testes
+
+[33mcommit bbf256a6e34c670d935f2a8d2e1ee412908863fc[m
+Merge: 9edcc15 7e66d93
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 30 21:09:36 2016 -0200
+
+    Merge pull request #21 from Guihrmsfo/gf-codeclimate_config
+    
+    Codeclimate config (Test Coverage and config file patch)
+
+[33mcommit 7e66d93c0388083d0b093e998d5751a594cb565e[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 30 22:32:46 2016 +0000
+
+    cucumber test coverage
+
+[33mcommit 1fd8d3a413f4964371e988969f4d25488e250ea7[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 30 22:25:21 2016 +0000
+
+    Code Climate config file - patch
+
+[33mcommit 98f55378e20c99134e4a479d2126be03605450a0[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 30 22:17:25 2016 +0000
+
+    Code Climate - Test Coverage
+
+[33mcommit 25af81ff333bd5755a63bf770bebd5de133ac369[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Oct 30 21:51:56 2016 +0000
+
+    Ultimas alterações em models
+
+[33mcommit 9edcc15c51d3eb8942bda8a22ea4928ac834ec08[m
+Merge: 97cf25f 321f9d0
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 30 19:48:47 2016 -0200
+
+    Merge pull request #19 from Guihrmsfo/hp-loginSemValidacao
+    
+    Removida confirmação de email no login
+
+[33mcommit 97cf25f81cd46f8b2d0d7d9a5cc9cc1af6fad925[m
+Merge: a158bb5 fc014c7
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 30 19:21:42 2016 -0200
+
+    Merge pull request #18 from Guihrmsfo/lv-recuperacaoSenha
+    
+    Pequenos erros arrumados + Testes cucumber e rspec
+
+[33mcommit ae3099d7ede919c53a64339aec14d385c97dd03a[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Oct 30 20:50:18 2016 +0000
+
+    Corrige tabelas e models e insere a tabela de join ingredientes e users
+
+[33mcommit ea0ebc56eb312ec80881e43a34c0ba5d1899117c[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Oct 30 17:22:27 2016 +0000
+
+    Adiciona controller e views de ingrediente
+
+[33mcommit 54a5659385dec95c5a48d21c98ca2c657b46d60b[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Oct 30 17:15:54 2016 +0000
+
+    Cria tabela e model de ingredientes
+
+[33mcommit 321f9d0193bb05949468076a9c0e8490feaac60e[m
+Author: Gabriel Pioto <gabriel.pioto07@hotmail.com>
+Date:   Sun Oct 30 13:04:47 2016 -0200
+
+    Removida confirmação de email no login
+    Ao logar sem confirmar email, uma notificação aparece no dashboard
+
+[33mcommit 8ac8170a6d7a9c9cfe86b688071d9d99455ab2ea[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Sun Oct 30 03:45:00 2016 +0000
+
+    new branch
+
+[33mcommit fc014c740ad6fc8d3c75f2be7c4e76699d8704b8[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Sun Oct 30 03:14:08 2016 +0000
+
+    fixed error
+
+[33mcommit 05ad871c62b8b33b709c1c39ff9a1d52bc9c6ab7[m
+Merge: fb54f12 a158bb5
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Sun Oct 30 03:01:58 2016 +0000
+
+    fixing merge conflict
+
+[33mcommit fb54f12a28e4cde40b336724b96c21873fce0e86[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Sun Oct 30 02:47:05 2016 +0000
+
+    tinha dado commit errado
+
+[33mcommit 707eea4d71414052be837602427d73c2f00c2510[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Sun Oct 30 02:42:00 2016 +0000
+
+    mais um teste do cucumber que faltava
+
+[33mcommit a158bb58b70d6c1b38eb087ff47562ad8ca6eb52[m
+Merge: f416031 9bf252d
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sat Oct 29 06:12:45 2016 -0200
+
+    Merge pull request #17 from jhonnyzao/gf-logout
+    
+    Add public assets to codeclimate file
+
+[33mcommit 9bf252dd4f57560cc50ace6bbddba0e0aac855af[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sat Oct 29 08:07:47 2016 +0000
+
+    add public assets to codeclimate file
+
+[33mcommit f41603180942e69a7b7b179b284447eabeefc06c[m
+Merge: d2eaeab 00e0865
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sat Oct 29 06:05:10 2016 -0200
+
+    Merge pull request #16 from jhonnyzao/gf-logout
+    
+    Code Climate config file
+
+[33mcommit 00e0865057bc4bfb65bb6d57992fe8443c3aa17b[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sat Oct 29 07:55:49 2016 +0000
+
+    codeclimate config file updated
+
+[33mcommit 75042e9fbb02ec4265a8e337cc43b011ef48b855[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sat Oct 29 07:49:56 2016 +0000
+
+     codeclimate config file
+
+[33mcommit d2eaeabfaebc00d462abe98ca6de33cf6a1cf70e[m
+Merge: 7fc3dd7 e96492f
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sat Oct 29 04:58:56 2016 -0200
+
+    Merge pull request #15 from jhonnyzao/gf-logout
+    
+    Logout feature, cucumber and rspec tests. Login feature test fixed
+
+[33mcommit e96492f972c9726466ede9c39f30f227c1ec8854[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sat Oct 29 06:52:34 2016 +0000
+
+    Logout feature, cucumber and rspec tests. Login feature test fixed
+
+[33mcommit 766c40adfa106e60e6a415e0f90edfaf7dd3f1f2[m
+Author: Lucas Correa Silva <lucas.correa.silvaa@gmail.com>
+Date:   Fri Oct 28 23:10:29 2016 +0000
+
+    [TESTE INCOMPLETO] Recuperação de Senha
+
+[33mcommit b821081393228d2d2913644d16abb2f28fb40198[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Fri Oct 28 19:55:56 2016 +0000
+
+    alguns testes do cucumber
+
+[33mcommit 4883ee28ae176feaddd49a24f667f05e704777b7[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Thu Oct 27 06:47:56 2016 +0000
+
+    arrumei layout de quando o link expira e adicionei alguns testes
+
+[33mcommit 58e06708b6d8f7384780dc349ebe680593aaec0c[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Wed Oct 26 18:13:08 2016 +0000
+
+    mensagem de não existe email que tinha esquecido
+
+[33mcommit 7fc3dd7675c9610c7a64fc8cdad2d36a7c494776[m
+Merge: 8132c92 dcf8ba8
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Sun Oct 23 20:47:07 2016 -0200
+
+    Merge pull request #14 from jhonnyzao/lv-recuperacaoSenha
+    
+    Merge arrumado e funcionalidades testadas
+
+[33mcommit dcf8ba8b3e98e7d8d1f85b64c90d2c34863c9e9b[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Sun Oct 23 20:16:00 2016 +0000
+
+    Merge arrumado com o Master e tudo testado funcionando
+
+[33mcommit f95f758a596a6e8ad4d8262e5229539ea8204af4[m
+Merge: b8bcf06 8132c92
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Sun Oct 23 03:24:02 2016 +0000
+
+    Merge branch 'master' of github.com:jhonnyzao/restrot into lv-recuperacaoSenha
+    
+    Merge necessary
+
+[33mcommit 8132c92f1d4a51493bb6a7eab61ce826901b73e8[m
+Merge: bbcb1bf c115a60
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Oct 20 18:46:36 2016 -0200
+
+    Merge pull request #13 from jhonnyzao/ja-dashboard
+    
+    Template Básico
+
+[33mcommit c115a607879be38554e37538662703a69fd49410[m
+Merge: df4840d bbcb1bf
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Oct 20 20:20:31 2016 +0000
+
+    Merge branch 'master' of github.com:jhonnyzao/restrot into ja-dashboard
+
+[33mcommit df4840d576150a75bf05825f13abe7193b3be610[m
+Merge: 241e2c0 5e0fd26
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Oct 20 20:19:48 2016 +0000
+
+    Merge branch 'master' into ja-dashboard
+
+[33mcommit bbcb1bf77c12c27fa30eb6b7703ebb6a6199ebe7[m
+Merge: 5e0fd26 90af86c
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Oct 20 15:56:30 2016 -0200
+
+    Merge pull request #12 from jhonnyzao/hp-newtemplate
+    
+    Hp newtemplate
+
+[33mcommit 90af86cfc5fffae3e099504b4ab7b592013817b4[m
+Author: Gabriel Pioto Gomes <gpioto@2trues.com>
+Date:   Thu Oct 20 13:56:52 2016 -0200
+
+    Arrumado o teste da feature de cadastro
+
+[33mcommit 2b8ac74dbf8d3156e5974a93a16ed1dfba50c2ed[m
+Merge: cc680bc 5e0fd26
+Author: Gabriel Pioto Gomes <gpioto@2trues.com>
+Date:   Thu Oct 20 13:33:26 2016 -0200
+
+    updating with master and solving conflicts
+
+[33mcommit b8bcf06b0942f8bc5ffedbf696f159f13425b40b[m
+Merge: 536e020 b25f32e
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 18 20:35:00 2016 +0000
+
+    merge with master
+
+[33mcommit 241e2c0fdea154d7ddec314bd3bd319a08382644[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Tue Oct 18 20:21:14 2016 +0000
+
+    Insere o template basico do dashboard
+
+[33mcommit b25f32e926076bb4d4be50447f2dfe04647e5e06[m
+Author: Lucas Albero <lucasalbero96@gmail.com>
+Date:   Tue Oct 18 20:07:07 2016 +0000
+
+    merge la-preferences
+
+[33mcommit 536e020fec903052b507ba42010803d088dac39e[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 18 20:05:54 2016 +0000
+
+    Mudança na verificação do tamanho da nova senha
+
+[33mcommit 12bbb305bd171c9d453e700aa4c33b5dcd22dada[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 18 19:53:05 2016 +0000
+
+    erro fix
+
+[33mcommit cc680bc9c9a3c9af5309d3508f60f6ad7ed243c1[m
+Author: Gabriel Pioto Gomes <gpioto@2trues.com>
+Date:   Tue Oct 18 17:40:03 2016 -0200
+
+    extraido para partial a seção de newsletter
+    removida da home
+
+[33mcommit 5673eee1b4e1c931ecd724d32480290a6ccf44df[m
+Merge: a5a6021 64587f1
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 18 19:37:22 2016 +0000
+
+    Recuperar senha funcionando e alguns testes
+
+[33mcommit 1e818caab289ade2839a198c5b4ef00bbd223e26[m
+Author: Gabriel Pioto Gomes <gpioto@2trues.com>
+Date:   Tue Oct 18 17:35:06 2016 -0200
+
+    extraido o blog como partial, falta renderizar na home, caso necessário
+
+[33mcommit 033cccdf91812326d26511aae489d2cda4c94e56[m
+Author: Gabriel Pioto Gomes <gpioto@2trues.com>
+Date:   Tue Oct 18 17:33:51 2016 -0200
+
+    Retirado o blog e ajustado o rodapé da home
+
+[33mcommit 5e0fd264395317f18ed8fa087511c14739f0c084[m
+Merge: 1a0c021 a5a6021
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 18 15:25:16 2016 -0200
+
+    Merge pull request #7 from jhonnyzao/lv-recuperacaoSenha
+    
+    Testes do cucumber das tarefas da primeira iteração + Mudança de senha
+
+[33mcommit a5a60216121da1bb4f1ab14cc54f1608306b4571[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 18 17:00:02 2016 +0000
+
+    Testes do cucumber
+
+[33mcommit b15ed98e8ba740fd6ba4da435f13aea3725848b9[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 18 16:58:21 2016 +0000
+
+    Testes do cucumber
+
+[33mcommit 64587f19bdc6fba5bb844ba8183f943194a483b6[m
+Author: Lucas Correa Silva <lucas.correa.silvaa@gmail.com>
+Date:   Tue Oct 18 15:06:05 2016 +0000
+
+    Recuperação de Senha (só falta testar com o log out)
+
+[33mcommit eb11094f63c1f60ec6bf212a40b9f6f336b14b23[m
+Author: Gabriel Pioto <gabriel.pioto07@hotmail.com>
+Date:   Tue Oct 18 00:36:35 2016 -0200
+
+    ajustado form de cadastro (pagina e homepage)
+
+[33mcommit 3e8e0eea0508bea52b6d5052f6db49f803b48b95[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 18 01:41:13 2016 +0000
+
+    encriptando senha ao alterar e limitando-a
+
+[33mcommit 1a0c021bab8e70b2a38cde9f244132f1bbfac3bc[m
+Merge: dbb0c0c ee85e9b
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 22:09:53 2016 -0200
+
+    Merge pull request #6 from jhonnyzao/gf-register
+    
+    Production config fix and New User rspec tests
+
+[33mcommit ee85e9b8246e45a389c997004baecce4083091f4[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 18 00:02:42 2016 +0000
+
+    New User rspec tests
+
+[33mcommit df9d6dd1413550062c4f679ebcf98e87abf64592[m
+Merge: cd2954e caf1849
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 17 23:07:01 2016 +0000
+
+    Merge branch 'la-preferences' of github.com:jhonnyzao/restrot into lv-recuperacaoSenha
+    
+    fixing merge
+
+[33mcommit 9dfbe6d999b12d100972a440e2f9ec64877af765[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 22:01:48 2016 +0000
+
+    default url options fix - production
+
+[33mcommit dbb0c0ca2b27998f3990d178a275044b55cfaa87[m
+Merge: cd2954e d0ae700
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 19:52:51 2016 -0200
+
+    Merge pull request #5 from jhonnyzao/gf-register
+    
+    Email Sending - Production Environment
+
+[33mcommit d0ae70036984911525a11443d8418d01c06545a8[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 21:36:44 2016 +0000
+
+    email sending - production environment
+
+[33mcommit caf18496dd45b4ae95a94bad0b823967f2697c41[m
+Author: Lucas Albero <lucasalbero96@gmail.com>
+Date:   Mon Oct 17 19:22:36 2016 +0000
+
+    Modificar senha funcionando
+
+[33mcommit fb7390f9e964bea6dc367a7dfc089910fcc8cd51[m
+Author: Lucas Albero <lucasalbero96@gmail.com>
+Date:   Mon Oct 17 17:55:02 2016 +0000
+
+    Criada pagina de preferencias e pagina para alterar senha(ainda não funcional)
+
+[33mcommit ecb8a4e24ec90561fbba1589e52c4c048e09ca67[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 05:20:24 2016 +0000
+
+    User Mailer rspec
+
+[33mcommit cd2954e2484caa5fe360f088ecf3b05322d31999[m
+Merge: c67baf4 35db9d3
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 02:32:49 2016 -0200
+
+    Merge pull request #4 from jhonnyzao/gf-register
+    
+    Email confirmation sending and New Template
+
+[33mcommit 35db9d34c3b92cc54b4fdfcd71179eb09eb4fe32[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 04:26:11 2016 +0000
+
+    user has valid attributes rspec fix
+
+[33mcommit ec65e353772e54422fc85d0e832dbbf861476f46[m
+Merge: 08be90a 3233133
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 04:17:03 2016 +0000
+
+    email validation fixed and merge with hp-newtemplate
+
+[33mcommit 08be90a1c6f3c6d10a8ffad721bb0451c2f297ad[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 03:50:21 2016 +0000
+
+    email token. Session validation
+
+[33mcommit 827a073ceb44cda9f7dd2e0e672177449ccb8a0b[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 17 03:18:04 2016 +0000
+
+    email sending. token's not working yet.
+
+[33mcommit 323313366f814a6df55f268ba6a804ee5bc4f4b6[m
+Author: Gabriel Pioto <gabriel.pioto07@hotmail.com>
+Date:   Mon Oct 17 00:49:33 2016 -0200
+
+    Layout da home arrumado
+    Adicionada nova tela de login (novo template)
+    Adicionado novo dashboard
+
+[33mcommit c67baf4b9153b7ecb4372b96d3992e96495d8cd8[m
+Author: gpioto <gabriel.pioto07@hotmail.com>
+Date:   Sun Oct 16 23:03:51 2016 -0200
+
+    Link do pivotal atualizado
+
+[33mcommit ed35cb4115946a1e66d32dd8b53fdd1f2f2875dc[m
+Author: Gabriel Pioto <gabriel.pioto07@hotmail.com>
+Date:   Sun Oct 16 22:57:01 2016 -0200
+
+    Adicionado arquivos necessários para o novo template
+    README atualizado referenciando o novo template.
+
+[33mcommit 0137cd2fc05cf7873116e9357d6a03756ac07944[m
+Author: Gabriel Pioto <gabriel.pioto07@hotmail.com>
+Date:   Sun Oct 16 22:50:15 2016 -0200
+
+    Adicionado o novo template (utilizando a gem 'adminlte2-rails')
+
+[33mcommit 9de633e25e41aab33b50fea640fd970919c7e844[m
+Merge: f2212e6 d3708a0
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 17:42:10 2016 -0300
+
+    Merge pull request #3 from jhonnyzao/gf-register
+    
+    Ruby version, add pg gem and assets (heroku)
+
+[33mcommit d3708a04f86045eb087bea402c14cd2f0da9733c[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 20:35:38 2016 +0000
+
+    add gem pg (heroku)
+
+[33mcommit bb045bb89acc544946bf16f0ded1faa3520e76a0[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 20:13:44 2016 +0000
+
+    ruby version
+
+[33mcommit 0162e9e077271939bd7481d25091e9049cd9442e[m
+Merge: 3dc8e0f 9551685
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 20:01:49 2016 +0000
+
+    Merge remote-tracking branch 'origin/ja-paginaInicial' into gf-register
+
+[33mcommit 95516850aa710d69ac0c8aa63124793f4f472117[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Tue Oct 4 20:01:06 2016 +0000
+
+    Remove arquivo main.scss
+
+[33mcommit 3dc8e0f662b4d6799367b043089b6326a9f730ac[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 20:00:06 2016 +0000
+
+    merge with ja-paginainicial
+
+[33mcommit 65fae68658ef1c9c29805ab96bfe199b4b05e034[m
+Merge: fe35817 107770e
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 19:56:40 2016 +0000
+
+    Merge remote-tracking branch 'origin/ja-paginaInicial' into gf-register
+
+[33mcommit 107770ebc466d10b464adfd32929f93d9dc49179[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Tue Oct 4 19:55:10 2016 +0000
+
+    Remove arquivo css inutil
+
+[33mcommit f2212e68b91d7bc4c5d0b4315823ebf225e33449[m
+Merge: b715778 fe35817
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 16:32:08 2016 -0300
+
+    Merge pull request #1 from jhonnyzao/gf-register
+    
+    Home, Register and Login
+
+[33mcommit fe35817560a19a5066983ff194b89eac97ae09bf[m
+Merge: 9570ea5 b16117e
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 19:20:36 2016 +0000
+
+    Merge branch 'la-register' into gf-register
+
+[33mcommit 9570ea5e3929482841be7f7ebd77f728e7f23c6d[m
+Merge: bb7a2b0 0cba3e9
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Tue Oct 4 19:17:21 2016 +0000
+
+    merge with ja-paginainicial
+
+[33mcommit 0cba3e96deb3d324071e7e2ede43b842275ecd24[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Tue Oct 4 19:05:00 2016 +0000
+
+    Insere o template da página inicial, das páginas internas, organiza os assets da vendor, cria a sidebar compartilhada e corrige os textos da home
+
+[33mcommit b16117ee5ae3bf9529856c3cde90bacc4862dc4e[m
+Author: Lucas Albero <lucasalbero96@gmail.com>
+Date:   Tue Oct 4 17:50:44 2016 +0000
+
+    verificação de e-mail valido durante o cadastro
+
+[33mcommit 9990131bbd3d55d369566f5a50e608c86a2c57b2[m
+Merge: cfd7257 bb7a2b0
+Author: Lucas Albero <lucasalbero96@gmail.com>
+Date:   Tue Oct 4 17:26:17 2016 +0000
+
+    verificação de e-mail valido durante o cadastro
+
+[33mcommit cfd725719db124f21573b9d138a8187ef8fb2c00[m
+Author: Lucas Albero <lucasalbero96@gmail.com>
+Date:   Tue Oct 4 17:23:39 2016 +0000
+
+    verificação de e-mail valido durante o cadastro
+
+[33mcommit bb7a2b0df7515e98631bf4404720a7515354f717[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 08:26:37 2016 +0000
+
+    adding template that I forgot :)
+
+[33mcommit 1413845090aac7dc2f60f510094808da10190394[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 08:21:10 2016 +0000
+
+    fixing template path
+
+[33mcommit 9b9adfb5adfe92b68ee394a7ec4cb0eb86bf9ad5[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 08:16:41 2016 +0000
+
+    testing with new gem
+
+[33mcommit 662711fd9aa828972569e7cbe6d63fe74cf9346e[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 08:14:40 2016 +0000
+
+    testing with new gem
+
+[33mcommit 8a1ab0df25e5e3d176b3cfbe4ef3f78625c2e214[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 08:06:29 2016 +0000
+
+    new routes on controller test
+
+[33mcommit f2365131cdd6fb840ed001c29f2055d72b46c255[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 07:30:25 2016 +0000
+
+    testes model
+
+[33mcommit 37d442ce4604f2f2bde1b7e27d2de6b0732e1790[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 07:23:33 2016 +0000
+
+    testes model
+
+[33mcommit 84f4f87bf21d935f65ede937d978f005dcb6214d[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 07:05:02 2016 +0000
+
+    teste do model
+
+[33mcommit f31a181c45dc6a52461413c2ade3d95fae4a9d37[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 06:52:52 2016 +0000
+
+    teste do model
+
+[33mcommit 80476f04588ded70a1cbd8b921f89423e87bdf6f[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 06:40:04 2016 +0000
+
+    testes
+
+[33mcommit aac54662cab0cd0939dfde6c494eddf58c1bd75f[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 06:19:43 2016 +0000
+
+    fixing errors
+
+[33mcommit 47811cca8aba510eedf702aaddd328ef3f06c727[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 06:03:02 2016 +0000
+
+    fixing errors
+
+[33mcommit 7cfc0cab5445ff8113d734aa53e838836513d4dd[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 05:58:25 2016 +0000
+
+    Revert "testes controller"
+    
+    This reverts commit a340bba466b74163b26cc7ab5af8c6aa20b8d41a.
+
+[33mcommit 00ac1e1c05300036d9cec503d0475acc83a7607b[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 05:57:50 2016 +0000
+
+    Revert "installed gem"
+    
+    This reverts commit f756f24f6773249431c14528214c58daaeff8bc4.
+
+[33mcommit 236bed6de37423bd0447a47c5f177210aef40504[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 05:53:43 2016 +0000
+
+    Revert "installed gem"
+    
+    This reverts commit 8112b0fd6cb2e6342ac288ad47e563fd84060ba4.
+    
+    reverting commit
+
+[33mcommit 8112b0fd6cb2e6342ac288ad47e563fd84060ba4[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 05:30:49 2016 +0000
+
+    installed gem
+
+[33mcommit f756f24f6773249431c14528214c58daaeff8bc4[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 05:26:21 2016 +0000
+
+    installed gem
+
+[33mcommit a340bba466b74163b26cc7ab5af8c6aa20b8d41a[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 05:20:12 2016 +0000
+
+    testes controller
+
+[33mcommit e3ce593767765a29c094ca3decf24d7e2eb56734[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 05:03:21 2016 +0000
+
+    testes controller
+
+[33mcommit ed532c020b227252c11135ead1406350e8815ab6[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 04:59:33 2016 +0000
+
+    testes controller
+
+[33mcommit 13079d65d7a7a15654916bcdb2e4b3df60082eb3[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 04:52:41 2016 +0000
+
+    testes controller
+
+[33mcommit 7fbcdfc24a0df2e67fb7cf0ebb369c8f7eee55f5[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 04:31:00 2016 +0000
+
+    testes model e controller
+
+[33mcommit 07229ca8f151228ba536667d5e036891cf4a4894[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 03:38:56 2016 +0000
+
+    testes do model
+
+[33mcommit 77daf1a3a766ed79b2165318101c6a9677a4a8ce[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Tue Oct 4 00:03:20 2016 +0000
+
+    testes do controller
+
+[33mcommit 26488a1173cc28269db9f8f6fbbe01fc981e9c7f[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 23:39:25 2016 +0000
+
+    testes do controller
+
+[33mcommit 90d22f5812b946227ecfccb703ebe61bd12d05cb[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 23:33:19 2016 +0000
+
+    testes do controller
+
+[33mcommit 5eabe051cb1647b0d2a51defcbe56741f762e3f9[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 23:29:36 2016 +0000
+
+    testes do controller
+
+[33mcommit 014ae354a43869a04933feb771695531c45d980b[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 22:23:36 2016 +0000
+
+    testes do controller
+
+[33mcommit e6f93b7da13a36bdece122bf5367f7acf7171e26[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 22:17:55 2016 +0000
+
+    testes do controller
+
+[33mcommit 4464a95bc15f6ed59076c0122bed5df59d5d7ce2[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 22:13:57 2016 +0000
+
+    testes do controller
+
+[33mcommit 73fb0049f48418d2567288ed3ff3c8403841a8f9[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 21:14:34 2016 +0000
+
+    testes do controller
+
+[33mcommit ac368ad272a3afd93a69e4ee6ff2a0e5936bccbb[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 21:09:20 2016 +0000
+
+    testes do controller
+
+[33mcommit 225271cb66afb91e85c764b12078d692be9520a4[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 21:06:55 2016 +0000
+
+    testes do controller
+
+[33mcommit 5b4d1e47df0253bd8737d06536308bbe47cb20fe[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 20:57:55 2016 +0000
+
+    testes do controller
+
+[33mcommit ca7587449d781fa5d6b6b8dffa4dbba16191c936[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 20:35:23 2016 +0000
+
+    testes do controller
+
+[33mcommit ed445f9e49069eaec4e04ab88f1bec4913d195b3[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 20:29:51 2016 +0000
+
+    testes do controller
+
+[33mcommit ec356b476339ad90c7556bab70e39ff85c9e74d8[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 20:26:06 2016 +0000
+
+    testes do controller
+
+[33mcommit 4a90a2be968bf031115d91c820925dabca8e416f[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 20:09:18 2016 +0000
+
+    testes do controller
+
+[33mcommit eb4dd8664c7f91d83762e86bbe641734e6665d82[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 19:46:16 2016 +0000
+
+    testes do controller
+
+[33mcommit 7af90bfbfc1bb657c251c9cad9aeeff89c9705f6[m
+Author: Laura Castro Vieira <lauravieira.lvl@gmail.com>
+Date:   Mon Oct 3 19:23:14 2016 +0000
+
+    testes do controller
+
+[33mcommit 8be53e18b4478c1d6e90c74729e4188a4334599f[m
+Author: Lucas Correa Silva <lucas.correa.silvaa@gmail.com>
+Date:   Mon Oct 3 18:23:29 2016 +0000
+
+    Instalação do Bootstrap e Implantação do Template
+
+[33mcommit aad84a4f1e289975ac1dbf56e314b705379bb885[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Mon Oct 3 04:19:10 2016 +0000
+
+    login started
+
+[33mcommit 5585f71e75bd7e666945a5c06c5addc2bc0d7e48[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Fri Sep 30 05:27:31 2016 +0000
+
+    register started
+
+[33mcommit 42e5eecbeb91695b5cce2302e8d99d0b5ae86cc4[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Sep 29 18:06:21 2016 +0000
+
+    started: home and register index controllers
+
+[33mcommit b715778909af4f9c23d6df45e79f57826e10d712[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Sep 29 17:52:27 2016 +0000
+
+    travis fix
+
+[33mcommit 5b309da242fd746b00fcb62e28353c68fb0f1fd0[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Sep 29 17:40:17 2016 +0000
+
+    travis.yml
+
+[33mcommit 21451b0e80e656a78bffe7147f07f64e8b986fb2[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Sep 29 15:25:36 2016 +0000
+
+    new mysql configuration
+
+[33mcommit 01c01d4d40d2c9b39b71583bb791b1a66859323e[m
+Author: Guilherme de Oliveira Fernandes <guilherme_oliveira55@hotmail.com>
+Date:   Thu Sep 29 06:05:57 2016 +0000
+
+    mysql configuration
+
+[33mcommit 616ce40c724bf74eba672b3ac39a79dfc8c38074[m
+Author: Gabriel Pioto <gabriel.pioto07@hotmail.com>
+Date:   Wed Sep 28 23:39:02 2016 -0300
+
+    Criada a primeira modelo e tabela. Rodar rails db:migrate
+
+[33mcommit 96c6c81082e621fdf0707bb041e1a44e3010bff8[m
+Author: João Armando Moretti Ferreira <jhonnyzao@users.noreply.github.com>
+Date:   Sun Sep 4 22:29:40 2016 -0300
+
+    Update README.md
+
+[33mcommit 963943e6ec2210daea5d8e13f7a40aae921ce85f[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Sep 5 01:17:27 2016 +0000
+
+    Instalações adicionais para o funcionamento do cucumber
+
+[33mcommit 4c9cb7df0ef5c3143010d3c086f3daec80128601[m
+Merge: d628e46 1093071
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Sep 5 01:10:35 2016 +0000
+
+    Merge branch 'master' of https://github.com/jhonnyzao/epengenharia
+
+[33mcommit d628e469e2397a096c580e5e953d78fa43cd07af[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Sep 5 01:10:16 2016 +0000
+
+    Novas Gems instaladas
+
+[33mcommit 109307121c46e3009895aeaa645092251084118e[m
+Author: João Armando Moretti Ferreira <jhonnyzao@users.noreply.github.com>
+Date:   Sun Sep 4 21:59:10 2016 -0300
+
+    Update README.md
+
+[33mcommit 5bb6d80af48b99f8094606c29ad5035d4a62e9bf[m
+Author: João Armando Moretti Ferreira <jhonnyzao@users.noreply.github.com>
+Date:   Sun Sep 4 21:58:43 2016 -0300
+
+    Update README.md
+
+[33mcommit a5ef578e1cb94f60b08460b3accb4790a77d85af[m
+Author: gpioto <gabriel.pioto07@hotmail.com>
+Date:   Sun Sep 4 21:57:37 2016 -0300
+
+    Atualização do README
+
+[33mcommit 3a060a3881abf660bb30c0c213dbc56cc9a0ee46[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Sep 5 00:17:11 2016 +0000
+
+    Troca todos os arquivos para a pasta correta.
+
+[33mcommit 2d45e6851db48c9a9297ba472c597c01f91b96d8[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Mon Sep 5 00:05:14 2016 +0000
+
+    Gemfile configs changed
+
+[33mcommit 49c09a92562b03e95c8fcb50240450a0643efecd[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Sep 4 23:33:49 2016 +0000
+
+    Again
+
+[33mcommit ceeba5d4e38d42ac0d2d3ef8430c341f4382df93[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Sep 4 23:29:13 2016 +0000
+
+    Travis config file edit
+
+[33mcommit 6a7a56b1bfe695a7ea9a06595f231c8176c44adf[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Sep 4 23:24:03 2016 +0000
+
+    Travis config file added
+
+[33mcommit c0ea697a05d9fe2284087ecbb2714c9e9c3fd5b1[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Sep 4 23:18:07 2016 +0000
+
+    rspecs-rails gem added
+
+[33mcommit 3b7ba12607a7444b645238552e04c5a14d8e0cb4[m
+Author: Joao Armando <joaoarmando94@gmail.com>
+Date:   Sun Sep 4 22:01:48 2016 +0000
+
+    Commit inicial

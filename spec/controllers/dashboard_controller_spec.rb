@@ -5,9 +5,7 @@ RSpec.describe DashboardController, type: :controller do
     context "user is logged" do
         
         before(:each) do
-            @password = '123456'
-            @user = User.new(id: 1, name: "Guilherme", email: "guilherme_oliveira55@hotmail.com", password: @password)
-            @user.save
+            FactoryGirl.create(:user)
             session[:user_id] = 1
         end
     
