@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'ingredients_users/edit'
+
+  get 'ingredients_users/update'
+
   get 'ingredients/create'
 
   get 'ingredients/edit'
@@ -52,6 +56,10 @@ Rails.application.routes.draw do
   post 'preferences/preferences'
 
   resources :password_resets
+  
+  resources :ingredients
+  
+  resources :ingredients_users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -7,9 +7,21 @@ class IngredientsController < SessionController
   end
   
   def create
+    @ingredient = Ingredient.new(ingredient_params)
+    if @ingredient.save
+      flash[:success] = "Ingrediente criado com sucesso!"
+    else
+    end
   end
 
   def edit
+  end
+  
+  def update
+    @ingredients = IngredientsUser.find(params[:id])
+    @ingredients.update_attribute(:quantity, params[:ingredient][:quantity])
+    
+    redirect_to session.delete(:return_to)
   end
 
   def remove
