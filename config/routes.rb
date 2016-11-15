@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
   get 'ingredients_users/edit'
 
   get 'ingredients_users/update'
@@ -10,6 +11,14 @@ Rails.application.routes.draw do
   get 'ingredients/remove'
   
   get 'ingredients/index'
+  
+  get 'recipes/create'
+
+  get 'recipes/edit'
+
+  get 'recipes/remove'
+  
+  get 'recipes/index'
 
   root 'home#index'
   

@@ -6,7 +6,7 @@ RSpec.describe PreferencesController, type: :controller do
     
     before(:each) do
       @password = '123456'
-      @user = User.new(id: 1, name: "Any Name", email: "anyemaik@gmail.com", password: @password)
+      @user = User.new(id: 1, name: "Any Name", email: "anyemail@gmail.com", password: @password)
       @user.save
       session[:user_id] = 1
     end
