@@ -3,7 +3,8 @@ Feature: Ingredients Removal
   As a user
   I want to remove one ingredient from my ingredient list
   
-  @javascript
+  # Uncomment tag below when its possible to run on travis (works local with proper selenium driver)
+  # @javascript
   Scenario: Option to delete an ingredient
     Given I am a registered user with the username "any_name" and password "123456"
     And I am on "users/login"
@@ -12,7 +13,7 @@ Feature: Ingredients Removal
     And I press "Login"
     Then I should be on "dashboard/dashboard"
     Given I have at least one ingredient
-    And I am on "ingredients/index"
+    And I am on "/ingredients/index"
     When I click on the deletion button for the first ingredient
     And I confirm deletion by clicking ok
     Then I should not see the ingredient deleted
