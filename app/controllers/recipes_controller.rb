@@ -15,9 +15,7 @@ class RecipesController < SessionController
     
     uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
     http = Net::HTTP.new(uri.host, uri.port)
-
     request = Net::HTTP::Post.new(uri.request_uri)
-
     response = http.request(request)
     resultado = JSON.parse(response.body)
     
@@ -37,15 +35,7 @@ class RecipesController < SessionController
           contador_ingredientes += 1
         end  
         
-        receita_atual = {
-          image: receita['recipe']['image'], 
-          name: receita['recipe']['label'],
-          calories: receita['recipe']['calories'].to_i,
-          uri: receita['recipe']['uri'],
-          url: receita['recipe']['url'],
-          ingredients_count: contador_ingredientes,
-          ingredients: ingredientes_totais_receita_atual  
-        }
+        receita_atual = {image: receita['recipe']['image'], name: receita['recipe']['label'], calories: receita['recipe']['calories'].to_i, uri: receita['recipe']['uri'], url: receita['recipe']['url'], ingredients_count: contador_ingredientes, ingredients: ingredientes_totais_receita_atual}
         
         contador_ingredientes = 0
         @receitasTotais.push(receita_atual)
