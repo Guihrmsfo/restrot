@@ -21,9 +21,9 @@
                     
                         <% @recipes.each do |recipe| %>
                         <tr>
-                            <td><class "img"><%= image_tag("#{recipe.picture}") %> </class></td>
-                            <td><%= recipe.title %></td>
-                            <td><%= recipe.yield %></td>
+                            <td><class "img"><%= image_tag("#{recipe['image']}", size: "50x50",) %> </class></td>
+                            <td><%= recipe['label']%></td>
+                            <td><%= recipe['yield']%></td>
                         </tr>
                         <% end %>
                     </table>    

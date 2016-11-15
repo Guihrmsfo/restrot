@@ -1,9 +1,9 @@
-Feature: Log in must be successfull
-  In order to use the website features
+Feature: Favorites page must be accessible
+  In order to see my favorite recipes
   As a user
-  I want to log in into the website
+  I want to access favorites page
   
-    Scenario: User log in
+    Scenario: Favorites Page
         Given I am a registered user with the username "any_name" and password "123456"
         And I am on "users/login"
         When I fill in user_name with "any_name"

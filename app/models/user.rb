@@ -6,6 +6,7 @@ class User < ApplicationRecord
     before_update :encrypt_update_password, :if => :should_validate_password
     attr_accessor :updating_password
     
+    has_many :recipes
     has_and_belongs_to_many :ingredients
     has_many :ingredients_users
     has_many :ingredients, through: :ingredients_users

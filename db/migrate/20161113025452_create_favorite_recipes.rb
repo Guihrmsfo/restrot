@@ -1,10 +1,10 @@
 class CreateFavoriteRecipes < ActiveRecord::Migration[5.0]
   def change
-    create_join_table :users, :recipes, table_name: :favorite_recipes do |t|
+    create_table :favorite_recipes do |t|
+      t.string :uri
+      t.integer :user_id
       t.timestamps
     end
-    add_column :favorite_recipes, :id, :primary_key
-    add_foreign_key :favorite_recipes, :users
-    add_foreign_key :favorite_recipes, :recipes
+    add_foreign_key :favorite_recipes, :users, column: :user_id, primary_key: :id
   end
 end

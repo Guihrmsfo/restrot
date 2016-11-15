@@ -1,11 +1,3 @@
-<section class="content-header">
-  <h1>
-    Dashboard
-    <small>Números</small>
-  </h1>
-</section>
-<br><br>
-
 <div class="row">
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
@@ -75,7 +67,7 @@
                         </tr>
                         <% @ingredients.each do |ingredient| %>
                         <tr>
-                            <td><class "img"><%= image_tag("#{ingredient.picture}") %> </class></td>
+                            <td><class "img"><%= image_tag("#{ingredient.picture}", :class => "img-ingredient") %> </class></td>
                             <td><%= ingredient.name %></td>
                             <td><%= ingredient.quantity %></td>
                             <td><%= ingredient.unit_of_measure %></td>
