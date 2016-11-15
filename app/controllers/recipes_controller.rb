@@ -44,13 +44,6 @@ class RecipesController < SessionController
         contador_ingredientes = 0
         @receitasTotais.push(receita_atual)
         
-        receita_insert = Recipe.new
-        receita_insert.uri = receita_atual[:uri]
-        receita_insert.url = receita_atual[:url]
-        receita_insert.picture = receita_atual[:image]
-        receita_insert.label = receita_atual[:name]
-        receita_insert.user_id = session[:user_id]
-        receita_insert.save
       end
     end
   end
