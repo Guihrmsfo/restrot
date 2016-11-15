@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
   get 'ingredients_users/edit'
 
   get 'ingredients_users/update'

@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20161114143109) do
 
+  create_table "favorite_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "uri"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "fk_rails_dc8cf51c80", using: :btree
+  end
+
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "unit_of_measure"
@@ -26,17 +34,6 @@ ActiveRecord::Schema.define(version: 20161114143109) do
     t.integer "quantity"
     t.index ["ingredient_id"], name: "fk_rails_d73140a606", using: :btree
     t.index ["user_id"], name: "fk_rails_ac568aa73e", using: :btree
-  end
-
-  create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "uri"
-    t.string   "url"
-    t.string   "picture"
-    t.string   "label"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "fk_rails_9606fce865", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,7 +52,7 @@ ActiveRecord::Schema.define(version: 20161114143109) do
     t.string   "profile_image"
   end
 
+  add_foreign_key "favorite_recipes", "users"
   add_foreign_key "ingredients_users", "ingredients"
   add_foreign_key "ingredients_users", "users"
-  add_foreign_key "recipes", "users"
 end

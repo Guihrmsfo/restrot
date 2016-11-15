@@ -10,6 +10,11 @@ class User < ApplicationRecord
     has_and_belongs_to_many :ingredients
     has_many :ingredients_users
     has_many :ingredients, through: :ingredients_users
+    
+    has_and_belongs_to_many :recipes
+    has_many :favorite_recipes
+    has_many :recipes, through: :favorite_recipes
+    
     validates :name, :presence => {:message => " deve ser preenchido"}, :uniqueness => {:message => " já foi escolhido"}, :length => { :in => 3..20, :message => " deve conter entre 3 e 20 caracteres" }
     validates :email, :presence => {:message => " deve ser preenchido"}, :uniqueness => {:message => " já foi escolhido"}
     validates :email, :format => {:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, :message => " inválido"}
