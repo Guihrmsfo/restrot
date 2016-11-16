@@ -1,13 +1,6 @@
 class IngredientsController < SessionController
   layout 'admin_lte_2'
   
-  def update
-    @ingredients = IngredientsUser.find(params[:id])
-    @ingredients.update_attribute(:quantity, params[:ingredient][:quantity])
-    
-    redirect_to session.delete(:return_to)
-  end
-  
   def create
         if params[:ingredientList]
             @userIngredient = IngredientsUser.new
