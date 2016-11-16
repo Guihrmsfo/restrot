@@ -1,6 +1,6 @@
 <container class ="centralizado">
     <div class ="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title title">Lista de Ingredientes</h3>
@@ -42,7 +42,37 @@
                     </table>
                     <br>
                     <div class="col-md-12 center-block">
-                        <button type="button" class="btn btn-success center-block">Inserir Ingrediente</button>
+                        <div class="span4 proj-div" data-toggle="modal" data-target="#GSCCModal"><button type="button" class="btn btn-primary">Inserir Ingrediente</button></div>
+                        <div id="GSCCModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
+                                        <h4 class="modal-title" id="myModalLabel">Inserir Ingrediente</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <%= form_for(:ingredientList, :url => {:controller => 'ingredients', :action => 'create'}) do |f| %>
+                                            <div class ="modal-text col-md-6">
+                                                <div class="title">Ingrediente: </div>
+                                                <%= f.select :value, options_for_select(@ingredient.map{ |ing| [ing.name+" em "+ing.unit_of_measure, ing.id]}), {},{class: 'form-control'} %>
+                                                <br><br><br>
+                                            </div>
+                                            <div class="modal-text col-md-6">
+                                                <div class="title">Quantidade: </div>
+                                                <%= f.text_field :quantity, class: 'form-control', placeholder: "quantidade", autofocus: true %>
+                                                <br><br><br>
+                                            </div>
+                                            <table class="table">
+                                                <tr>
+                                                    <td class="title"><button type="button" class="btn btn-danger center-block" data-dismiss="modal">Fechar</button></td>
+                                                    <td class="title"><%= f.submit :Salvar, class: 'btn btn btn-success center-block'%></td>
+                                                </tr>
+                                            </table> 
+                                        <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
