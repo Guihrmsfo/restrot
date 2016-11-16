@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'ingredients/create'
 
   get 'ingredients/edit'
+  
+  get 'ingredients/create'
+  
+  post 'ingredients/create'
 
   #get 'ingredients/remove'
   
