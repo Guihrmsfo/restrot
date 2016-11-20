@@ -39,6 +39,7 @@ class RecipesController < SessionController
         
         contador_ingredientes = 0
         @receitasTotais.push(receita_atual)
+        puts @receitasTotais.first
         
       end
     end
