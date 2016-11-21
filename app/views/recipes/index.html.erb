@@ -27,27 +27,30 @@
                         <p> <%=recipe[:ingredients_count]%> ingredientes</p>
                         
                         <div class="span4 proj-div" ></div>
-                        <button type="button" class="btn btn-primary"><%= link_to recipe['label'], "Ver Instruções de Preparo", data: {:style=>'color:#FFFFFF;', :class => "css_class", toggle: "modal", target: "#modal#{i}"} %></button>
+                        <button type="button" class="btn btn-primary"><%= link_to recipe['label'], "Ver Receita", data: {:style=>'color:#FFFFFF;', :class => "css_class", toggle: "modal", target: "#modal#{i}"} %></button>
                         <div id="modal<%= i %>" class="modal fade" role="dialog">
-                           <div class="modal-dialog modal-lg">
+                           <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
-                                    <h4 class="modal-title" id="myModalLabel">Instruções</h4>
                                  </div>
                                  <div class="modal-body">
-                                    <div class ="modal-text col-md-3">
-                                       <div class="model-subtitle">Ingredientes: </div>
-                                       <br>
-                                       <% recipe[:ingredients].each do |ingredient| %>
-                                       <% end %>
-                                    </div>
-                                    <div class ="modal-text col-md-9">
-                                       <div class="model-subtitle">Modo de Preparo: </div>
-                                       
-                                       <br>
-                                    </div>
-                                    <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Close</button>
+                                    <h3><%=recipe[:name]%></h3>
+                                    <div class="model-subtitle">Ingredientes: </div>
+                                    <br>
+                                    <% recipe[:ingredients].each do |ingredient| %>
+                                        <p> <%= ingredient[:text] %> </p>
+                                    <% end %>
+                                    <br>
+                                    <div class="model-subtitle">Modo de Preparo: </div>
+                                    <br>
+                                    Clique no botão abaixo para visualizar a receita completa e o modo de preparo!
+                                    <br>
+                                    <br>
+                                    <a href= "<%= recipe[:url] %>" target="_blank"><button type="button" class="btn btn-primary">Ver Receita Completa</button></a>
+                                    <br><br>
+                                    <button type="button" class="btn btn-secondary center-block close-button" data-dismiss="modal">Close</button>
+                                    <br>
                                  </div>
                               </div>
                            </div>

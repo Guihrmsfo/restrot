@@ -38,6 +38,7 @@ class RecipesController < SessionController
         receita_atual = {image: receita['recipe']['image'], name: receita['recipe']['label'], calories: receita['recipe']['calories'].to_i, uri: receita['recipe']['uri'], url: receita['recipe']['url'], ingredients_count: contador_ingredientes, ingredients: ingredientes_totais_receita_atual}
         
         contador_ingredientes = 0
+        ingredientes_totais_receita_atual = []
         @receitasTotais.push(receita_atual)
         puts @receitasTotais.first
         
