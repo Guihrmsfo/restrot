@@ -26,23 +26,17 @@ class PasswordResetsController < ApplicationController
   end
   
   def update
-    @user = User.find_by_password_reset_token!(params[:id])
-    if @user.password_reset_sent_at < 2.hours.ago
-      flash[:notice] = "Recuperação de senha expirada, solicite um novo link"
-      render :new
-    else
-      if (params[:user]).present?
-        @user.salt = nil
-        @user.password = params[:user][:password]
-        
-        if @user.save
-          redirect_to root_path, :notice => "Senha redefinida com sucesso!"
-        else
-          flash[:notice] = "Erro!"
-        end
+    @user = User.find_by_password_reset_token(params[:id])
+    if (params[:user]).present?
+      @user.salt = nil
+      @user.password = params[:user][:password]
+      if @user.save
+        redirect_to root_path, :notice => "Senha redefinida com sucesso!"
       else
-        render :edit
+        flash[:notice] = "Erro!"
       end
+    else
+      render :edit
     end
   end
 end
