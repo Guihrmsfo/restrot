@@ -1,5 +1,5 @@
 <pre>
-  <%= @receitasTotais.inspect %>
+  <%= @recipes.inspect %>
 </pre>
 <container class ="centralizado">
    <div class ="row">
@@ -9,15 +9,15 @@
                <h3 class="box-title title">Busca de Receitas</h3>
             </div>
             <div class="box-body">
-               <% if @receitasTotais.first.nil? %>
+               <% if @recipes.first.nil? %>
                <div class = 'no-ingredient'>
                   <br>
                   Você ainda não possui nenhum ingrediente na sua lista para uma busca personalizada! :( <br>
                   Clique no botão abaixo para adicionar e buscar suas receitas! 
                </div>
                <% end %>
-               <% if @receitasTotais.first %>
-               <% @receitasTotais.each_with_index do |recipe, i| %>
+               <% if @recipes.first %>
+               <% @recipes.each_with_index do |recipe, i| %>
                <div class="col-md-3">
                   <div class="thumbnail">
                      <class "img"><%= image_tag("#{recipe[:image]}", :class => "img-recipe")%> </class>
