@@ -25,6 +25,26 @@ RSpec.describe PasswordResetsController, type: :controller do
     end
   end
   
+  describe "PUT #update" do 
+    
+    before(:each) do
+      @password = '123456'
+      @user = User.new(id: 1, name: "Any Name", email: "anyemaik@gmail.com", password: @password)
+      @user.save
+      session[:user_id] = 1
+    end
+    
+    it "atualiza a senha do usuario" do
+      put :update, params: {id: 1}
+      expect(response).to render_template(root_path)
+    end
+    
+    it "falha ao identificar usuário" do
+      put :update, params: {id: 1}
+      expect(response).to render_template("password_resets/edit")
+    end
+  end
+  
   #describe "GET #edit" do
   #  it "checa se link expirou" do
   #    get :edit 

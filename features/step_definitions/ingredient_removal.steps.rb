@@ -1,12 +1,10 @@
 Given(/^I have at least one ingredient$/) do
-  @ingredient = Ingredient.new(id: 1, name: "Any Name", unit_of_measure: "Any unit")
-  @ingredient.save
   @ingredients_users = IngredientsUser.new(user_id: User.all.first.id, ingredient_id: 1, quantity: 10)
   @ingredients_users.save
 end
 
 When(/^I click on the deletion button for the first ingredient$/) do
-  page.find('spam.btn-danger').click
+  first('spam.btn-danger').click
 end
 
 #Cannot "see" dialog in cucumber tests

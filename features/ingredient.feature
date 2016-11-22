@@ -33,6 +33,14 @@ Feature: Ingredients and Receipts Visualization
       When I click on "Meus Ingredientes" in the sidebar menu
       Then I should be on my ingredients page
       
-      
-      
-      
+    Scenario: See page for edit quantity of an ingredient
+      Given I am a registered user with the username "lucascorrea" and password "lucascorrea"
+      And I am on "users/login"
+      When I fill in user_name with "lucascorrea"
+      And I fill in user_password with "lucascorrea"
+      And I press "Login"
+      Then I should be on my dashboard
+      And I should see my last registered ingredients
+      Given I see at least one ingredient in my Ingredients List
+      When I click on the "Editar" button
+      And I should be on my edit ingredient page
