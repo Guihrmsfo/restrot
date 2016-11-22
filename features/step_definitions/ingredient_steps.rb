@@ -15,5 +15,17 @@ When(/^I click on "Meus Ingredientes" in the sidebar menu$/) do
 end
 
 Then(/^I should be on my ingredients page$/) do
-    expect(page).to have_current_path("/ingredients/index")
+  expect(page).to have_current_path("/ingredients/index")
+end
+
+When(/^I click on the "Editar" button$/) do
+  first('a.btn-primary').click
+end
+
+When(/^I see at least one ingredient in my Ingredients List$/) do
+  expect(page).to have_content("Medida")
+end
+
+Then(/^I should be on my edit ingredient page$/) do
+  expect(page).to have_content("Qual a quantidade desse item que tem disponível?")
 end

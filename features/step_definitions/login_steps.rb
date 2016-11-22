@@ -3,6 +3,10 @@ Given(/^I am a registered user with the username "([^"]*)" and password "([^"]*)
   @user.save  
   @user.confirmed_email = true
   @user.save
+  @ingredient = Ingredient.new(name: "Cebola", unit_of_measure: "Unidade")
+  @ingredient.save
+  @ingredients = IngredientsUser.new(user_id: @user.id, ingredient_id: @ingredient.id, quantity: 20)
+  @ingredients.save
 end
 
 Given(/^I am on "([^"]*)"$/) do |location|
