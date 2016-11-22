@@ -7,7 +7,7 @@ class FavoritesController < SessionController
     if !@favorites.nil?
       
       @favorites.each do |f|
-        @recipe = RecipesController.search(f.uri)
+        @recipe = RecipesController.search_recipe(f.uri)
         if !@recipe.nil?
           @recipes.push(@recipe)
         end
