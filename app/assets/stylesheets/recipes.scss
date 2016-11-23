@@ -15,12 +15,6 @@ h4{
   text-overflow: ellipsis;
 }
 
-h4:hover{
-    overflow: visible; 
-    white-space: normal;
-    height:auto;  /* just added this line */
-}
-
 .img-recipe{
     width: 250px;
     height: 180px;
