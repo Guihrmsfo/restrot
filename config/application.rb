@@ -13,5 +13,8 @@ module Restrot
     # -- all .rb files in that directory are automatically loaded.
     
     config.autoload_paths += %W(#{config.root}/lib)
+    
+    #Configuring timezone
+    config.time_zone = "Brasilia"
   end
 end

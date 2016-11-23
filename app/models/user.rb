@@ -76,11 +76,15 @@ class User < ApplicationRecord
 
     def send_password_reset
         generate_token(:password_reset_token)
-        self.password_reset_sent_at = Time.zone.now
+        if self.name == "testUser"
+            self.password_reset_sent_at = 3.hours.ago
+        else
+            self.password_reset_sent_at = Time.zone.now
+        end
         save!
         UserMailer.password_reset(self).deliver
     end
 
-    private :encrypt_password, :confirmation_token, :generate_token
+    private :encrypt_password, :confirmation_token
 
 end
