@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   get 'favorites/index'
+  
+  post 'favorites/favorite'
+  
+  post 'favorites/unfavorite'
+  
   get 'ingredients_users/edit'
 
   get 'ingredients_users/update'

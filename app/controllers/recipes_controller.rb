@@ -7,7 +7,8 @@ class RecipesController < SessionController
   
   def index
     ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
-    @recipes = RecipesController.search_with_ingredients(ingredients)
+    uid = session[:user_id]
+    @recipes = RecipesController.search_with_ingredients(ingredients, uid)
   end
   
   def self.search(uri)
@@ -24,7 +25,7 @@ class RecipesController < SessionController
     return @recipes.first
   end
   
-  def self.search_with_ingredients(ingredients)
+  def self.search_with_ingredients(ingredients, uid)
     @query = ""
     ingredients.each do |ingredient|
       @query.concat(ingredient.name).concat(" ")
@@ -32,14 +33,31 @@ class RecipesController < SessionController
     
     uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
     result = self.search(uri)
+
+    @userFavs ||= Array.new
+    @favorites = FavoriteRecipe.where("user_id = ?", uid)
+    
+    if !@favorites.nil?
+      @favorites.each do |f|
+        uri_decoded = URI.unescape(f.uri)
+        @userFavs.push(uri_decoded)
+      end
+    end
     
     if result.empty?
       @recipes = []
     else
       @recipes = []
       result['hits'].each do |recipe|
-        current_recipe =  self.get_recipe(recipe)
-        @recipes.push(current_recipe)
+        if(@userFavs.include?(recipe['recipe']['uri']))
+          current_recipe =  self.get_recipe(recipe, true)
+          @recipes.push(current_recipe)
+        else
+          current_recipe =  self.get_recipe(recipe, false)
+          @recipes.push(current_recipe)
+        end
+        
+        
       end
     end
     
@@ -47,18 +65,20 @@ class RecipesController < SessionController
     
   end
   
-  def self.get_recipe(recipe)
+  def self.get_recipe(recipe, isFavorite)
     current_ingredients = []
     ingredient_counter = 0
+
     recipe['recipe']['ingredients'].each do |ingredient|
       ingredient_counter += 1
       current_ingredient = {text: ingredient['text'], quantity: ingredient['quantity'], measure: ingredient['measure']}
       current_ingredients.push(current_ingredient)
     end  
         
-    current_recipe = {image: recipe['recipe']['image'], name: recipe['recipe']['label'], calories: recipe['recipe']['calories'].to_i, uri: recipe['recipe']['uri'], url: recipe['recipe']['url'], ingredients_count: ingredient_counter, ingredients: current_ingredients}
+    current_recipe = {image: recipe['recipe']['image'], name: recipe['recipe']['label'], calories: recipe['recipe']['calories'].to_i, uri: recipe['recipe']['uri'], url: recipe['recipe']['url'], ingredients_count: ingredient_counter, ingredients: current_ingredients, is_favorite: isFavorite}
     return current_recipe
   end
+  
   
   def create
   end

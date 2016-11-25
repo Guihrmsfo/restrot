@@ -23,7 +23,7 @@
                         <p>Calorias: <%=recipe[:calories]%></p>
                         <p> <%=recipe[:ingredients_count]%> ingredientes</p>
                         
-                        <div class="span4 proj-div" ></div>
+                        <div class="bottom_buttons">
                         <button type="button" class="btn btn-primary"><%= link_to "Ver Receita", "#", data: {:style=>'color:#FFFFFF;', :class => "css_class", toggle: "modal", target: "#modal#{i}"} %></button>
                         <div id="modal<%= i %>" class="modal fade" role="dialog">
                            <div class="modal-dialog modal-md">
@@ -51,6 +51,24 @@
                                  </div>
                               </div>
                            </div>
+                        </div>
+                        <% if recipe[:is_favorite] == false %>
+                           <%= link_to url_for(controller: 'favorites', action: :favorite, uri: recipe[:uri]), method: :post, :id => "fav-link#{i}", :onclick => "favorite(#{i})" do%>
+                              <button type="button" class="btn btn-warning favorite_btn">Favoritar  <span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+                           <% end %>
+                           <%= link_to url_for(controller: 'favorites', action: :unfavorite, uri: recipe[:uri]), method: :post, :id => "unfav-link#{i}", :class => "unfav_button_hidden", :onclick => "unfavorite(#{i})" do%>
+                              <button type="button" class="btn btn-danger favorite_btn" id="testee">Desfavoritar  <span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+                           <% end %>
+                        <% end %>
+                        
+                        <% if recipe[:is_favorite] == true %>
+                           <%= link_to url_for(controller: 'favorites', action: :favorite, uri: recipe[:uri]), method: :post, :id => "fav-link#{i}", :class => "fav_button_hidden", :onclick => "favorite(#{i})" do%>
+                              <button type="button" class="btn btn-warning favorite_btn">Favoritar  <span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+                           <% end %>
+                           <%= link_to url_for(controller: 'favorites', action: :unfavorite, uri: recipe[:uri]), method: :post, :id => "unfav-link#{i}", :onclick => "unfavorite(#{i})" do%>
+                              <button type="button" class="btn btn-danger favorite_btn" id="testee">Desfavoritar  <span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+                           <% end %>
+                        <% end %>
                         </div>
                      </div>
                   </div>
