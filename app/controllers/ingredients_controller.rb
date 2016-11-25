@@ -2,19 +2,19 @@ class IngredientsController < SessionController
   layout 'admin_lte_2'
   
   def create
-        if params[:ingredientList]
-            @userIngredient = IngredientsUser.new
-            @userIngredient.ingredient_id = params[:ingredientList][:value]
-            @userIngredient.quantity = params[:ingredientList][:quantity]
-            @userIngredient.user_id = @user.id
-            if @userIngredient.save
-                flash[:success] = "Ingrediente salvo!"
-            else
-                @userIngredient.errors.full_messages.each do |error| 
-                    flash[:alert] = error
-                end
-            end
+    if params[:ingredientList]
+      @userIngredient = IngredientsUser.new
+      @userIngredient.ingredient_id = params[:ingredientList][:value]
+      @userIngredient.quantity = params[:ingredientList][:quantity]
+      @userIngredient.user_id = @user.id
+      if @userIngredient.save
+        flash[:success] = "Ingrediente salvo!"
+      else
+        @userIngredient.errors.full_messages.each do |error| 
+          flash[:alert] = error
         end
+      end
+    end
     redirect_to action: 'index'
   end
 
@@ -41,7 +41,7 @@ class IngredientsController < SessionController
       @ingredient_user.destroy
       flash.now[:success] = "Ingrediente deletado com sucesso"
     else
-      flash.now[:error] = "Ingrediente nÃ£o existe"
+      flash.now[:error] = "Ingrediente não existe"
     end
     redirect_to action: 'index'
   end
