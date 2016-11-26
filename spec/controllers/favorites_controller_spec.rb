@@ -34,5 +34,15 @@ RSpec.describe FavoritesController, type: :controller do
     
     end
     
+    describe "POST #favorite" do
+      it "should save favorite successfully" do
+        post :favorite, params: {uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_637913ec61d9da69eb451818c3293df2"}
+        expect(assigns(:userFavorite).errors.full_messages.count).to be == 0
+      end
+      it "send error messages when unable to save" do
+        post :favorite, params: {uri: ""}
+        expect(assigns(:userFavorite).errors.full_messages.count).to be > 0
+      end
+    end
   end
 end

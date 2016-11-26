@@ -12,4 +12,4 @@ Feature: Favorites page must be accessible
         Then I should be on "dashboard/dashboard"
         And I press "Favoritos"
         Then I should be on "favorites/index"
-  
+        And I should see my favorite recipes

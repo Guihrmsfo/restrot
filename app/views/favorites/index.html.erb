@@ -22,7 +22,7 @@
                         <% @recipes.each_with_index  do |recipe, i| %>
                         <tr>
                             <td><class "img"><%= image_tag("#{recipe['image']}", size: "50x50") %> </class></td>
-                            <td><%= link_to recipe['label'], "#", data: {toggle: "modal", target: "#modal#{i}"} %></td>
+                            <td><%= link_to recipe['label'], "#", data: {:class => "link", :style => "color:  black !important", toggle: "modal", target: "#modal#{i}"} %></td>
                             <td><%= recipe['yield']%></td>
                             <td class="favorite_star"><i class="fa fa-star fa-2x"></i></td>
                         </tr>
