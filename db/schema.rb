@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113025452) do
+ActiveRecord::Schema.define(version: 20161125015142) do
 
   create_table "favorite_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "uri"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 20161113025452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "fk_rails_dc8cf51c80", using: :btree
+  end
+
+  create_table "history_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "uri"
+    t.integer  "user_id"
+    t.integer  "times"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "fk_rails_0d80614b5d", using: :btree
   end
 
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -53,6 +62,7 @@ ActiveRecord::Schema.define(version: 20161113025452) do
   end
 
   add_foreign_key "favorite_recipes", "users"
+  add_foreign_key "history_recipes", "users"
   add_foreign_key "ingredients_users", "ingredients"
   add_foreign_key "ingredients_users", "users"
 end
