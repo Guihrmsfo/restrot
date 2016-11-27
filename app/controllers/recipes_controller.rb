@@ -63,9 +63,10 @@ class RecipesController < SessionController
   end
   
   def save_history
-    history = HistoryRecipe.find_by uri: params[:uri], user_id: session[:user_id]
+    enconded_uri = URI.encode(params[:uri])
+    history = HistoryRecipe.find_by uri: enconded_uri, user_id: session[:user_id]
     if history.nil?
-      HistoryRecipe.create user_id: session[:user_id], uri: params[:uri], times: 1  
+      HistoryRecipe.create user_id: session[:user_id], uri: enconded_uri, times: 1  
     else
       history.times = history.times + 1;
       history.save

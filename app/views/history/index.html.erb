@@ -16,13 +16,13 @@
                         <tr>
                             <td class="title"> Foto </td>
                             <td class="title"> Receita </td>
-                            <td class="title"> Porções </td>
+                            <td class="title"> Visto à </td>
                         </tr>
                         <% @recipes.each_with_index  do |recipe, i| %>
                         <tr>
                             <td><class "img"><%= image_tag("#{recipe['image']}", size: "50x50") %> </class></td>
                             <td><%= link_to recipe['label'], "#", data: {toggle: "modal", target: "#modal#{i}"} %></td>
-                            <td><%= recipe['yield']%></td>
+                            <td><%= recipe[:last_saw]%></td>
                         </tr>
                         <div id="modal<%= i %>" class="modal fade" role="dialog">
                           <div class="modal-dialog">

@@ -3,6 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $('button[id^=btnRecipe]').on 'click', ->
   uri = $('#modal'+$(this).data('indice')).data 'uri'
-  console.log(uri)
   $.post '/recipes/view',
     uri: uri
