@@ -5,6 +5,8 @@ class RecipesController < SessionController
   APP_ID = "da2071e2"
   APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
   
+  helper_method :save_history
+  
   def index
     ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
     @recipes = RecipesController.search_with_ingredients(ingredients)
@@ -58,6 +60,16 @@ class RecipesController < SessionController
         
     current_recipe = {image: recipe['recipe']['image'], name: recipe['recipe']['label'], calories: recipe['recipe']['calories'].to_i, uri: recipe['recipe']['uri'], url: recipe['recipe']['url'], ingredients_count: ingredient_counter, ingredients: current_ingredients}
     return current_recipe
+  end
+  
+  def save_history
+    history = HistoryRecipe.find_by uri: params[:uri], user_id: session[:user_id]
+    if history.nil?
+      HistoryRecipe.create user_id: session[:user_id], uri: params[:uri], times: 1  
+    else
+      history.times = history.times + 1;
+      history.save
+    end
   end
   
   def create

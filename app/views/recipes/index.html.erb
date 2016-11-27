@@ -24,8 +24,8 @@
                         <p> <%=recipe[:ingredients_count]%> ingredientes</p>
                         
                         <div class="span4 proj-div" ></div>
-                        <button type="button" class="btn btn-primary"><%= link_to recipe['label'], "Ver Receita", data: {:style=>'color:#FFFFFF;', :class => "css_class", toggle: "modal", target: "#modal#{i}"} %></button>
-                        <div id="modal<%= i %>" class="modal fade" role="dialog">
+                        <button id="btnRecipe<%= i %>" type="button" data-indice="<%= i %>" class="btn btn-primary"><%= link_to "Ver Receita", '#', data: {:style=>'color:#FFFFFF;', :class => "css_class", toggle: "modal", target: "#modal#{i}"} %></button>
+                        <div id="modal<%= i %>" class="modal fade" role="dialog" data-uri="<%=recipe[:uri]%>">
                            <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
@@ -62,4 +62,13 @@
       </div>
    </div>
 </container>
-
+<%= javascript_tag do %>
+  function view(uri){
+    console.log("entrou aqui, pelo menos");
+    $.post('/recipes/view', {
+      uri: uri
+    }, function(response){
+      alert('sucesso');
+    })
+  }  
+<% end %>

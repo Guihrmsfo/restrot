@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get 'recipes/remove'
   
   get 'recipes/index'
+  
+  post 'recipes/view' => 'recipes#save_history'
 
   root 'home#index'
   
