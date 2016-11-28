@@ -11,6 +11,10 @@
     cursor: pointer; 
 }
 
-a{
-    color: black;
+.link, .link:visited , .link:active{
+    color: black !important;
+}
+
+.link:hover{
+    color: #3c8dbc !important;
 }
