@@ -6,7 +6,7 @@ class RecipesController < SessionController
   APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
   
   def index
-    ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
+    ingredients = params[:ingredientes]
     @recipes = RecipesController.search_with_ingredients(ingredients)
   end
   
@@ -27,10 +27,10 @@ class RecipesController < SessionController
   def self.search_with_ingredients(ingredients)
     @query = ""
     ingredients.each do |ingredient|
-      @query.concat(ingredient.name).concat(" ")
+      @query.concat(ingredient).concat(" ")
     end  
     
-    uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
+    uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=100")
     result = self.search(uri)
     
     if result.empty?
