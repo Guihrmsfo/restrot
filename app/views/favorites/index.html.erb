@@ -22,7 +22,7 @@
                         <% @recipes.each_with_index  do |recipe, i| %>
                         <tr>
                             <td><class "img"><%= image_tag("#{recipe['image']}", size: "50x50") %> </class></td>
-                            <td><%= link_to recipe['label'], "#", data: {:class => "link", :style => "color:  black !important", toggle: "modal", target: "#modal#{i}"} %></td>
+                            <td><%= link_to recipe['label'], "#", class: "link", data: {:class => "link", toggle: "modal", target: "#modal#{i}"} %></td>
                             <td><%= recipe['yield']%></td>
                             <td class="favorite_star"><i class="fa fa-star fa-2x"></i></td>
                         </tr>
@@ -41,18 +41,16 @@
                                         <hr>
                                         <div class="model-subtitle">Ingredientes:</div>
                                         <br>
-                                        <ul style="font-size: 14px">
-                                           <% recipe['ingredients'].each do |ingredient| %>
-                                           <li>
-                                                <%= ingredient['quantity']%> 
-                                                <%= ingredient['unit_of_measure']%>s of 
-                                                <%= ingredient['text'] %>
-                                                <br>
-                                            </li>
-                                           <% end %>
-                                       </ul>
+                                        <% recipe['ingredients'].each do |ingredient| %>
+                                            <p> <%= ingredient['text'] %> </p>
+                                        <% end %>
+                                        <br>
                                     <div style="text-align: center">
-                                       <b><%= link_to "Acessar Receita", recipe['url'], target: "_blank" %></b>
+                                       <a href= "<%= recipe[:url] %>" target="_blank">
+                                            <button type="button" class="btn btn-primary">
+                                               Ver Receita Completa
+                                            </button>
+                                        </a>
                                     </div>
                               </div>
                               <div class="modal-footer">
