@@ -26,9 +26,11 @@ class RecipesController < SessionController
   
   def self.search_with_ingredients(ingredients)
     @query = ""
-    ingredients.each do |ingredient|
-      @query.concat(ingredient).concat(" ")
-    end  
+    if ingredients
+      ingredients.each do |ingredient|
+        @query.concat(ingredient).concat(" ")
+      end
+    end
     
     uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=100")
     result = self.search(uri)
