@@ -16,10 +16,10 @@
     </div><!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-aqua"><i class="fa fa-book"></i></span>
+        <span class="info-box-icon bg-aqua"><i class="fa fa-calendar"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Receitas Buscadas</span>
-          <span class="info-box-number numero-maior">52</span>
+          <span class="info-box-text">Último Acesso</span>
+          <span class="info-box-number"><%= @usuario.updated_at.strftime('%d/%m/%y, as %Hh%mmin') %></span>
         </div><!-- /.info-box-content -->
       </div><!-- /.info-box -->
     </div><!-- /.col -->
@@ -28,7 +28,7 @@
         <span class="info-box-icon bg-red"><i class="fa fa-desktop"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Acessos</span>
-          <span class="info-box-number numero-maior">49</span>
+          <span class="info-box-number numero-maior"><%= @usuario.logins %></span>
         </div><!-- /.info-box-content -->
       </div><!-- /.info-box -->
     </div><!-- /.col -->

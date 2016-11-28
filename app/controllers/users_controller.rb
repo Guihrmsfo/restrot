@@ -27,6 +27,10 @@ class UsersController < ApplicationController
                     redirect_to :controller => 'dashboard', :action => 'dashboard'
                     session[:user_id] = @user.id
                     if @user.confirmed_email
+                        usuario = User.where(:id => @user.id).first
+                        logins = usuario.logins
+                        usuario.increment!(:logins)
+                        usuario.update_attribute(:logins, logins)
                         flash[:notice] = "Login realizado com sucesso!"
                     else
                         flash[:alert] = "Por favor, confirme seu e-mail para ativar sua conta"
