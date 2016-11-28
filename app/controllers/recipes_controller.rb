@@ -6,14 +6,10 @@ class RecipesController < SessionController
   APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
   
   def index
-<<<<<<< HEAD
-    ingredients = params[:ingredientes]
-    @recipes = RecipesController.search_with_ingredients(ingredients)
-=======
     ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
+    ingredients = params[:ingredientes]
     uid = session[:user_id]
     @recipes = RecipesController.search_with_ingredients(ingredients, uid)
->>>>>>> 6bb7952b841bdf8bdc7cc14fb45ca67fa1bf5d5f
   end
   
   def self.search(uri)
