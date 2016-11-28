@@ -1,0 +1,50 @@
+<container class ="centralizado">
+    <div class ="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h1 class="box-title title">Selecione os ingredientes para a busca</h1>
+                </div>
+                <hr class="hr-margin"></hr>
+                <div class="search-title">
+                    <p>Selecione os ingredientes para buscar receitas.</p>
+                    <p>Você precisa selecionar <strong>no mínimo 2 e no máximo 20 ingredientes!</strong></p>
+                </div>
+                <div class="box-body">
+                    <% if @ingredients.first.nil? %>
+                        <div class ='no-ingredient'>
+                            <br>
+                            Você ainda não possui nenhum ingrediente na sua lista! :( <br>
+                            Visite o menu de ingredientes para inserí-los e depois volte aqui para buscar suas receitas.
+                        </div>
+                    <% end %>
+                    <table class="table table-hover">
+                        <thread>
+                            <tr>
+                                <th></th>
+                                <th class="title"> Imagem </th>
+                                <th class="title"> Ingrediente </th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                        <%= form_tag({controller: "recipes", action: "index"}, method: :post, onsubmit: 'return validateForm()') do %>
+                            <% @ingredients.each do |ingredient| %>
+                            <tr>
+                                <td class="padding-4"><%= check_box_tag(ingredient.name, ingredient.name, false, class: 'padding-4') %></td>
+                                <td><class="img"><%= image_tag("#{ingredient.picture}", :class => "img-ingredient") %> </class></td>
+                                <td><%= label_tag(ingredient.name, ingredient.name, class: 'sem-negrito') %></td>
+                            </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12 center-block">
+                    <div class="span4 proj-div botao-busca">
+                        <%= submit_tag("Buscar Receitas", class:"btn btn-primary", data: { disable_with: false }) %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</container>

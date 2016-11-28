@@ -60,7 +60,8 @@ class RecipesController < SessionController
     return current_recipe
   end
   
-  def create
+  def search
+    @ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
   end
 
   def edit
