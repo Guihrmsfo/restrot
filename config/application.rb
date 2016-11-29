@@ -14,6 +14,8 @@ module Restrot
     
     config.autoload_paths += %W(#{config.root}/lib)
     
+    config.assets.initialize_on_precompile = false
+    
     #Configuring timezone
     config.time_zone = "Brasilia"
   end
