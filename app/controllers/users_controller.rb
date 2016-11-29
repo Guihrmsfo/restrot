@@ -50,7 +50,12 @@ class UsersController < ApplicationController
         if (params[:user]).present?  
             @user = User.new(user_params)
             if @user.save
-                UserMailer.registration_confirmation(@user).deliver
+                begin
+                  UserMailer.registration_confirmation(@user).deliver
+                    flash[:success] = "#{@user.name} created"
+                  rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError
+                   flash[:success] = "#{@user.name} created"
+                end
                 flash[:success] = "Cadastro realizado com sucesso"
                 render "login"
                 return
