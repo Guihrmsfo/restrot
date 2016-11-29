@@ -9,7 +9,7 @@ end
 
 Given(/^I press "([^"]*)"$/) do |button|
     click_on button
-    @user = User.new(:name => 'cv.laura', :email => 'cv.laura95@gmail.com', :password => '123456', :password_confirmation => '123456')
+    @user = User.new(:name => 'any name', :email => 'any-email@gmail.com', :password => '123456', :password_confirmation => '123456')
 end
 
 Then(/^I should be on login screen$/) do

@@ -1,5 +1,5 @@
 Given(/^I am a registered user with the username "([^"]*)" and password "([^"]*)"$/) do |name, password|
-  @user = User.new(name: name, email: 'any_name@gmail.com', password: password) 
+  @user = User.new(id: 500, name: name, email: 'any_name@gmail.com', password: password) 
   @user.save  
   @user.confirmed_email = true
   @user.save

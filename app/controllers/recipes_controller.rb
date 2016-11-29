@@ -6,8 +6,9 @@ class RecipesController < SessionController
   APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
   
   def index
-    ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
-    @recipes = RecipesController.search_with_ingredients(ingredients)
+    ingredients = params[:ingredientes]
+    user_id = session[:user_id]
+    @recipes = RecipesController.search_with_ingredients(ingredients, user_id)
   end
   
   def self.search(uri)
@@ -24,43 +25,66 @@ class RecipesController < SessionController
     return @recipes.first
   end
   
-  def self.search_with_ingredients(ingredients)
+  def self.search_with_ingredients(ingredients, user_id)
     @query = ""
-    ingredients.each do |ingredient|
-      @query.concat(ingredient.name).concat(" ")
-    end  
+    if ingredients
+      ingredients.each do |ingredient|
+        @query.concat(ingredient).concat(" ")
+      end
+    end
     
-    uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
+    uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=100")
     result = self.search(uri)
+    return get_results(result, user_id)
+    
+  end
+  
+  def self.get_results(result, user_id)
+    @userFavs ||= Array.new
+    @favorites = FavoriteRecipe.where("user_id = ?", user_id)
+    
+    if !@favorites.nil?
+      @favorites.each do |f|
+        uri_decoded = URI.unescape(f.uri)
+        @userFavs.push(uri_decoded)
+      end
+    end
     
     if result.empty?
       @recipes = []
     else
       @recipes = []
       result['hits'].each do |recipe|
-        current_recipe =  self.get_recipe(recipe)
-        @recipes.push(current_recipe)
+        if(@userFavs.include?(recipe['recipe']['uri']))
+          current_recipe =  self.get_recipe(recipe, true)
+          @recipes.push(current_recipe)
+        else
+          current_recipe =  self.get_recipe(recipe, false)
+          @recipes.push(current_recipe)
+        end
       end
     end
     
     return @recipes
-    
+  
   end
   
-  def self.get_recipe(recipe)
+  def self.get_recipe(recipe, isFavorite)
     current_ingredients = []
     ingredient_counter = 0
+
     recipe['recipe']['ingredients'].each do |ingredient|
       ingredient_counter += 1
       current_ingredient = {text: ingredient['text'], quantity: ingredient['quantity'], measure: ingredient['measure']}
       current_ingredients.push(current_ingredient)
     end  
         
-    current_recipe = {image: recipe['recipe']['image'], name: recipe['recipe']['label'], calories: recipe['recipe']['calories'].to_i, uri: recipe['recipe']['uri'], url: recipe['recipe']['url'], ingredients_count: ingredient_counter, ingredients: current_ingredients}
+    current_recipe = {image: recipe['recipe']['image'], name: recipe['recipe']['label'], calories: recipe['recipe']['calories'].to_i, uri: recipe['recipe']['uri'], url: recipe['recipe']['url'], ingredients_count: ingredient_counter, ingredients: current_ingredients, is_favorite: isFavorite}
     return current_recipe
   end
   
-  def create
+  def search
+    @ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
   end
 
   def edit

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   get 'favorites/index'
+  
+  post 'favorites/favorite'
+  
+  post 'favorites/unfavorite'
+  
   get 'ingredients_users/edit'
 
   get 'ingredients_users/update'
@@ -18,13 +23,15 @@ Rails.application.routes.draw do
   
   get 'ingredients/index'
   
-  get 'recipes/create'
+  get 'recipes/search'
 
   get 'recipes/edit'
 
   get 'recipes/remove'
   
   get 'recipes/index'
+  
+  post 'recipes/index'
 
   root 'home#index'
   
