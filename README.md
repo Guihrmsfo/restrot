@@ -31,4 +31,4 @@ Criação de uma aplicação web baseada na busca inteligente de receitas. A ide
 * [Recipe Search API](https://developer.edamam.com/edamam-recipe-api)
 
 #### Flaticon Icon
-* [Icon by Freepik](http://www.flaticon.com)
+* [Icon by Freepik](http://www.flaticon.com/free-icon/chef-hat_100435#term=Chef&page=1&position=46)
