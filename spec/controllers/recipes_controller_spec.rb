@@ -30,6 +30,13 @@ RSpec.describe RecipesController, type: :controller do
           @recipes = assigns(@recipes)
           expect(@recipes).to_not be_nil
         end
+        
+        it "doesn't find recipe" do
+          post :index, params: {:ingredientes => ['anotfoundelement']}
+          @recipes = assigns(@recipes)
+          expect(@recipes['recipes']).to be_empty
+        end
+        
       end
     end
 
