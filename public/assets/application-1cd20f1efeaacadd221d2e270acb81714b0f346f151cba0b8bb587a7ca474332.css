@@ -1,3 +1,165 @@
+/* line 5, /home/ubuntu/workspace/app/assets/stylesheets/favorites.scss */
+.favorite_star {
+  text-align: center;
+  color: gold;
+}
+
+/* line 9, /home/ubuntu/workspace/app/assets/stylesheets/favorites.scss */
+.favorite_star:hover {
+  color: black;
+  cursor: pointer;
+}
+
+/* line 14, /home/ubuntu/workspace/app/assets/stylesheets/favorites.scss */
+.link, .link:visited, .link:active {
+  color: black !important;
+}
+
+/* line 18, /home/ubuntu/workspace/app/assets/stylesheets/favorites.scss */
+.link:hover {
+  color: #3c8dbc !important;
+}
+/* line 5, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.img-ingredient {
+  width: 45px;
+  height: 45px;
+}
+
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+table {
+  font-size: 120%;
+}
+
+/* line 14, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.box-header {
+  text-align: center;
+}
+
+/* line 18, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.inserir-btn {
+  float: none !important;
+  margin: 0 auto;
+}
+
+/* line 23, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.title {
+  font-weight: bold;
+}
+
+/* line 27, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.no-ingredient {
+  font-size: 150%;
+  text-align: center;
+}
+/* line 5, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.thumbnail {
+  position: relative;
+  float: left;
+  width: 250px;
+}
+
+/* line 11, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+h4 {
+  width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 18, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.img-recipe {
+  width: 250px;
+  height: 180px;
+}
+
+/* line 23, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.recipe-name {
+  text-align: center;
+}
+
+/* line 27, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.modal-body {
+  font-size: 110%;
+  text-align: center;
+}
+
+/* line 32, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.modal-text {
+  position: relative;
+  float: left;
+}
+
+/* line 37, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.modal-close-button {
+  float: right;
+  margin-right: 20px;
+}
+
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+#myModalLabel {
+  font-size: 150%;
+  font-weight: bold;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  text-align: center;
+}
+
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.model-subtitle {
+  font-size: 105%;
+  font-weight: bold;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  text-align: center;
+}
+
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+a:link {
+  color: white;
+}
+
+/* line 59, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+a:visited {
+  color: white;
+}
+
+/* line 62, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+a:hover {
+  color: white;
+}
+
+/* line 65, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+a:active {
+  color: white;
+}
+
+/* line 69, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+a {
+  target-name: new;
+  target-new: tab;
+}
+
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.favorite_btn {
+  margin-left: 5px;
+}
+
+/* line 78, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.unfav_button_hidden {
+  display: none;
+}
+
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
+.fav_button_hidden {
+  display: none;
+}
+/* line 8, /home/ubuntu/workspace/app/assets/stylesheets/styles/dashboard.scss */
+.numero-maior {
+  font-size: 40px !important;
+}
+
+/* line 12, /home/ubuntu/workspace/app/assets/stylesheets/styles/dashboard.scss */
+.margin-top-50 {
+  margin-top: 50px;
+}
 html,
 body {
     height: 100%;
@@ -512,8 +674,8 @@ img {
 }
 
 #contact .image img {
-	width: 100%;
-	height: 100%;
+	width: auto;
+	height: 300px;
 }
 
 
