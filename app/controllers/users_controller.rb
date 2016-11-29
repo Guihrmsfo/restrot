@@ -79,7 +79,6 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :created_at, :updated_at)
     end
     
-    private
     def update_login_data
         usuario = User.where(:id => @user.id).first
         usuario.increment!(:logins)
