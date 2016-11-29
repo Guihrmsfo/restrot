@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :controller do
       
       before(:each) do
         @password = '123456'
-        @user = User.new(id: 1, name: "Any Name", email: "anyemail@gmail.com", password: @password)
+        @user = User.new(id: 1, name: "Any Name", email: "anyemail@gmail.com", password: @password, logins: 1, updated_at: "2016-11-29 02:08:52")
         @user.save
       end
       
@@ -40,6 +40,13 @@ RSpec.describe UsersController, type: :controller do
         it "inputs a wrong password" do
           post :login, params: {:user => {:name => "Any Name", :password => "1"}}
           expect(flash[:danger]).to match(/Senha inválida*/)
+        end
+        
+        it "updates logins and updated_at" do
+          post :login, params: {:user => {:name => "Any Name", :password => "123456"}}
+          @user = User.find_by id: session[:user_id]
+          expect(@user.logins).to eq(2)
+          expect(@user.updated_at).not_to eq("2016-11-29 02:08:52")
         end
       
     end
@@ -66,6 +73,7 @@ RSpec.describe UsersController, type: :controller do
         post :login, params: {:user => {:name => "Any Name", :email => "email@123", :password => ""}}
         expect(response).to render_template("users/login")
       end
+      
     end
   end
   
@@ -79,12 +87,7 @@ RSpec.describe UsersController, type: :controller do
     end
     
     describe "POST #login" do
-      it "updates logins and updated_at" do
-        post :login
-        #expect(@user.logins).to eq(2)
-        #expect(@user.updated_at).not_to eq("2016-11-29 02:08:52")
-      end
-      
+    
       it "redirects to dashboard" do
         post :login 
         expect(response).to redirect_to(:controller => 'dashboard', :action => 'dashboard')

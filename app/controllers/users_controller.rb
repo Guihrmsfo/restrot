@@ -30,6 +30,7 @@ class UsersController < ApplicationController
                         update_login_data
                         flash[:notice] = "Login realizado com sucesso!"
                     else
+                        update_login_data
                         flash[:alert] = "Por favor, confirme seu e-mail para ativar sua conta"
                     end
                     return
@@ -80,8 +81,9 @@ class UsersController < ApplicationController
     end
     
     def update_login_data
-        usuario = User.where(:id => @user.id).first
-        usuario.increment!(:logins)
-        usuario.update_attribute(:updated_at, Time.now) 
+        user = User.where(:id => session[:user_id]).first
+        user.increment!(:logins)
+        user.update_attribute(:updated_at, Time.now) 
+        user.save()
     end
 end
