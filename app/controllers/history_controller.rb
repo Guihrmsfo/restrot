@@ -16,7 +16,6 @@ class HistoryController < SessionController
         end
         
       end
-      
     end
   end
 end
