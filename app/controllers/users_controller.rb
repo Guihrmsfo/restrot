@@ -27,10 +27,7 @@ class UsersController < ApplicationController
                     redirect_to :controller => 'dashboard', :action => 'dashboard'
                     session[:user_id] = @user.id
                     if @user.confirmed_email
-                        usuario = User.where(:id => @user.id).first
-                        logins = usuario.logins
-                        usuario.increment!(:logins)
-                        usuario.update_attribute(:logins, logins)
+                        update_login_data
                         flash[:notice] = "Login realizado com sucesso!"
                     else
                         flash[:alert] = "Por favor, confirme seu e-mail para ativar sua conta"
@@ -82,4 +79,10 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :created_at, :updated_at)
     end
     
+    private
+    def update_login_data
+        usuario = User.where(:id => @user.id).first
+        usuario.increment!(:logins)
+        usuario.update_attribute(:updated_at, Time.now) 
+    end
 end
