@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20161128010032) do
 
-  create_table "favorite_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "favorite_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "uri"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20161128010032) do
     t.index ["user_id"], name: "fk_rails_dc8cf51c80", using: :btree
   end
 
-  create_table "history_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "history_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "uri"
     t.integer  "user_id"
     t.integer  "times"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20161128010032) do
     t.index ["user_id"], name: "fk_rails_0d80614b5d", using: :btree
   end
 
-  create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "unit_of_measure"
     t.string   "picture"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20161128010032) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "ingredients_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "ingredients_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id",       null: false
     t.integer "ingredient_id", null: false
     t.integer "quantity"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20161128010032) do
     t.index ["user_id"], name: "fk_rails_ac568aa73e", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
