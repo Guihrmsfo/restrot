@@ -73,12 +73,18 @@ RSpec.describe UsersController, type: :controller do
     
     before(:each) do
       @password = '123456'
-      @user = User.new(id: 1, name: "Any Name", email: "anyemaik@gmail.com", password: @password)
+      @user = User.new(id: 1, name: "Any Name", email: "anyemaik@gmail.com", password: @password, logins: 1, updated_at: "2016-11-29 02:08:52")
       @user.save
       session[:user_id] = 1
     end
     
     describe "POST #login" do
+      it "updates logins and updated_at" do
+        post :login
+        #expect(@user.logins).to eq(2)
+        #expect(@user.updated_at).not_to eq("2016-11-29 02:08:52")
+      end
+      
       it "redirects to dashboard" do
         post :login 
         expect(response).to redirect_to(:controller => 'dashboard', :action => 'dashboard')

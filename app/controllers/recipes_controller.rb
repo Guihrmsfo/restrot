@@ -6,9 +6,9 @@ class RecipesController < SessionController
   APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
   
   def index
-    ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
-    uid = session[:user_id]
-    @recipes = RecipesController.search_with_ingredients(ingredients, uid)
+    ingredients = params[:ingredientes]
+    user_id = session[:user_id]
+    @recipes = RecipesController.search_with_ingredients(ingredients, user_id)
   end
   
   def self.search(uri)
@@ -25,17 +25,23 @@ class RecipesController < SessionController
     return @recipes.first
   end
   
-  def self.search_with_ingredients(ingredients, uid)
+  def self.search_with_ingredients(ingredients, user_id)
     @query = ""
-    ingredients.each do |ingredient|
-      @query.concat(ingredient.name).concat(" ")
-    end  
+    if ingredients
+      ingredients.each do |ingredient|
+        @query.concat(ingredient).concat(" ")
+      end
+    end
     
-    uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=30")
+    uri = URI.parse("http://api.edamam.com/search?q="+@query+"&app_id="+APP_ID+"&app_key="+APP_KEY+"&from=0&to=100")
     result = self.search(uri)
-
+    return get_results(result, user_id)
+    
+  end
+  
+  def self.get_results(result, user_id)
     @userFavs ||= Array.new
-    @favorites = FavoriteRecipe.where("user_id = ?", uid)
+    @favorites = FavoriteRecipe.where("user_id = ?", user_id)
     
     if !@favorites.nil?
       @favorites.each do |f|
@@ -56,13 +62,11 @@ class RecipesController < SessionController
           current_recipe =  self.get_recipe(recipe, false)
           @recipes.push(current_recipe)
         end
-        
-        
       end
     end
     
     return @recipes
-    
+  
   end
   
   def self.get_recipe(recipe, isFavorite)
@@ -79,8 +83,8 @@ class RecipesController < SessionController
     return current_recipe
   end
   
-  
-  def create
+  def search
+    @ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
   end
 
   def edit
