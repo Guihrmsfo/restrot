@@ -25,27 +25,18 @@ RSpec.describe RecipesController, type: :controller do
           expect(response).to have_http_status(:success)
         end
         
-        it "api response is a json" do
-          get :index
-          
-          uri = URI.parse("http://api.edamam.com/search?q=chicken&app_id=da2071e2&app_key=5dc2d144e030622c3525cf5f355d9dec&from=0&to=30")
-          http = Net::HTTP.new(uri.host, uri.port)
-          request = Net::HTTP::Post.new(uri.request_uri)
-          response = http.request(request)
-          
-          json = JSON.parse(response.body)
-          response.header['Content-Type'].should include 'application/json'
-          
-          json['hits'].each do |receita|
-            passou = false;
-            receita['recipe']['ingredients'].each do |ingrediente|
-              if ingrediente['text'].include? "chicken"
-                passou = true
-              end
-            end  
-            expect(passou).to be true
-          end
+        it "finds recipe" do
+          post :index, params: {:ingredientes => ['chicken']}
+          @recipes = assigns(@recipes)
+          expect(@recipes).to_not be_nil
         end
+        
+        it "doesn't find recipe" do
+          post :index, params: {:ingredientes => ['anotfoundelement']}
+          @recipes = assigns(@recipes)
+          expect(@recipes['recipes']).to be_empty
+        end
+        
       end
     end
 

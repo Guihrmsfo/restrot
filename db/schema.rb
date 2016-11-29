@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125015142) do
+ActiveRecord::Schema.define(version: 20161128010032) do
 
   create_table "favorite_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "uri"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20161125015142) do
     t.string   "profile_name"
     t.string   "profile_last_name"
     t.string   "profile_image"
+    t.integer  "logins"
   end
 
   add_foreign_key "favorite_recipes", "users"

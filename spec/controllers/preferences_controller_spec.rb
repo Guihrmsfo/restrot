@@ -95,6 +95,18 @@ RSpec.describe PreferencesController, type: :controller do
         expect(response).to render_template("preferences/password")
       end
       
+      it "new password did not match" do
+        post :password, params: {:user => {:oldPassword => @password, :passwordConfirmation => "passwordConfirmation", 
+          :password => "password", session: { user_id: User.minimum(:id) }}}
+        expect(response).to render_template("preferences/password")
+      end
+      
+      it "success" do
+        post :password, params: {:user => {:oldPassword => @password, :passwordConfirmation => "passwordConfirmation", 
+          :password => "passwordConfirmation", session: { user_id: User.minimum(:id) }}}
+        expect(response).to render_template("preferences/password")
+      end
+      
     end
     
   end

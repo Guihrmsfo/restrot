@@ -21,3 +21,41 @@
 //= require js/easypiechart.js
 //= require js/easypiechart-data.js
 //= require js/bootstrap-datepicker.js
+
+jQuery(function($) {
+// when the #region_id field changes
+  $("#contact_country_id").live('change', function() {
+    // make a POST call and replace the content
+    var country = $('select#contact_country_id :selected').val();
+    if(country == "") country="0";
+    jQuery.get('/countries/update_city_select/' + country, function(data){
+        $("#cities").html(data);
+    })
+    return false;
+  });
+});
+
+jQuery(function($) {
+    $("#sortTable").tablesorter({
+        headers : {
+            5: {
+                sorter: false
+            },
+            8: {
+                sorter: false
+            },
+            9: {
+                sorter: false
+            }
+        },
+        sortList: [[0,0]] 
+    });
+});
+
+ jQuery(function($) {
+  $('.action-icon').twipsy();
+  $("a[rel=twipsy]").twipsy({
+    live: true
+  });
+ });
+

@@ -27,8 +27,10 @@ class UsersController < ApplicationController
                     redirect_to :controller => 'dashboard', :action => 'dashboard'
                     session[:user_id] = @user.id
                     if @user.confirmed_email
+                        update_login_data
                         flash[:notice] = "Login realizado com sucesso!"
                     else
+                        update_login_data
                         flash[:alert] = "Por favor, confirme seu e-mail para ativar sua conta"
                     end
                     return
@@ -48,7 +50,12 @@ class UsersController < ApplicationController
         if (params[:user]).present?  
             @user = User.new(user_params)
             if @user.save
-                UserMailer.registration_confirmation(@user).deliver
+                begin
+                  UserMailer.registration_confirmation(@user).deliver
+                    flash[:success] = "#{@user.name} created"
+                  rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError
+                   flash[:success] = "#{@user.name} created"
+                end
                 flash[:success] = "Cadastro realizado com sucesso"
                 render "login"
                 return
@@ -78,4 +85,10 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :created_at, :updated_at)
     end
     
+    def update_login_data
+        user = User.where(:id => session[:user_id]).first
+        user.increment!(:logins)
+        user.update_attribute(:updated_at, Time.now) 
+        user.save()
+    end
 end
