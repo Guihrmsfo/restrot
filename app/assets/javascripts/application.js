@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require app
+//= require_tree .
 //= require js/chart.min.js
 //= require js/chart-data.js
 //= require js/easypiechart.js
@@ -57,4 +58,4 @@ jQuery(function($) {
     live: true
   });
  });
-//= require_tree .
+

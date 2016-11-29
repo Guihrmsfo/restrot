@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title title">Histórico</h3>
+            </div>
+            <div class="box-body">
+                <% if @recipes.first.nil? %>
+                    <div class = 'no-recipe'>
+                        <br>
+                        Você ainda não visualizou nenhuma receita! :(
+                    </div>
+                <% end %>
+                <% if @recipes.first %>
+                    <table class="table table-striped">
+                        <tr>
+                            <td class="title"> Foto </td>
+                            <td class="title"> Receita </td>
+                            <td class="title"> Visto à </td>
+                        </tr>
+                        <% @recipes.each_with_index  do |recipe, i| %>
+                        <tr>
+                            <td><class "img"><%= image_tag("#{recipe['image']}", size: "50x50") %> </class></td>
+                            <td><%= link_to recipe['label'], "#", data: {toggle: "modal", target: "#modal#{i}"} %></td>
+                            <td><%= recipe[:last_saw]%></td>
+                        </tr>
+                        <div id="modal<%= i %>" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title"><%= recipe['label'] %></h4>
+                              </div>
+                               <div class="modal-body">
+                                    <div style="text-align: center">
+                                        <class "img"><%= image_tag("#{recipe['image']}", size: "140x140",) %> </class>
+                                        <p>Rende <%= recipe['yield'] %> porções</p>
+                                    </div> 
+                                        <hr>
+                                        <div class="model-subtitle">Ingredientes:</div>
+                                        <br>
+                                        <ul style="font-size: 14px">
+                                           <% recipe['ingredients'].each do |ingredient| %>
+                                           <li>
+                                                <%= ingredient['quantity']%> 
+                                                <%= ingredient['unit_of_measure']%>s of 
+                                                <%= ingredient['text'] %>
+                                                <br>
+                                            </li>
+                                           <% end %>
+                                       </ul>
+                                    <div style="text-align: center">
+                                       <b><%= link_to "Acessar Receita", recipe['url'], target: "_blank" %></b>
+                                    </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                        
+                          </div>
+                        </div>
+
+                        <% end %>
+                    </table>    
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

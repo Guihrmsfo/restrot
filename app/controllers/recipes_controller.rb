@@ -5,6 +5,8 @@ class RecipesController < SessionController
   APP_ID = "da2071e2"
   APP_KEY = "5dc2d144e030622c3525cf5f355d9dec"
   
+  helper_method :save_history
+  
   def index
     ingredients = params[:ingredientes]
     user_id = session[:user_id]
@@ -83,6 +85,18 @@ class RecipesController < SessionController
     return current_recipe
   end
   
+
+  def save_history
+    enconded_uri = URI.encode(params[:uri])
+    history = HistoryRecipe.find_by uri: enconded_uri, user_id: session[:user_id]
+    if history.nil?
+      HistoryRecipe.create user_id: session[:user_id], uri: enconded_uri, times: 1  
+    else
+      history.times = history.times + 1;
+      history.save
+    end
+  end
+
   def search
     @ingredients = Ingredient.joins(:ingredients_users).where("user_id = ?", session[:user_id]).select("*")
   end

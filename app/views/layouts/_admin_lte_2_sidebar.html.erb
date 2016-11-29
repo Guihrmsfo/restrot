@@ -35,7 +35,8 @@
       <li class="<%= 'active' if params[:controller] == 'recipes' %>"><a href="/recipes/search" data-no-turbolink="true"><i class='fa fa-link'></i> <span>Nova Busca</span></a></li>
       <li class="<%= 'active' if params[:controller] == 'ingredients' %>"><a href="/ingredients/index" id="meus-ingredientes"><i class="fa fa-link"></i> <span>Meus Ingredientes</span></a></li>
       <li class="<%= 'active' if params[:controller] == 'favorites' %>"><a href="/favorites/index" id="favoritos"><i class='fa fa-link'></i> <span>Favoritos</span></a></li>
-      <li><a href="#"><i class='fa fa-link'></i> <span>Histórico</span></a></li>
+      <li class="<%= 'active' if params[:controller] == 'history' %>"><a href="/history/index" id="historico"><i class='fa fa-link'></i> <span>Histórico</span></a></li>
+      <!-- <li><a href="#"><i class='fa fa-link'></i> <span>Histórico</span></a></li> -->
       <li class="<%= 'active' if params[:controller] == 'preferences' %>"><a href="<%= url_for(controller: 'preferences', action: 'preferences', only_path: true) %>"><i class='fa fa-link'></i> <span>Preferências</span></a></li>
       <<!--li class="treeview">
         <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>

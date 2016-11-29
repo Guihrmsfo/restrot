@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'favorites/index'
+
+  get 'history/index'
   
   post 'favorites/favorite'
   
@@ -31,6 +33,8 @@ Rails.application.routes.draw do
   
   get 'recipes/index'
   
+  post 'recipes/view' => 'recipes#save_history'
+
   post 'recipes/index'
 
   root 'home#index'
