@@ -51,6 +51,34 @@ table {
   font-size: 150%;
   text-align: center;
 }
+
+/* line 32, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.search-title {
+  text-align: left;
+  padding-left: 4em;
+  font-size: 1.1em;
+}
+
+/* line 38, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.hr-margin {
+  margin: 10px;
+}
+
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.sem-negrito {
+  font-weight: normal;
+}
+
+/* line 46, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.padding-4 {
+  padding-left: 4em !important;
+}
+
+/* line 50, /home/ubuntu/workspace/app/assets/stylesheets/ingredients.scss */
+.botao-busca {
+  text-align: center;
+  margin-top: 20px;
+}
 /* line 5, /home/ubuntu/workspace/app/assets/stylesheets/recipes.scss */
 .thumbnail {
   position: relative;
