@@ -23,6 +23,12 @@ Criação de uma aplicação web baseada na busca inteligente de receitas. A ide
 
 ### Recursos Utilizados
 
-# Template Bootstrap
+#### Template Bootstrap
 * [AdminLTE gem](https://github.com/nicolas-besnard/adminlte2-rails)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE)
+
+#### Edamam 
+* [Recipe Search API](https://developer.edamam.com/edamam-recipe-api)
+
+#### Flaticon Icon
+* [Icon by Freepik](http://www.flaticon.com)
