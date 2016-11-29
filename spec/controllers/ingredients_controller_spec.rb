@@ -32,7 +32,7 @@ RSpec.describe IngredientsController, type: :controller do
 
     describe "GET #edit" do
       it "returns http success" do
-        get :edit
+        get :edit, id: 1
         expect(response).to have_http_status(:success)
       end
     end
