@@ -24,7 +24,7 @@
                             <td><class "img"><%= image_tag("#{recipe['image']}", size: "50x50") %> </class></td>
                             <td><%= link_to recipe['label'], "#", class: "link", data: {:class => "link", toggle: "modal", target: "#modal#{i}"} %></td>
                             <td><%= recipe['yield']%></td>
-                            <td class="favorite_star"><i class="fa fa-star fa-2x"></i></td>
+                            <td class="favorite_star"><%= link_to(favorites_unfavorite_path(uri: recipe['uri'], origin: "favorites_recipes_list"), method: :post) do %><i class="fa fa-star fa-2x"></i><% end %></td>
                         </tr>
                         <div id="modal<%= i %>" class="modal fade" role="dialog">
                           <div class="modal-dialog">

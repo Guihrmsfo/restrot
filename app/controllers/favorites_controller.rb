@@ -51,6 +51,15 @@ class FavoritesController < SessionController
   end
   
   def unfavorite
-    puts "desfavoritando"
+    @uri_ajustado = params[:uri].sub('#', '%23')
+    @recipe = FavoriteRecipe.find_by(uri: @uri_ajustado)
+    if !@recipe.nil?
+      FavoriteRecipe.destroy(@recipe)
+      flash[:success] = "A receita foi removida com sucesso de sua lista de favoritos!"
+    else
+      flash[:alert] = "Lista de favoritos não encontrada"
+      render "recipes/search"
+    end
+    redirect_to action: 'index'
   end
 end
