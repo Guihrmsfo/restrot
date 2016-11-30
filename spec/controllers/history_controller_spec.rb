@@ -26,7 +26,7 @@ RSpec.describe HistoryController, type: :controller do
             
             context "when user has history" do
                 before(:each) do
-                    @history_recipe = HistoryRecipe.new(id: 1, uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_637913ec61d9da69eb451818c3293df2", user_id: 1, times: 1, created_at: "20/10/2016 20:20", updated_at: "20/10/2016 20:21")
+                    @history_recipe = HistoryRecipe.new(id: 1, uri: "http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2", user_id: 1, times: 1, created_at: "20/10/2016 20:20", updated_at: "20/10/2016 20:21")
                     @history_recipe.save
                     session[:user_id] = 1
                 end

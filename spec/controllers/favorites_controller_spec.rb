@@ -20,7 +20,7 @@ RSpec.describe FavoritesController, type: :controller do
     
     context "when user has favorites" do
       before(:each) do
-        @favorite_recipe = FavoriteRecipe.create(user_id: 1, uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_637913ec61d9da69eb451818c3293df2")
+        @favorite_recipe = FavoriteRecipe.create(user_id: 1, uri: "http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2")
         @favorite_recipe.save
         session[:user_id] = 1
       end
