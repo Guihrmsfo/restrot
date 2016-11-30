@@ -58,7 +58,6 @@ class FavoritesController < SessionController
       flash[:success] = "A receita foi removida com sucesso de sua lista de favoritos!"
     else
       flash[:alert] = "Lista de favoritos não encontrada"
-      render "recipes/search"
     end
     redirect_to action: 'index'
   end
