@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .favorite_star{
+    i {
+        color: gold;
+    }
+    i:hover {
+        color: black;
+        cursor: pointer;
+    }
     text-align: center; 
     color: gold;
 }
